@@ -63,8 +63,9 @@
 % should be used if it is desired that the figures are to be displayed in
 % draft mode.
 %
-%\documentclass[11pt,draftclsnofoot,onecolumn]{IEEEtran}
-\documentclass[11pt,final,onecolumn]{IEEEtran}
+
+\documentclass[11pt,draftclsnofoot,onecolumn]{IEEEtran}
+%\documentclass[11pt,final,onecolumn]{IEEEtran}
 %\documentclass[journal,twosides]{IEEEtran}
  \pagestyle{plain}
 %
@@ -409,9 +410,12 @@
 %\usepackage{eqparbox}
 \usepackage{url}
 % \url{my_url_here}.
+\usepackage{parskip}
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{10pt}
 
 % correct bad hyphenation here
-%\renewcommand{\baselinestretch}{1.3}
+\renewcommand{\baselinestretch}{0.95}
 \hyphenation{op-tical net-works semi-conduc-tor pa-ckets}
 
 
@@ -435,8 +439,9 @@
 
 \author{Diego F. Ram\'{i}rez, 
 			 Sandra~C\'{e}spedes\\%
-			 Department of Information and Communication Technologies, Icesi University, Cali, Colombia\\%
-			 Email: \{\textit{dframirez,slcesped}\}\textit{@icesi.edu.co}}
+			 Department of Information and Communication Technologies\\%
+			 Icesi University, Cali, Colombia\\%
+			 Email: \{\textit{dframirez,scespedes}\}\textit{@icesi.edu.co}}
 % <-this % stops a space
 %\thanks{D. Ram\'{i}rez and S. C\'{e}spedes are with the 
 %Department of Information and Communication Technologies, Icesi University, Cali, Colombia. Email: \{dframirez,slcesped\}@icesi.edu.co}}%
@@ -544,53 +549,56 @@ The remainder of this paper is organized as follows. In Section \ref{preliminari
 
 \section{Advanced Metering Infraestructure}\label{ami}
 
-The Advanced Metering Infrastructure (AMI) is a component of the Smart Grid, which provides a two-way communication between the Utility and the HANs (Home Area Networks) at the customer side. The main purpose of this building block in the whole system is to measure, gather and analyze energy consumption as well as patterns of energy use. The main components of the AMI system include smart meters, a Meter Data Management System (MDMS), a communication network, access points and a head-end  \cite{Wang2011b} \cite{Bennett2008}. While some utility companies use their own AMI backhaul communication networks on a general basis, it is expected for the new communications architecture to be IP-based in order to guarantee interoperability with standard applications. As discussed by Yan et al in \cite{Yan2013}, an IP-based network will provide an effective solution for the communication needs of the Smart grid, as it becomes a non technology-dependent deployment.  Thus, the cost of implementation and maintenance can be reduced signifficantly using an IP-based approach. 
+Smart grid communications comprise three types of networks: Home Area Networks (HAN), which serve as the communication infrastructure for sensors and devices inside homes; Neighborhood Area Networks (NAN), which connect smart meters and data collectors; and a Wide Area Network (WAN), which communicates data collectors with a utility control center  \cite{Tang2010}. The Advanced Metering Infrastructure (AMI) refers to the architecture that provides a two-way communication between the Utility and the Home Area Networks (HANs). It includes smart meters, a Meter Data Management System (MDMS), a communication network, access points, and a head-end  \cite{Wang2011b} \cite{Bennett2008}. An example of a typical AMI deployment is depicted in Fig. \ref{fig:ami}.
 
-AMI communications network is usually categorized into three main types: Home Area Network (HAN), which serves as communication infrastructure for sensors and devices inside home; Neighborhood Area Network (NAN), which connects smart meters and data collectors; and Wide Area Network (WAN), which communicates data collectors with a utility control center  \cite{Tang2010}. A view of a typical AMI deployment is depicted in (Fig. \ref{fig:ami}).
-
-\begin{figure}[h!]
+\begin{figure}[htp!]
 \centering
 \includegraphics [height=6cm] {basicAMI}
 \caption{Basic AMI deployment}
 \label{fig:ami}
 \end{figure}
 
-As stated before, the AMI must support different types of traffic, coming from different sources (meters, data collectors, Utility). Therefore, the AMI network must fulfill specific requirements to meet the needs of different traffic nature and to face the constraints of limited bandwidth and comparatively low-capacity of some devices (in terms of memory, processing capacity, etc.). The main requirements for the IP-based communication network deployed in the AMI are as follows  \cite{Wang2011b}:
+The main purpose of the AMI is to measure, gather, and analyze energy consumption as well as patterns of energy use.  The AMI must support  traffic generated at a variety of sources (meters, data collectors, and Utility). Therefore, the AMI network must fulfill %specific requirements to meet 
+the needs of different natures of traffic while it may face constraints such as limited bandwidth and interaction with low-capacity devices (in terms of memory, processing capacity, and others).
+
+While many utility companies started deploying AMI networks based on proprietary protocols, it is expected for the AMI communications architecture to be IP-based to guarantee interoperability with standard applications. As discussed by Yan \textit{et al.} \cite{Yan2013}, an IP-based network will provide an effective solution for the communication needs of the smart grid, as it becomes a non-technology dependant deployment.  Thus, the cost of implementation and maintenance can be reduced signifficantly using an IP-based approach. The main requirements for the IP-based communications network deployed in the AMI are as follows \cite{Wang2011b} \cite{Iyer2011a}:
 
 \begin{itemize}
-\item Interoperability: With the purpose of making possible the communication between segments using different technologies and networking protocols and with the aim of providing end-to-end services, the IP suite and protocols should be standards-based.
-\item Scalability: Supporting large and dense deployments is a must in the Smart Grid. 
-\item Security: Given the fact that the meters transmit information on a regular basis, the network must provide security to the data transfer. Security services must be provided at both the network and the application layer, in order to cover different types of traffic  \cite{Bennett2008}. Real time information about neighbor?s energy consumption habit, for instance, would be a kind of data that must be protected (as the visibility of this information from third parties would constitute an invasion of privacy).
+\item Interoperability: The IP suite and protocols should be standards-based with the purpose of enabling the communication between segments using different technologies and networking protocols, as well as providing end-to-end services.
+\item Scalability: Supporting large and dense deployments is a must in the AMI network. 
+\item Security: Smart meters transmit sensitive information on a regular basis; hence, the network must provide security for data transfer. Security services must cover different types of traffic and be provided at both network and application layers \cite{Bennett2008}. Real time information, for instance neighbors' energy consumption habits, become data that must be protected since third-party visibility of this information would constitute an invasion of privacy.
+\item{Reliability: TBD}
+\item{Quality of Service: TBD}
 \end{itemize}
 
-In this respect, the implementation of efficient routing strategies becomes paramount to guarantee that the information reaches its final destination. In order to face this problem, several protocols have been designed, each one of them according to routing requirements such as: interoperability, reliability, security, availability, scalability, quality of service and effective packets delivery  \cite{Iyer2011a}. Routing should be more or less robust, depending on the type of technology used for the AMI implementation. Given the fact that the AMI network is an initial approach to a SUN (Smart Utility Network), the main characteristics of these kinds of networks and the most important routing requirements are discussed in this article. 
+An important aspect of the AMI's network operation is the routing of packets. The implementation of efficient routing strategies becomes paramount to guarantee that the information reaches its final destination. Therefore, routing protocols should be designed according to the aforementioned requirements. Furthermore, routing should be more or less robust, depending on the type of communication technology over which the AMI is deployed. In this article, we compare and discussed the routing strategies and protocols that will help the AMI network to become part of a Smart Utility Network (SUN).
 
 \section{Overview of global deployment status of AMI}\label{ami}
 
-In \cite{FERC2012} the results of the Advanced Metering and Demand Response Survey performed by FERC in the U.S. indicate that advanced metering penetration and potential peak load reductions from electric power demand response have increased significantly since the last survey in 2008. The growth is around four percentage points (from 4.7\% in 2008 to 8.7\% in 2010). On the other hand, the Upper Midwest, West, and Texas have advanced meter penetrations exceeding 13\%, with electric cooperatives (which supply about 10\% of electric power in the U.S.). 
+The Advanced Metering and Demand Response Survey performed by FERC \cite{FERC2012} indicates that, in the U.S., the AMI penetration together with potential peak load reductions from electric power demand response have increased significantly since the last survey in 2008. The growth is around four percentage points (from 4.7\% in 2008 to 8.7\% in 2010). The study also shows that the Upper Midwest, West, and Texas have advanced metering penetration exceeding 13\%, with electric cooperatives (which supply about 10\% of electric power in the U.S.). 
 
-But not only U.S shows a significant increase in AMI deployments. The European Union (EU) has set a target of 80\% smart meter deployment by 2020. Regarding demand response, off-peak usage, and planning for electric vehicle, there are still a lot of questions to answer.  The main motivation in Europe for installing AMI appears to be limited to the operational efficiency of automatic meter reading (AMR). However, because of the diversity of EU members and country-specific goals, the definition of a common AMI methodology will become a paramount challenge. The European Smart Metering Landscape Report \cite{SmartRegions2012} classifies EU countries and Norway into five categories: dynamic movers,  market drivers, ambiguous movers, waverers , and laggards. These categories are based on the existence of a regulatory framework and a clear stragegy for AMI. Countries such as Italy and Sweden have close to 100\% advanced meter penetrations, but a large percentage of these only have unidirectional communication capabilities for AMR. Functionalities such as demand response and load-shifting applications are restricted to larger customers. 
+But not only the U.S shows a significant increase in AMI deployments. The European Union (EU) has set a target of 80\% smart meter deployment by 2020. However, there are still many of questions to answer regarding demand response, off-peak usage, and planning for the deployment and support of electric vehicles. The main motivation in Europe for installing AMI appears to be limited to the operational efficiency of the Automatic Meter Reading (AMR) systems. However, due to the diversity of EU members and country-specific goals, the definition of a common AMI deployment methodology is a challenging task. The European Smart Metering Landscape Report \cite{SmartRegions2012} classifies EU countries and Norway into five categories: dynamic movers, market drivers, ambiguous movers, waverers, and laggards. These categories are based on the existence of a regulatory framework and a clear stragegy for AMI. Countries such as Italy and Sweden have near to a 100\% advanced metering penetration, but a large percentage of these deployments only have unidirectional communication capabilities for AMR. Functionalities such as demand response and load-shifting applications are restricted to larger customers. 
 
-In Canada, the provinces of Ontario and British Columbia have introduced mandatory requirements for smart electricity meters for all customers. A four million smart metering points deployment is considered in the largest project of the region called Hydro-Quebec, which is expected in 2017. As for Asia, with the purpose of reducing inter-operability issues of needing backwards compatibility, China is investing in the expansion of the nations’ energy infrastructure by deploying more advanced electricity meters capable of two-way communication. In Latin America, Brazil leads the AMI initiative, with the preparation of regulations underway for widespread smart-meter deployments throughout the country. With lower electricity consumption than countries such as the U.S.A and those in Europe, the motivations for the AMI deployment are income recovery through anti-tampering systems rather than energy conservation.  
+In Canada, the provinces of Ontario and British Columbia have introduced mandatory requirements for smart electricity meters for all customers. A four million-point smart metering deployment is considered in the largest project of the region called Hydro-Quebec, which is expected to be completed by 2017. As for Asia, China is investing in the expansion of the nations’ energy infrastructure by deploying more advanced electricity meters capable of two-way communications, with the purpose of reducing interoperability issues of needing backwards compatibility. In Latin America, Brazil leads the AMI initiative with underway regulations for widespread smart meter deployments across the country. With lower electricity consumption than the U.S. and countries in Europe, the motivation for AMI deployment are income recovery through anti-tampering systems rather than energy conservation.  
 
 
 \subsection{Design Factors of the AMI Network}\label{designFactors}
 
-Due to the evolution of the electrical grid, specifically electricity metering, a two-way communication network has been required. Applications such as smart metering, demand response (DR) and remote disconnect/reconnect require a communication network that supports them, as well as future application that will become prevalent, such as the sending of information about prices in real time from the Utility to the consumer’s home or electrical vehicle charging stations.  
-Aspects regarding the choice of technology in which the AMI will be deployed, the constraints of the routing protocols and system capacity limits are some of the issues that must be addressed through a proper network planning. This plan requires the use of best practice guidelines for the design and deployment of the AMI. An outline for the main factors to consider when designing AMI networks
+Due to the evolution of the electrical grid, specifically electricity metering, a two-way communication network has been required. Applications such as smart metering, demand response (DR) and remote disconnect/reconnect require a communication network that supports them, as well as future application that will become prevalent, such as the sending of information about real time pricing from the Utility to the consumers homes or electric vehicles charging stations.  
+Aspects regarding the choice of technology in which the AMI will be deployed, the constraints of the routing protocols, and the system capacity limits are some of the issues to solved through a proper network planning. This plan requires the use of best practice guidelines for the design and deployment of the AMI. The main factors to consider when designing AMI networks are outlined as follows:
 
 \begin{itemize}
 \item Understanding the networking needs and goals of the Utility
-\item Identifying the main design constraints of the AMI vendor’s equipment (in terms of hardware and software capacity).
-\item Pilot installation, field testing, and site infrastructure exploration
+\item Identifying the main design constraints of the AMI vendor's equipment (in terms of hardware and software capacity).
+\item Need for pilot installation, field testing, and site infrastructure exploration
 \item Model tuning within design software
 \item Design of the AMI network 
-\item Deployment, Testing and Post-Design Adjustments
+\item Deployment, testing, and post-design adjustments
 \end{itemize}
 		
-Given that each Utility will have different needs and expectations on the behavior of their network, and considering the varying constraints on performance requirements, a fully understanding of these goals and success criteria must be taken into account when designing the AMI. The design of the AMI Network should then consider factors such as: compatibility with the AMI communication protocols, production costs, network topology, and adaptability with wireless and wired communications, fault tolerance, hardware constraints, power consumption, environment, and transmission media. These requirements will affect the design process, as they will define the approach to meet the Utility’s expectations.
+Given that each Utility has different needs and expectations on the behavior of the AMI network, and considering the varying constraints on performance requirements, a fully understanding of these goals and success criteria must be taken into account when designing the AMI. The design of the AMI Network should then consider factors such as: compatibility with the AMI communication protocols, production costs, network topology, and adaptability with wireless and wired communications, fault tolerance, hardware constraints, power consumption, environment, and transmission media. These requirements will affect the design process, as they will define the approach to meet the Utility’s expectations.
 
-In relation to the definition of the vendor’s equipment, the creation of the link budgets for the various types of devices that will be used in the network deployment is the first step. This process includes accounting for transmit power, receive sensitivity, antenna gains, cable losses and meter location losses. In the case of a mesh approach, hopping limits, capacity limits, transmission requirements of radio and battery capacity are some of the issues that must be considered, as the influence of all these elements in the system affect the maintenance requirements and operation expenses for the Utility. Also, computer-aided design tools may be required for simulation, dimensioning and placement of infrastructure equipment purposes.  Through this kind of tools, the model of the network is created and then the planning of the whole system’s architecture can be deployed in the service area destined for that aim. 
+In relation to the selection of vendors' equipment, the creation of link budgets for the various types of devices that will be used in the network deployment is the first step. This process includes accounting for transmit power, receive sensitivity, antenna gains, cable losses and meter location losses. In the case of a mesh approach, hopping limits, capacity limits, transmission requirements of radio and battery capacity are some of the issues that must be considered, as the influence of all these elements in the system affect the maintenance requirements and operation expenses for the Utility. Also, computer-aided design tools may be required for simulation, dimensioning and placement of infrastructure equipment purposes.  Through this kind of tools, the model of the network is created and then the planning of the whole system’s architecture can be deployed in the service area destined for that aim. 
 
 Another integral part in the design process is setting up a pilot system. In \cite{Leon2011}  a set-up of test transmitters in multiple locations within the service area is recommended. Execution of field measurements by testing the link configurations such as collector-to-meter, collector-to-repeater, and meter-to-meter is also proposed, in order to get a general view of the system performance.  
 
@@ -896,7 +904,7 @@ It would be of a great value to test the coexistence of different traffic patter
 % http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
 % The IEEEtran BibTeX style support page is at:
 % http://www.michaelshell.org/tex/ieeetran/bibtex/
-\bibliography{bibliography_ami}
+\bibliography{bibliography_ami_final}
 \bibliographystyle{IEEEtran}
 % argument is your BibTeX string definitions and bibliography database(s)
 %\bibliography{IEEEabrv,../bib/paper}a
