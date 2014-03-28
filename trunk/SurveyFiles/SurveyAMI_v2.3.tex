@@ -604,37 +604,54 @@ Another integral part in the design process is setting up a pilot system. In \ci
 
 \section{Communication Technologies in AMI}\label{technologies}
 
-In this section, we intend to address the communication technologies used for the AMI deployment. A detailed analysis is performed regarding the technologies used in both the NAN and HAN domains.
+In this section, we address the communication technologies suitable for AMI deployments. Although we introduce technologies related to the other domains in the smart grid (HAN and WAN), we devote a more detailed analysis for technologies in the NAN domain. 
 
-\subsection{ZigBee}
+\subsection{HAN domain}
 
-There are several technologies that are now under consideration for the communication network in the SG. Some of them have been established by consensus of the scientific community and the industry. Such is the case of ZigBee \cite{Alliance2010}, a wireless communication technology that is considered ideal for the real time monitoring of multiple targets, due to its low power consumption, low deployment cost, self-organization and self-configuration characteristics. Therefore, ZigBee is especially useful as deployment technology for HANs (Home Area Network) \cite{Sabbah2014}. It’s important to note that many providers of devices used in the AMI prefer smart meters on which the ZigBee protocol can be integrated, embracing the recommendation of the National Institute for Standards and Technology (NIST). The PHY and MAC layers of the complete stack of protocols defined by ZigBee are based on the IEEE 802.15.4 standard. Main technical specifications, advantages and drawbacks of this technology are described below:
+\subsubsection{802.15.4-based technologies}\label{tech::802154}
 
-Technical specifications: It has 16 channels in the 2.4GHz band, each with 5MHz bandwidth. Some of the values for the maximum power out of the radios in USA, Japan and Sweden are described as follows: The maximum power out of the radios with a transmission range between 1 and 100m is 0Dbm (1mW), with a data rate of 250 Kb/s, in OQPSK modulation \cite{Sabbah2014}.
-
-Advantages: Due to its simplicity, mobility, robustness, low bandwidth requirements, low deployment cost, easy implementation and the fact that it operates over a non-licensed spectrum band, ZigBee is considered a good option for the metering and management of energy.
-
-Drawbacks: Regarding the restrictions of this technology, we can cite its low processing capacity, a limited memory, low latency performance and the interference caused by other devices using the same transmission media. ZigBee is then vulnerable to noise.
-
-
-\subsubsection{IEEE 802.15.4}
-
-This standard specifies PHY and MAC layer for LR-WPANs (Low Rate- Wireless Personal Area Networks). Physical layer is divided in two layers: PHY data service and PHY management, whose main function is to transmit and receive messages through the radio medium. On the other hand, MAC layer provides two main services: MAC data service and MAC management service. Both of them allow the transmission and reception of frames (MPDU), through the PHY data service. Functions such as channel switching, energy detection measurement, clear channel assessment, security functions (AES encryption) and QoS (Quality of Service) through a (GTS) Guaranteed Time Slot are some of other features of this standard.  Main technical specifications of this standard are described below:
+The IEEE 802.15.4 standard specifies the physical and medium access control layers for Low Rate-Wireless Personal Area Networks (LR-WPAN). The physical layer is divided in two layers: PHY data service and PHY management, whose main function is to transmit and receive messages through the radio medium. The MAC layer provides two main services: MAC data service and MAC management service. Both of them allow the transmission and reception of frames through the PHY data service. Functions such as channel switching, energy detection measurement, clear channel assessment, security functions (AES encryption) and quality of service through guaranteed time slots are some of other features of this standard. Other technical characteristics of the 802.15.4 standard are listed below:
 
 \begin{itemize}
-	\item Frequency band: 868 MHz/915 MHz and 2.4GHz
-	\item Raw data rate: 868 MHz: 20kbps; 915 MHz: 40 kbps; 2.4GHz: 250 kbps
+	\item Frequency bands: 868 MHz/915 MHz and 2.4GHz
+	\item Raw data rates: 868 MHz: 20kbps; 915 MHz: 40 kbps; 2.4GHz: 250 kbps
 	\item Channels: 11 in the 868/915 MHz ; 16 in the 2.4 GHz
 	\item Range: 10-20 m
 	\item Latency: Down to 15ms
 	\item Addressing: Short  8 bit or 64bit IEEE
-	\item Channel access CSMA-CA and slotted CSMA-CA
+	\item Channel access: CSMA-CA and slotted CSMA-CA
 	\item Modulation technique: DSSS (Direct Sequence Spread Spectrum)
-\end{itemize}
+\end{itemize}  
 
-\subsubsection{IEEE. 802.15.4g}
+One of the most well-known 802.15.4-based technologies is ZigBee \cite{Alliance2010}. It is a wireless communications technology considered ideal for real time monitoring of multiple targets, due to its low power consumption, low deployment cost, self-organization and self-configuration characteristics. As a result, ZigBee is especially useful in the HAN domain \cite{Sabbah2014}. Many AMI operators prefer smart meters on which the ZigBee protocol can be integrated, embracing the recommendation of the National Institute for Standards and Technology (NIST). Two different ZigBee specifications are available: \textit{i)} the one based on the RF4CE Specification, which is designed for running in low-power and resource-constrained devices, mostly for control applications. It employes specially-developed protocols for network and transport layers; and \textit{ii)} the IP-based version, named ZigBee IP, which provides mesh networking and IPv6 connectivity, enabling Internet access from ZigBee devices. The PHY and MAC layers of both specifications are based on the IEEE 802.15.4 standard.  
 
-It’s an amendment to IEEE 802.15.4 whose objective is to provide a global standard that facilitates very large scale process control applications such as the ones found in Smart Utility Networks, capable of supporting large, geographically diverse networks with minimal infrastructure and millions of fixed endpoints. This standard was published in May 2012 and features the following technical specifications and operating modes:
+WirelessHART is another technology based on 802.15.4. This technology, however, defines Data Link, Network, and Transport layers for deploying real-time industrial control applications \cite{Song2008}. It has become very popular in the electric sector. In the link access, WirelessHART defines a 10ms time-slot for guaranteed link access. In the upper layers, it designates a centralized network manager in charge of maintaining updated routes. It also employs mesh-networking with self-healing and self-organizing characteristics.
+
+There is also the possibility of employing standard Internet protocols directly over the 802.15.4 technology. 6LowPAN, a standard defined by the IETF, builds an adaptation layer between MAC layer and network layer to enable the transmission of IPv6 packets over IEEE 802.15.4 \cite{RFC4944}.  It describes the way packets of large sizes (i.e., IPv6 packets) can be transported through a wireless link that only accepts packets of a maximum 127 bytes size. For this purpose, header compression and fragmentation of IPv6 packets is performed, and mesh forwarding is also allowed for the delivery of packets from source to destination over multihop scenarios. Therefore, wireless embedded Internet access is enabled on any device, which provides an option for communications in HAN environments.
+ 
+Among the advantages of technologies based on the 802.15.4 standard we can mention simplicity, robustness, low bandwidth requirements, low deployment cost, easy implementation, and the fact that they operate over a non-licensed spectrum band. They also allow for mobility of  devices. Regarding the drawbacks, one could mention the interference caused by other devices using the same transmission media. %ZigBee is vulnerable to noise.
+ 
+ 
+% Main technical specifications, advantages and drawbacks of this technology are described below:
+%
+%Technical specifications: It has 16 channels in the 2.4GHz band, each with 5MHz bandwidth. Some of the values for the maximum power out of the radios in USA, Japan and Sweden are described as follows: The maximum power out of the radios with a transmission range between 1 and 100m is 0Dbm (1mW), with a data rate of 250 Kb/s, in OQPSK modulation \cite{Sabbah2014}.
+
+\subsubsection{802.11 and WiFi}
+COMPLETE THIS SECTION BY PRESENTING WiFi AS A CANDIDATE TECHNOLOGY FOR COMUNICATING DEVICES INSIDE HOME WITH THE SMART METER
+
+\subsection{Ethernet}\label{ethernetl}
+
+It is a very popular communication technology standard primarily used within the HAN, but can also be used on the NAN. A variety of speeds can be achieved, including 10Mbps, 100Mbps, 1000Mbps and 10000Mbps. While 100Mbps is the most common speed found in the HAN, 1000Mbps is becoming more extensive, since Video and Network Attached Storage are being more prevalent applications. Main advantages and drawdbacks are the following:
+
+Advantages: Being standard-based, set up and configuration are easier.
+
+Drawbacks: This technology may not be appropriate for connecting all devices in the HAN, due to the high cost and power requirements plus the need for separate cabling back to a central point.
+
+\subsection{NAN domain}
+
+\subsubsection{IEEE. 802.15.4g}\label{tech::802154g}
+
+This is an amendment to the 802.15.4 standard whose objective is to facilitate very large scale process control applications such as the ones found in Smart Utility Networks. It is capable of supporting large and geographically diverse networks with minimal infrastructure and millions of fixed endpoints. This standard was published in 2012 and features the following technical specifications and operating modes:
 
 \begin{itemize}
 	\item It accounts for the performance characteristics of SG networks, such as moderate bandwidth but very low latency
@@ -643,10 +660,9 @@ It’s an amendment to IEEE 802.15.4 whose objective is to provide a global stan
 	\item The standard defines technologies supporting up to 1 Mbps
 	\item It establishes a global standard by explicitly including unlicensed and region-specific frequency ranges, or spectrum bands
 	\item It supports for Frequency Hopping Spread Spectrum (FHSS) transmission techniques.
-
 \end{itemize}
 
-As for the advantages of the adoption of this standard, it can be said that because of the backward compatibility built into the standard, utilities hardware can be integrated with no changes, so their investment in the technology is protected. IEEE 802.15.4g addresses SG outdoor reliability, interference resiliency and high density operation by FHSS techniques, thus allowing a vast improvement over historical not so reliably wireless technologies.
+It is natural that technologies based on the 802.15.4 standard (see Section \ref{tech::802154}) evolve to support the 802.15.4g technology, in order to provide communications for NAN environments. Such is the case for ZigBee, whose participation in standardization activities for smart grid NANs has been announced in early 2014 \cite{ZigBeeNAN}. As for the advantages of the adoption of this standard, it provides backward compatibility built into the standard; thus, utilities' hardware can be integrated with no changes, so their investment in the technology is protected. IEEE 802.15.4g addresses reliability in outdoor environments, interference resiliency, and support of high density operation by FHSS techniques. The latter represents a vast improvement over historical not so reliable wireless technologies.
 
 A summary of the technologies used in the HAN domain is depicted in  (Fig. \ref{fig:han}).
 
@@ -658,29 +674,18 @@ A summary of the technologies used in the HAN domain is depicted in  (Fig. \ref{
 \end{figure}
 
 
-\subsection{Cellular Networks}\label{cellular}
-Cellular Networks may be a suitable option for the communication between the smart meters and the Utility (NAN section), as they use the existing infrastructure, thus avoiding incurring in additional installation and deployment costs. Some of the current cellular technologies being considered for the long-haul communication in the NAN domain are: 2G, 2.5G, 3G, LTE and WiMax. This kind of technologies has a high-capacity of bandwidth and, consequently, they can also support several QoS requirements.
+\subsection{802.11s}\label{tech::80211s}
+TBD
+(I removed the RF section. Instead of presenting Wi-Fi directly, it's better to focus on the 802.11s that allows for the multi-hop operation for 802.11 (similar to what you were describing in your RF section)
+%Compared to cellular technologies, and advantage of using RF technologies is that these typically use unlicensed bands that do not incur any carrier costs to the Utility. The Utility must only own the terminal units (which in most cases are relatively chep) and could be integrated with the local processors at the Operator side. By using multi-hopping, the range of communication could be extended. Wi-Fi becomes one of the main RF technologies to be used in the NAN domain. When existing feeder infrastructured is re-used to mount multi-hopping points on electric poles, Wi-Fi could be used for long-range communication by multi-hopping from one end to another. By improving receivers and directional antennas, the range issues derived from the very nature of Wi-Fi can be mitigated to some extent.
 
-Advantages: When outsourcing the communications network to a mobile operator, utilities can significantly reduce operative costs, as they don’t have to bear the cost of deploying and maintaining the infrastructure. Data rates for cellular technologies-based AMI projects are now much more competitive. On the other hand, coverage provided by cellular networks is another outstanding advantage, which helps to improve network capabilities. Thus, because of the fact that the cellular network infrastructure already exists, the Utility does not have to incur in additional costs for building infrastructure. Due to the significant amount of information that is transported between the Utility and the Client, a large bandwidth capacity is sometimes required (such is the case of 3G, 4G and WIMAX), which is provided by these cellular networks. In general terms, the low maintenance costs and fast installation are the main advantages of this technology. 
+\subsection{Power Line Communication (PLC)}\label{tech::plc}
 
-Drawbacks: The main drawbacks of cellular networks are associated to information security. As the physical medium used for transmission is susceptible to interceptions, sensitive information (such as contractual data or bills) must be protected, to guarantee that it reaches its intended recipient with no understanding by other individuals or devices attempting to intercept it. On the other hand, particularly given that the communication channel in the SG is shared with users of the mobile telephony, the network performance may be impaired. Finally, in adverse situations such as wind storms, the service could not be guaranteed, neither the communication in the SG. Moreover, transmission through cellular networks still has a high cost, especially when SMS is used as communication media between smart meters and data collectors.While WiMax provides a solution with a large communication range and high data rates, it tends to be costlier due to the greater licensing and subscription fees. 
+PLC is a technology that uses the existing electric grid to transmit data at a maximum rate of 11kbps. PLC becomes a well suited alternative as it is a no-cost medium for the Utility and is spread along the distribution system. Thus, PLC is a natural solution for the communication between the Utility and the Smart Meters. By reusing the electric grid as communication media, the implementation investment is low. In a typical PLC network, the smart meters are connected to the data center through power lines. The main technical specifications of this technology are stated below.
 
-\subsection{Radio Frequency (RF) Technologies}
+Two main types of communication architectures based on PLC have been defined: NarrowBand PLC (NBPLC) and Broadband PLC (BPLC). The first type allows data transmission at lower rates than those provided by BPLC (from few dozens of kbps to 100 Mbps, respectively) \cite{Sabbah2014}. NBPLC systems generally use the CENELEC (Comité Européen de Normalisation Electrotechnique) bands (3-148.5 kHz). NBPLC generally operates in transmission frequencies of up to 500 kHz, as opposed to BPLC, which targets much higher bandwidth at shorter distances and operates over a much higher frequency band. Frequencies of 148.5 kHz and less have been recognized by CENELEC standards for use in NBPLC systems on a public utility's power wires. Regarding the BPLC, the operation bands go from 1.8 MHz up to 250 MHz. Some examples of NBPLC technologies are described in IEEE 1901 and ITU-T G-hn (G.9960/G.9961) recommendations. NBPLC generally refers to PLC systems supporting data rates over 1 Mbps.
 
-Compared to cellular technologies, and advantage of using RF technologies is that these typically use unlicensed bands that do not incur any carrier costs to the Utility. The Utility must only own the terminal units (which in most cases are relatively chep) and could be integrated with the local processors at the Operator side. By using multi-hopping, the range of communication could be extended. Wi-Fi becomes one of the main RF technologies to be used in the NAN domain. When existing feeder infrastructured is re-used to mount multi-hopping points on electric poles, Wi-Fi could be used for long-range communication by multi-hopping from one end to another. By improving receivers and directional antennas, the range issues derived from the very nature of Wi-Fi can be mitigated to some extent.
-
-
-\subsection{Power Line Communication (PLC)}\label{plc}
-
-PLC is a technology that uses the existing electric grid to transmit data at a maximum rate of 11kbps. PLC becomes a well suited alternative as it is a no-cost medium for the Utility and is spread along the distribution system. Thus, PLC is a natural solution for the communication aspect between the Utility and the Smart Meters, as the implementation investment is low, as long as the power lines are used as physical transmission media.
-In a typical PLC network, the smart meters are connected to the data center through power lines and the data are transferred to the collectors via cellular networks like the ones stated above. 
-The main technical specifications, advantages and drawbacks of this technology are stated below:
-
-Technical specifications: Two main types of communication architectures based on PLC have been defined: NarrowBand PLC (NBPLC) and Broadband PLC (BPLC). The first type allows data transmission at lower rates than those provided by BPLC (from few dozens of kbps to 100 Mbps, respectively) \cite{Sabbah2014}. NBPLC systems generally use the CENELEC (Comité Européen de Normalisation Electrotechnique) bands (3-148.5 kHz). NBPLC generally operates in transmission frequencies of up to 500 kHz (as opposed to Broadband PLC that targets much higher bandwidth at shorter distances and operates over a much higher frequency band). Frequencies of 148.5 kHz and less have been recognized by CENELEC standards for use in N-PLC systems on a public utility’s power wires. Regarding the BPLC, the operation bands go from 1.8 MHz up to 250 MHz. Some examples of BB-PLC technologies are described in IEEE 1901 and ITU-T G-hn (G.9960/G.9961) recommendations. B-PLC generally refers to PLC systems supporting data rates over 1 Mbps.
-
-Advantages:The main advantage of this technology is associated to the low implementation costs. Additionally, the coverage provided by PLC is exactly the one intended by the Utility, because of the fact that the existing infrastructure allows the implementation of services in the SG (smart metering, monitoring and control applications). As it uses the power feeder, PLC behaves as an enabler forn sensing, control, and automation in large systems comprising tens or even hundreds of components spread over relatively wide areas (which contributes to the scalability requirement). On the other hand, as the power lines are owned by the Utility, there is more independence in relation to other operators or networks. 
-
-Drawbacks:The very nature of the physical transmission media generates some challenges. The main disadvantage of this technology is the high susceptibility to signal degradation, due to the harsh power lines. The technology is also limited by its low bandwidth, which is why it may not be suitable for more robust applications where large amounts of data may be transferred. Beside the fact that feeder cables are not designed for data transmission, they are also prone to be interfered by the inverter’s outcome. Therefore, PLC modems developed for domestic applications may not be suitable. 
+The main advantage of PLC is associated to the low implementation costs. Additionally, the coverage provided by PLC is exactly the one intended by the Utility. As it uses the power feeder, PLC behaves as an enabler for sensing, control, and automation in large systems comprising tens or even hundreds of components spread over relatively wide areas, which contributes to provide scalability. Furthermore, as the power lines are owned by the Utility, there is more independence in relation to sending information through third-party networks or operators. Nonetheless, the very nature of  PLC's physical transmission media generates some challenges. It is highly susceptible to signal degradation due to the harsh power lines. The technology is also limited by its low bandwidth, which is why it may not be suitable for more robust applications where large amounts of data need to be transferred. Besides the fact that feeder cables are not designed for data transmission, they are also prone to be interfered by the inverter’s outcome. %Therefore, PLC modems developed for domestic applications may not be suitable. 
 
 A summary of the technologies used in the NAN domain is depicted in (Fig. \ref{fig:nan}).
 
@@ -693,7 +698,7 @@ A summary of the technologies used in the NAN domain is depicted in (Fig. \ref{f
 
 
 \subsection{Digital Subscriber Lines (DSL)}\label{dsl}
-DSL is a high speed digital data transmission technology which main feature is the use of the wires of the voice telephone network. As with PLC, this technology may be a suitable candidate for the implementation of network segments within the AMI, as it reuses the existing infrastructure, thus reducing installation cost of an implementation from scratch. As for the technical specifications, the network performance and perceived throughput will depend on how far away the subscriber is from the serving telephone  \cite{Gungor2011}. Main technical details, advantages and drawbacks of this technology are listed below:
+DSL is a high speed digital data transmission technology, which employs the wires of the voice telephone network for data transmission. As with PLC, this technology may be a suitable candidate for the implementation of network segments within the AMI, as it reuses the existing infrastructure, thus reducing installation cost of an implementation from scratch. As for the technical specifications, the network performance and perceived throughput will depend on how far away the subscriber is from the serving telephone  \cite{Gungor2011}. Main technical details, advantages and drawbacks of this technology are listed below:
 
 Technical specifications: Commonly, the frequencies on which this technology works are greater than 1MHz through an ADSL enabled telephone line. 
 
@@ -701,14 +706,18 @@ Advantages:With a high data transmission rate, and given the low installation co
 
 Drawbacks: Distance dependency and lack of standardizations are the primary constraints of this technology.
 
+\subsection{WAN domain}
 
-\subsection{Ethernet}\label{ethernetl}
+\subsubsection{Cellular Networks}\label{tech::cellular}
+Cellular Networks has been a popular technology for the communication between the smart meters and the Utility (NAN section), as they use the existing infrastructure, thus avoiding incurring in additional installation and deployment costs. However, it is also suitable for communication collectors to the central data center at the Utility's premises. Some of the cellular technologies employed for the long-haul communication are: 2G, 2.5G, 3G, and LTE. The latter has a high-capacity of bandwidth and, consequently, can also support several QoS requirements.
 
-It’s a very common communication technology standard primarily used within the HAN, but can also be used on the WAN. A variety of speeds can be achieved, including 10Mbps, 100Mbps, 1000Mbps and 10000Mbps. While 100Mbps is the most common speed found in the HAN, 1000Mbps is becoming more extensive, since Video and Network Attached Storage are being more prevalent applications. Main advantages and drawdbacks are the following:
+Advantages: When outsourcing the communications network to a mobile operator, utilities can significantly reduce operative costs, as they don’t have to bear the cost of deploying and maintaining the infrastructure. Data rates for cellular technologies-based AMI projects are now much more competitive. On the other hand, coverage provided by cellular networks is another outstanding advantage, which helps to improve network capabilities. Thus, because of the fact that the cellular network infrastructure already exists, the Utility does not have to incur in additional costs for building infrastructure. Due to the significant amount of information that is transported between the Utility and the Client, a large bandwidth capacity is sometimes required (such is the case of 3G, 4G and WIMAX), which is provided by these cellular networks. In general terms, the low maintenance costs and fast installation are the main advantages of this technology. 
 
-Advantages: Being standard-based, set up and configuration are easier.
+Drawbacks: The main drawbacks of cellular networks are associated to information security. As the physical medium used for transmission is susceptible to interceptions, sensitive information (such as contractual data or bills) must be protected, to guarantee that it reaches its intended recipient with no understanding by other individuals or devices attempting to intercept it. On the other hand, particularly given that the communication channel in the SG is shared with users of the mobile telephony, the network performance may be impaired. Finally, in adverse situations such as wind storms, the service could not be guaranteed, neither the communication in the SG. Moreover, transmission through cellular networks still has a high cost, especially when SMS is used as communication media between smart meters and data collectors.While WiMax provides a solution with a large communication range and high data rates, it tends to be costlier due to the greater licensing and subscription fees. 
 
-Drawbacks: This technology may not be appropriate for connecting all devices in the HAN, due to the high cost and power requirements plus the need for separate cabling back to a central point.
+
+\subsubsection{WiMAX}\label{tech::wimax}
+TBD: PLEASE INCLUDE WIMAX AS A SEPARATE TECHNOLOGY FOR WAN DOMAIN
 
 
 \section{Routing} \label{routing}
