@@ -568,7 +568,7 @@ An important aspect of the AMI's network operation is the routing of packets. Th
 
 The Advanced Metering and Demand Response Survey performed by FERC \cite{FERC2012} indicates that, in the U.S., the AMI penetration together with potential peak load reductions from electric power demand response have increased significantly since the last survey in 2008. The growth is around four percentage points (from 4.7\% in 2008 to 8.7\% in 2010). The study also shows that the Upper Midwest, West, and Texas have advanced metering penetration exceeding 13\%.
 
-But not only the U.S shows a significant increase in AMI deployments. The European Union (EU) has set a target of 80\% smart meter deployment by 2020. However, there are still many questions to answer regarding demand response, off-peak usage, and planning for the deployment and support of electric vehicles. The main motivation in Europe for installing AMI appears to be limited to the operational efficiency of the Automatic Meter Reading (AMR) systems. However, due to the diversity of EU members and country-specific goals, the definition of a common AMI deployment methodology is a challenging task. Regarding the penetration of advanced metering approaches in Europe, countries such as Italy and Sweden have a near 100\% AMI implementation, but a large percentage of these deployments only have unidirectional communication capabilities (for AMR purposes). Functionalities such as demand response and load-shifting applications are restricted to larger customers. 
+But not only the U.S shows a significant increase in AMI deployments. The European Union (EU) has set a target of 80\% smart meter deployment by 2020. However, there are still many questions to answer regarding demand response, off-peak usage, and planning for the deployment and support of electric vehicles. The main motivation in Europe for installing AMI appears to be limited to the operational efficiency of the Automatic Meter Reading (AMR) systems. However, due to the diversity of EU members and country-specific goals, the definition of a common AMI deployment methodology is a challenging task. Regarding the penetration of advanced metering approaches in Europe, countries such as Italy and Sweden have a near 100\% AMI implementation, but a large percentage of these deployments only have unidirectional communication capabilities (for AMR purposes). Functionalities such as demand response and load-shifting applications are restricted to larger customers  \cite{FERC2012}.
 
 In Canada, the lasrgest AMI project in the region, called Hydro-Quebec, considers the deployment of four million smart meters. This is expected to be completed by 2017. As for Asia, China is on the way to expand their energy metering infrastructurein by promoting projects aimed at providing a two-way communication architecture between utilities and final consumers. Similarly, in Latin America, Brazil leads the AMI initiative by considering projects that contribute to the implemenation of a more automated metering approach, in the pursuit of investment recovery  \cite{Namboodiri2012}.
 
@@ -647,6 +647,15 @@ As WiFi is a very mature technology (it's estimated that more than 100 millon ho
 
 WiFi operates in unlicensed spectrum, so it's resilient to many types of interference but can coexist with other technologies that share this bands (it provides mechanisms to deliver robust performance in shared-spectrum and noisy RF environments  \cite{WiFi2010}). Other advantages of this technology include the fact that it enables IP-based applications, as it transports all IPv4 and IPv6-based protocols, the fact that many vendors implement the technology in a wide range of devices and enhancements in power management. As for the drawbacks, one could mention a higher power consumption (when compared with other HAN technologies such as ZigBee).  
 
+\subsubsection{Ethernet}\label{ethernetl}
+
+It is a very popular communication technology standard primarily used within the HAN, but can also be used on the NAN. A variety of speeds can be achieved, including 10Mbps, 100Mbps, 1000Mbps and 10000Mbps. Main advantages and drawdbacks are the following:
+
+Advantages: Being standard-based, set up and configuration are easier.
+
+Drawbacks: This technology may not be appropriate for connecting all devices in the HAN, due to the high cost and power requirements plus the need for separate cabling back to a central point.
+
+
 \subsection{NAN domain}
 
 \subsubsection{IEEE. 802.15.4g}\label{tech::802154g}
@@ -671,16 +680,15 @@ A summary of the technologies used in the HAN domain is depicted in  (Fig. \ref{
 
 \begin{figure}[h!]
 \centering
-\includegraphics [height=15cm] {HANTechnologiesv3}
+\includegraphics [height=15cm] {HAN-TECH}
 \caption{Main technologies used in the HAN Domain}
 \label{fig:han}
 \end{figure}
 
 
 \subsubsection{802.11s}\label{tech::80211s}
-TBD
-(I removed the RF section. Instead of presenting Wi-Fi directly, it's better to focus on the 802.11s that allows for the multi-hop operation for 802.11 (similar to what you were describing in your RF section)
-%Compared to cellular technologies, and advantage of using RF technologies is that these typically use unlicensed bands that do not incur any carrier costs to the Utility. The Utility must only own the terminal units (which in most cases are relatively cheap) and could be integrated with the local processors at the Operator side. By using multi-hopping, the range of communication could be extended. Wi-Fi becomes one of the main RF technologies to be used in the NAN domain. When existing feeder infrastructured is re-used to mount multi-hopping points on electric poles, Wi-Fi could be used for long-range communication by multi-hopping from one end to another. By improving receivers and directional antennas, the range issues derived from the very nature of Wi-Fi can be mitigated to some extent.
+
+The IEEE 802.11s standard envisions a small-to medium- scale WLAN mesh network configured with a maximum of 32 mesh nodes (called Mesh Points MPs). An amendment to the standard has been made with the aim of developing a more flexible and extensible standard for wireless mesh networks based on IEEE 802.11. One of the most important functionalities of the new IEEE 802.11s is the multi-hop routing, which sets up the paths for the wireless forwarding. Mesh capabilities are provided to the mesh points, so they are able to participate in the forwarding process. Regarding the changes in this standard when compared with IEEE 802.11, the amendment is performed only in the MAC layer (modifications to PHY layer are not required) \cite{Bahr2006}.
 
 \subsubsection{Power Line Communication (PLC)}\label{tech::plc}
 
@@ -694,7 +702,7 @@ A summary of the technologies used in the NAN domain is depicted in (Fig. \ref{f
 
 \begin{figure}[h!]
 \centering
-\includegraphics [height=15cm] {NANTechnologiesv3}
+\includegraphics [height=15cm] {NAN-TECH}
 \caption{Main technologies used in the NAN Domain}
 \label{fig:nan}
 \end{figure}
