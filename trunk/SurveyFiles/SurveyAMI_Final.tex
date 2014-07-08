@@ -871,16 +871,17 @@ The test case used for the performance analysis was constructed based on the sce
 Regarding reliability, it was measured by computing the PDR, defined as the total number of received packets at the collector over the total number of packets transmitted by each node. On this matter, RPL showed a constant packet delivery ratio between 98\% and 100\% for each packet and an average of 99.98\% while Geographical routing showed similar performance with an average of 99.30\% \cite{Iyer2011a}.  
 
 Other protocols such as DADR and HYDRO are also analyzed, considering their behavior in testbeds and real deployments. In  \cite{Iwao2010} a study was conducted to determine the behavior of DADR in a 1500 node network topology. The study showed an average PDR of 97.8\%. HYDRO, as a combination of both centralized and distributed forwarding mechanisms, shows to have a high reliability according to \cite{Dawson2010}, as multiples routes are provided to a given destination.  By constantly evaluating the qualities of the links, the protocol becomes robust in terms of adaptability, as any change in the topology is quickly detected and the protocol reacts to it. An average PDR of 98,9\% was obtained when examining the performance of the protocol in a 57-node real deployment. 
-	
+
 A summary of the results described in this section can be observed in (Fig. \ref{fig:comparison}), where we compare the routing protocols based on the different metrics for evaluation.
 
 \begin{figure}[h!]
 \centering
-\includegraphics [height=11cm] {Comparative_Table}
+\includegraphics [height=18cm] {COMPARATIVE_TABLE}
 \caption{Comparison of Routing Protocols in the AMI scope \cite{Wang2010} \cite{Rührup2009} \cite{Perkins2003} \cite{Toimoor2013} \cite{Johnson2007}  \cite{Dawson2010} }
 \label{fig:comparison}
 \end{figure}
 
+	
 The choice of the routing protocol may also be considered taking into account the technology that is used for deployment purposes. Thus, a protocol might fit better that other, in a certain technology. For instance, in the case of a mesh technology, a protocol that involves end-to-end retransmission when a packet loss occurs wouldn’t be too suitable, as the possibility of fragments loss is bigger in a multihop scheme.
 
 
