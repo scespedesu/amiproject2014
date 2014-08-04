@@ -4,15 +4,14 @@
 %%%%%%%%%%                                                        %%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[10pt,twocolumn,twoside,submit]{JCNtran}
-%\documentclass[12pt,draft]{JCNtran}
+\documentclass[10pt,twocolumn,two-side]{JCNtran}
+%\documentclass[12pt,letterpaper,onepage]{JCNtran}
 %\documentclass[oneside,9pt,technote]{JCNtran} 
 
 \usepackage{graphicx}
 
 
 \usepackage[caption=false,font=footnotesize]{subfig}
-%\captionsetup[subfigure]{margin=0pt, justification=centering, singlelinecheck=false}
 \graphicspath{{figures/}}
 %\usepackage{subfigure}
 %\usepackage{epstopdf}
@@ -29,11 +28,15 @@
 %\usepackage{mdwtab}
 %\usepackage{eqparbox}
 \usepackage{url}
+\usepackage{authblk}
 % \url{my_url_here}.
 \usepackage{parskip}
-%\setlength{\parskip}{\baselineskip}
+\setlength{\parskip}{3pt}
 \setlength{\parindent}{10pt}
-
+%\usepackage[nomarkers,nofiglist,notablist]{endfloat}
+%\usepackage{setspace}
+%\doublespacing
+\renewcommand{\baselinestretch}{0.93}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -41,26 +44,34 @@
 \newtheorem{theorem}{Theorem}
 \setcounter{page}{1} 
 
-\pubyear{08}{2008}
+\pubyear{14}{2014}
 
 \begin{document}
-
 
 \title{A Survey on AMI Communication Technologies and Routing Protocols in the NAN domain}
 \author{Diego F. Ram\'{i}rez and Sandra C\'{e}spedes
 \thanks{D.~F.~Ram\'{i}rez is with the
-Departamento de Tecnologias de Informaci\'{o}n y Comunicaciones,
-Universidad Icesi, Cali, Colombia, email:
-dframirez@icesi.edu.co }\thanks{S.~ C\'{e}spedes is with the Departamento
-de Ingenier\'{i}a El\'{e}ctrica, Universidad de Chile,
-Santiago, Chile, email: scespedes@ing.uchile.cl }} \markboth{JOURNAL OF
-COMMUNICATIONS AND NETWORKS, VOL. 5, NO. 3, SEPTEMBER
-2014}{Ram\'{i}rez \lowercase{\textit{et al}}.: A Survey on AMI Communication Technologies and Routing Protocols in the NAN domain...} \maketitle
+Departament of Information and Communication Technologies, Icesi University, Cali, Colombia. Email:
+dframirez@icesi.edu.co }\thanks{S.~ C\'{e}spedes is with the Departament
+of Electrical Engineering, Universidad de Chile,
+Santiago, Chile, and with the Departament of Information and Communication Technologies, Icesi University. Email: scespedes@ing.uchile.cl }}
+\markboth{JOURNAL OF
+COMMUNICATIONS AND NETWORKS, VOL. X, NO. X, AUGUST 2014}{Ram\'{i}rez \lowercase{\textit{et al}}.: A Survey on AMI Communication Technologies and Routing Protocols in the NAN domain} \maketitle
+
+%\title{A Survey on AMI Communication Technologies and Routing Protocols in the NAN domain}
+%\author[1]{Diego F. Ram\'{i}rez}
+%\author[2,1]{Sandra C\'{e}spedes}
+%\affil[1]{\small Departamento de Tecnolog\'{i}as de Informaci\'{o}n y Comunicaciones, Universidad Icesi, Cali, Colombia}
+%\affil[2]{Departamento de Ingenier\'{i}a El\'{e}ctrica, Universidad de Chile}
+%\affil[ ]{Email: dframirez@icesi.edu.co, scespedes@ing.uchile.cl}
+%\markboth{JOURNAL OF
+%COMMUNICATIONS AND NETWORKS, VOL. X, NO. X, AUGUST
+%2014}{Ram\'{i}rez \lowercase{\textit{et al}}.: A Survey on AMI Communication Technologies and Routing Protocols in the NAN domain} \maketitle
 
 %\thispagestyle{plain}\pagestyle{plain}
 
 \begin{abstract}
-Smart Grid is the modern infrastructure of the electric grid whose objective is to improve efficiency, reliability, and security. This is achieved through the control automation of the transmission and distribution lines, the enhancement of metering technologies, the implementation of renewable energy sources and new energy management techniques. The growing demand of energy, changes in global weather, problems in the storing and distribution, and the need to implement more efficient metering systems, are some of the factors that influence the transit towards a more complex and robust electric grid. A fundamental component of this new grid is an Advanced Metering Infrastructure (AMI), which provides a two-way communication flow between Utilities and meters at the customer side. In this paper, we outline the main features of the new infrastructure, including a classification of communication technologies and routing protocols employed in the Neighborhood Area Network (NAN) domain. We introduce a set of metrics for the AMI network (such as scalability, interoperability, latency, security, and quality of service), and present a full analysis and comparison of AMI-related routing protocols and technologies. Open issues related to wireless and wired technologies, as well as routing for the NAN domain are also provided.
+Smart Grid is the modern infrastructure of the electric grid whose objective is to improve efficiency, reliability, and security. This is achieved through the control automation of the transmission and distribution lines, the enhancement of metering technologies, the implementation of renewable energy sources, and new energy management techniques. The growing demand of energy, changes in global weather, problems in the storing and distribution, and the need to implement more efficient metering systems, are some of the factors that influence the transit toward a more complex and robust electric grid. A fundamental component of this new grid is an Advanced Metering Infrastructure (AMI), which provides a two-way communication flow between Utilities and meters at the customer side. In this survey, we outline the main features of this new infrastructure, including a classification of communication technologies and routing protocols employed in the Neighborhood Area Network (NAN) domain. We introduce a set of metrics for the AMI network (such as scalability, interoperability, latency, security, and quality of service), and present a full analysis and comparison of AMI-related routing protocols and technologies. Open issues related to wireless and wired technologies, as well as routing for the NAN domain are also provided.
 		
 \end{abstract}
 
@@ -69,24 +80,26 @@ AMI, neighborhood area networks, routing protocols, Smart grid communications, s
 \end{keywords}
 
 \section{\uppercase{Introduction}}
-\label{sec:introd}
+\label{introd}
 
-Smart Grid is defined as the modern infrastructure of the electric grid, whose objective is to improve efficiency, reliability, and security. This is achieved through the control automation of the transmission and distribution lines, the enhancement of consumption metering technologies, the implementation of new renewable energy sources, and the introduction of new energy management techniques \cite{Gungor2011}. The growing demand of energy, changes in global weather, problems in the storing and distribution, and the need to implement more efficient consumption metering systems, are some of the factors that have led to transit towards a more complex and robust electric grid. At the same time, the improvement in the response time to network faults, natural disasters, interference problems, and energetic resources loss, constitutes a strong reason to structure an electric grid with better energy transport, generation, and distribution technologies.
+Smart Grid is defined as the modern infrastructure of the electric grid, whose objective is to improve efficiency, reliability, and security. This is achieved through the control automation of the transmission and distribution lines, the enhancement of consumption metering technologies, the implementation of new renewable energy sources, and the introduction of new energy management techniques \cite{Gungor2011}. The growing demand of energy, changes in global weather, problems in the storing and distribution, and the need to implement more efficient consumption metering systems, are some of the factors that have led to transit toward a more complex and robust electric grid. At the same time, the improvement in the response time to network faults, natural disasters, interference problems, and energetic resources loss, constitutes a strong reason to structure an electric grid with better energy transport, generation, and distribution technologies.
 
 %On the other hand, due to the emerging energy crisis, caused by the depletion of fossil fuels and the corresponding reserves, global attention has been called to find alternative renewable energy sources, so that the industry can be sustained in the long term \cite{Wang2011a}. It is in this context that the concept of SG arises as a strategic solution to the energy optimization problem, since it is proposed that this new type of electric grid responds, in a dynamic and periodic way, to changes in the energy load that is being consumed. The new business model that now involves the client (who can be a consumer as well as a producer), would allow energy provision depending on climate changes, number of appliances switched on, and peak hours \cite{Castellani2012}. By these means, SG constitutes itself in the next generation of electric grid systems, that will incorporate different renewable energy resources, automatic and intelligent management of the energy and a more effective and interactive communication with the client.
 
- The electric grid transformation involves the integration of a bidirectional communication infrastructure. Regarding the distribution component of the electric grid, an advanced metering infrastructure (AMI), which results from the integration of advanced sensors, smart meters, monitoring systems, and energy management systems, has been a focus of interest for governments, utilities, and academia. An initial implementation of the AMI involved the deployment of communication technologies to enable a two-way data flow for sending commands and information in real time to smart meters, as well as the reception of consumption information from the customer premises \cite{Deconinck2008}. Nowadays, it has been identified that the exchange of information between AMI devices will not be related exclusively to client's consumption, or the sending of control commands to smart meters. The list of applications is expanding to real time pricing, outage management, emergency response, in-home displays, among others \cite{Rajalingham2013}. Therefore, it is critical for the utilities to define the communications requirements and the more suitable technologies for implementing the bidirectional communication system. 
+The electric grid transformation involves the integration of a bidirectional communication infrastructure. Regarding the distribution component of the electric grid, an advanced metering infrastructure (AMI), which results from the integration of advanced sensors, smart meters, monitoring systems, and energy management systems, has been a focus of interest for governments, utilities, and academia. An initial implementation of the AMI involved the deployment of communication technologies to enable a two-way data flow for sending commands and information in real time to smart meters, as well as the reception of consumption information from the customer premises \cite{Deconinck2008}. Nowadays, it has been identified that the exchange of information between AMI devices will not be related exclusively to client's consumption, or the sending of control commands to smart meters. The list of applications is expanding to real time pricing, outage management, emergency response, in-home displays, among others \cite{Rajalingham2013}. Therefore, it is critical for the utilities to define the communications requirements and the more suitable technologies for implementing the bidirectional communication system. 
  
-In this paper, we first identify the set of design factors that need to be considered in order to support the aforementioned applications in the AMI network. Since both wired and wireless technologies have been proposed for communications in the AMI, we survey the different communications technologies that have been proposed, with a focus on the network segment that connects the smart meters and data collectors, i.e., the Neighborhood Area Networks (NAN). Additional to communications technologies, we also survey and provide a  detailed description of the different routing protocols proposed for the NAN domain. The protocols are compared based on a set of metrics and the performance results reported in the literature. In our survey, we consider the fact that the chosen technology and routing protocol should adapt well to the kind of traffic that will be transmitted. Furthermore, the choice will be subject to other factors, such as the deployment time, the type of environment (rural/urban), and the operational costs of deployment and maintenance. By considering the NAN domain as a very sensitive part of the whole system, as vital information regarding traffic measurements from client premises is transported until the collector, we perform a comparison of the most popular and well-known protocols for this domain, taking into account well-defined metrics that are essential for the performance evaluation of these forwarding mechanisms. This way, we provide a first snapshot of how the NAN domain should be characterized and how communication protocols should be chosen according to the very nature of the traffic that is intended to be transported throughout the network.
+In this survey, we first identify the set of design factors that need to be considered in order to support the aforementioned applications in the AMI network. Since both wired and wireless technologies have been proposed for communications in the AMI, we survey the different communications technologies that have been proposed, with a focus on the network segment that connects the smart meters and data collectors, i.e., the Neighborhood Area Networks (NAN). Additional to communications technologies, we also provide a detailed description of the different routing protocols proposed for the NAN domain. The protocols are compared based on a set of metrics and the performance results reported in the literature. In our survey, we consider the fact that the chosen technology and routing protocol should adapt well to the kind of traffic that will be transmitted. Furthermore, the choice will be subject to other factors, such as the deployment time, the type of environment (rural/urban), and the operational costs of deployment and maintenance. %By considering the NAN domain as a very sensitive part of the whole system, as vital information regarding traffic measurements from client premises is transported until the collector, 
+
+In general, most previous surveys about networking in Smart Grid consider only a revision of suitable communication technologies for AMI \cite{Gungor2011,Yan2013,Namboodiri2012}, or a revision of routing protocols but for a set of specific communication technologies (e.g., wireless) \cite{Iyer2011a}. Our main contribution in this paper corresponds to providing a structured comparison of the routing protocols (regardless of the communication technology) based on well-defined metrics and with a classification of such protocols according to their behaviour and reported performance in AMI scenarios. Furthermore, we provide a state of the art review about AMI deployments, and include an identification of issues that are yet to be addressed, which arise from the nature of the communication technologies and the routing processes that are employed in the AMI context.
 
 %In this article, we propose to outline the main features of the Advanced Metering Infrastructure (AMI), including communication technologies, topologies for deployment, and routing requirements. The overriding importance of the abovementioned subjects lies in the benefits that accrue for both Utilities and consumers, when enhancing the distribution system?s efficiency. On the one hand, Utilities will benefit from an automated information gathering system, reducing thus operational costs, as the system will collect and process data from the smart meters to its collectors located in strategic points within the service territory. Not only will the Utility benefit from an automated system for information gathering. A better understanding of how AMI works will allow utility to have a reduction in costs arising from lines losses (thefts and other kinds). On the other hand, users will have a better service experience as the two-way communication scheme enables a more interactive communication with the service provider. A decrease in operative costs and a better knowledge of their consumption patterns and electricity price in real time will also lead to reduced bills for residential and industrial customers. 
 
 The remainder of this paper is organized as follows. In Section \ref{ami}, we describe the AMI network, its evolution regarding the AMI deployments reported around the world, and the design factors to consider at the time of deployment. In Section \ref{technologies}, we classify the communications technologies according to the network segment they fit better, and identify their advantages and disadvantages. Next, in Section \ref{routing} we provide the descriptions for the routing protocols proposed for the NAN domain, followed by Section \ref{metrics} with a qualitative comparison among the routing protocols. The open networking issues are described in Section \ref{issues}. Concluding remarks are provided in Section \ref{conclusion}.
 
 
-\vspace{10pt}
+%\vspace{10pt}
 \section{\uppercase{Advanced Metering Infraestructure}}
-\label{sec:ami}
+\label{ami}
 
 Smart grid communications comprise three types of networks: i) Home Area Networks (HAN), which serve as the communication infrastructure for sensors and devices inside homes; ii) Neighborhood Area Networks (NAN), which connect smart meters and data collectors; and iii) a Wide Area Network (WAN), which communicates data collectors with a utility control center  \cite{Tang2010}. The Advanced Metering Infrastructure (AMI) refers to the architecture that provides a two-way communication between the Utility and the Home Area Networks (HANs). It includes smart meters, a Meter Data Management System (MDMS), a communication network, access points, and a head-end  \cite{Wang2011b} \cite{Bennett2008}. An example of a typical AMI deployment is depicted in Fig. \ref{fig:ami}.
 
@@ -120,10 +133,11 @@ But not only the U.S shows a significant increase in AMI deployments. The Europe
 
 In Canada, the largest AMI project in the region, called Hydro-Quebec, considers the deployment of four million smart meters. This is expected to be completed by 2017. As for Asia, China is on the way to expand their energy metering infrastructure by promoting projects aimed at providing a two-way communication architecture between utilities and final consumers. Similarly, in Latin America, Brazil leads the AMI initiative by considering projects that contribute to the implementation of a more automated metering approach, in the pursuit of investment recovery \cite{Namboodiri2012}.
 
+\vspace{-2.5mm}
 \subsection{Design Factors of the AMI Network}\label{designFactors}
 
 Due to the evolution of the electrical grid, specifically electricity metering, a two-way communication network has been required. Applications such as smart metering, demand response (DR) and remote disconnect/reconnect require a communication network that supports them, as well as future application that will become prevalent, such as the sending of information about real time pricing from the Utility to the consumers homes or electric vehicles charging stations.  
-Aspects regarding the choice of technology in which the AMI will be deployed, the constraints of the routing protocols, and the system capacity limits are some of the issues to solved through a proper network planning. This plan requires the use of best practice guidelines for the design and deployment of the AMI. The main factors to consider when designing AMI networks are outlined as follows \cite{Leon2011} :
+Aspects regarding the choice of technology in which the AMI will be deployed, the constraints of the routing protocols, and the system capacity limits are some of the issues to solved through a proper network planning. This plan requires the use of best practice guidelines for the design and deployment of the AMI. The main factors to consider when designing AMI networks are outlined as follows \cite{Leon2011}:
 
 \begin{itemize}
 \item Understanding the networking needs and goals of the Utility
@@ -168,7 +182,7 @@ One of the most well-known 802.15.4-based technologies is ZigBee \cite{Alliance2
 
 WirelessHART is another technology based on 802.15.4. This technology, however, defines data link, network, and transport layers for deploying real-time industrial control applications \cite{Song2008}. It has become very popular in the electric sector. In the link access, WirelessHART defines a 10ms time-slot for guaranteed link access. In the upper layers, it designates a centralized network manager in charge of maintaining updated routes. It also employs mesh-networking with self-healing and self-organizing characteristics.
 
-There is also the possibility of employing standard Internet protocols directly over the 802.15.4 technology. 6LowPAN, a standard defined by the IETF, builds an adaptation layer between MAC layer and network layer to enable the transmission of IPv6 packets over IEEE 802.15.4 \cite{RFC 4944}.  It describes the way packets of large sizes (i.e., IPv6 packets) can be transported through a wireless link that only accepts packets of a maximum 127 bytes size. For this purpose, header compression and fragmentation of IPv6 packets is performed, and mesh forwarding is also allowed for the delivery of packets from source to destination over multihop scenarios. Therefore, wireless embedded Internet access is enabled on any device, which provides an option for communications in HAN environments.
+There is also the possibility of employing standard Internet protocols directly over the 802.15.4 technology. 6LowPAN, a standard defined by the IETF, builds an adaptation layer between MAC layer and network layer to enable the transmission of IPv6 packets over IEEE 802.15.4 \cite{RFC4944}.  It describes the way packets of large sizes (i.e., IPv6 packets) can be transported through a wireless link that only accepts packets of a maximum 127 bytes size. For this purpose, header compression and fragmentation of IPv6 packets is performed, and mesh forwarding is also allowed for the delivery of packets from source to destination over multihop scenarios. Therefore, wireless embedded Internet access is enabled on any device, which provides an option for communications in HAN environments.
  
 Among the advantages of technologies based on the 802.15.4 standard we can mention simplicity, robustness, low bandwidth requirements, low deployment cost, easy implementation, and the fact that they operate over a non-licensed spectrum band. They also allow for mobility of  devices. Regarding the drawbacks, one could mention the interference caused by other devices using the same frequency band, and the fact that technologies based on the 802.15.4 standard suffer from the scope expansion of sensor networks, the reason why these kind of technologies are only appropriate for small-scale networks deployments  \cite{Lu2011}.
  
@@ -200,14 +214,16 @@ It is a very popular communications technology standard primarily used within th
 
 A comparative summary of the main technologies employed in the HAN domain is presented in  Table \ref{table:han}.
 
-\begin{table}[hp!]
+\begin{table}[htp!]
   \caption{Comparative summary of main technologies employed in the HAN domain}
   \label{table:han}
 \centering
-\includegraphics [height=3cm] {HAN-TECH}
+\includegraphics [height=2.5cm] {HAN-TECH}
 %\caption{Comparative summary of main technologies employed in the HAN domain
 %\label{fig:han}
+\vspace{-1cm}
 \end{table}
+
 
 \subsection{NAN domain}
 
@@ -251,11 +267,12 @@ As for the advantages of this technology, one could mention that given a high da
 
 A summary of the technologies used in the NAN domain is depicted in Table \ref{table:nan}.
 
-\begin{table}[hp!]
+\begin{table}[htp!]
 \caption{Main technologies used in the NAN Domain}
 \label{table:nan}
 \centering
-\includegraphics [height=3cm] {NAN-TECH}
+\includegraphics [height=2.5cm] {NAN-TECH}
+\vspace{-1cm}
 \end{table}
 
 \subsection{WAN domain}
@@ -274,7 +291,7 @@ WiMAX (Worldwide Interoperability for Microwave Access) is a wireless broadband 
 
 	\item Data rates: up to 70 Mbps
 	\item Not protocol-dependent
-	\item Low latency: <100 ms round trip
+	\item Low latency: $<$100 ms round trip
 	\item It supports QoS, policy and traffic management
 	\item It provides secure communication and provides 128-bit Advanced Encryption Standard (AES)
 
@@ -285,9 +302,9 @@ Regarding the advantages of WiMAX as technology enabling communications in the W
 
 \section{\uppercase{Routing for Neighborhood Area Networks in AMI}} \label{routing}
 
-The Advanced Metering Infrastructure (AMI) is expected to be deployed on networks with a dense number of nodes (meters) that connect to numerous data collectors. Furthermore, the AMI network should provide efficient and suitable routing functionalities, which guarantee a reliable and effective delivery of information. In general, other surveys about routing in the Smart Grid consider protocols for AMI wireless multi-hop ad hoc based networks (especially the analysis focus on AMI networks based on WiFi and ZigBee, in the HAN domain). In this paper we consider not only protocols for mesh-based networks but also outline communication protocols for AMI deployed on wired technologies in the NAN domain. 
+The Advanced Metering Infrastructure (AMI) is expected to be deployed on networks with a dense number of nodes (meters) that connect to numerous data collectors. Furthermore, the AMI network should provide efficient and suitable routing functionalities, which guarantee a reliable and effective delivery of information. As we mentioned before, different from other surveys, in this paper we consider not only protocols for wireless mesh-based networks but also outline communication protocols for AMI deployed on wired technologies in the NAN domain. 
 
-Regarding the traffic involved in the two-way communication channel, different types of traffic can be identified: i) traffic consisting of data containing the meter-reading, going from homes to Utilities' data collectors; ii) traffic consisting of data containing data going from collectors to substation or the Utility itself; and iii) traffic consisting of data from applications in the Smart Grid. Some of these applications are \cite{Tan2011}: lighting control, heating, ventilation, detection of fluctuations and power outages, switching on and off (remote control of the meter from customer side), demand response, and vehicle charging. 
+Regarding the traffic involved in the two-way communication channel, different types of traffic can be identified: i) traffic consisting of data containing the meter-reading, going from homes to Utilities' data collectors; ii) traffic consisting of data going from collectors to substation or the Utility itself; and iii) traffic consisting of data from applications in the Smart Grid. Some of these applications are \cite{Tan2011}: lighting control, heating, ventilation, detection of fluctuations and power outages, switching on and off (remote control of the meter from customer side), demand response, and vehicle charging. 
 
 Considering that the importance behind the implementation of efficient routing strategies and protocols lies in the need of an effective data packet delivery mechanism, we focus on the routing for the NAN domain in the AMI architecture. %As it is required that information from data collectors can be successfully received by the Utility, through the bidirectional communication channel outlined under the AMI concept, and conversely information from Utility must reach data collector and meters at the customer side, we analyse several routing protocols that have been proposed for the NAN domain. 
 Several routing protocols have been classified and evaluated according to a certain set of metrics \cite{Sabbah2014} that will further be explained. The routing protocols are presented as follows.
@@ -331,7 +348,7 @@ If the route reply is generated by the destination, then the destination places 
 
 \begin{figure}[h!]
 \centering
-\includegraphics [height=2.5cm] {DSR}
+\includegraphics [height=3cm] {DSR}
 \caption{Dynamic Source Routing. A) Route Discovery  B) Route Maintenance}
 \label{fig:dsrFigure}
 \end{figure}
@@ -344,6 +361,7 @@ Distributed Autonomous Depth-First Routing (DADR) \cite{Iwao2009} is a proactive
 
 A simulation scenario of more than two thousand smart meters is presented in \cite{Iwao2010}. The authors present an analysis of the routing protocol while it is tested in a 1500-node network topology. As for adaptability, the protocol shows the capability of learning new routes in both indoor and outdoor environments. In addition, the protocol demonstrated it does not need too much control overhead when updating routes, which is an advantage in a large-scale network. The study also shows that packet latency in a flat mesh network is affected by the several hops that data packets need to traverse in order to reach the destination.
 
+\vspace{-1.8mm}
 \subsection{HYDRO}\label{hydro}
 
 
@@ -414,12 +432,13 @@ This refers to the ability of a routing protocol to adapt to different network t
 We have surveyed the performance of the routing protocols for the NAN domain, when tested in simulated or experimental smart grid scenarios. From the results reported in the literature, we have compared the different protocols considering the metrics introduced in the previous section. The comparison is presented in Table \ref{table:comparison} \cite{Wang2010} \cite{Rührup2009} \cite{Perkins2003} \cite{Toimoor2013} \cite{Johnson2007} \cite{Dawson2010}.
 
 \begin{center}
-\begin{table}[ht!]
+\begin{table*}[ht!]
 \caption{Comparison of Routing Protocols in the AMI scope}
 \label{table:comparison}
 %\centering
-\includegraphics [width=10cm] {COMPARATIVE_TABLE}
-\end{table}
+\includegraphics [width=17cm] {COMPARATIVE_TABLE}
+\end{table*}
+%\vspace*{-4cm}
 \end{center}
 
 
@@ -449,11 +468,6 @@ Moreover, the NAN domain of an AMI network poses a critical challenge: a network
 In this paper, we have presented a comprehensive survey of communication technologies and routing protocols for Advance Metering Infrastructure deployments, with a special focus on the network domain that connects the smart meters at customer premises and data collectors that connect to the utility, namely the Neighborhood Area Networks (NAN) in AMI. We have described the evolution of the AMI network and the advances in real deployments around the world. As for the communication technologies, we have provided a classification of the different wired and wireless options, identifying the network domain in which each technology fits better. Together with the communication technologies, we have also provided descriptions for the routing protocols proposed for the NAN domain and the set of metrics we have employed for the comparison. 
 
 The open networking issues have been also identified and classified depending on whether they are related to the communication technology or the routing process. A proper balance between coverage and capacity are aspects to be investigated when employing wireless technologies for a NAN network with a large number of nodes. Also, while legacy Automated Meter Reading (AMR) systems can be extended to support other AMI applications, interoperability is still an issue, specially when connection to traditional IP networks is expected. Aspects such as secure routing, privacy protection, and QoS capabilities need further study for routing in the NAN domain to support the extended list of applications to be deployed in the AMI network. 
-
-\section{\uppercase{Confict of Interests}}\label{conflict}
-
-
-We certify that there is no conflict of interest with any financial organization regarding the material discussed in this manuscript.
 
 
 %\bibliographystyle{ieeetr}
