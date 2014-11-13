@@ -1,0 +1,24 @@
+file 924 1415830826                                             
+version 2
+run General-0-20141112-17:19:05-580
+attr configname General
+attr datetime 20141112-17:19:05
+attr experiment General
+attr inifile pruebawirelessmu.ini
+attr iterationvars "$0=300, $1=900, $2=0.04, $3=900, $4=0.04"
+attr iterationvars2 "$0=300, $1=900, $2=0.04, $3=900, $4=0.04, $repetition=0"
+attr measurement "$0=300, $1=900, $2=0.04, $3=900, $4=0.04"
+attr network WirelessNetworkMU
+attr processid 580
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 31  WirelessNetworkMU.colectores[0].netColector  endToEndDelay:vector  ETV
+attr interpolationmode  none
+attr source  endToEndDelay
+attr title  "end-to-end delay of arrived packets, vector"
+attr unit  s
+31	735 189 59 633 0.008163313224 0.048303462456 5 0.004384377414 0.026544377414 0.05316988707 0.00091440890140731

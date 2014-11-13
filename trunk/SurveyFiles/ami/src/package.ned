@@ -1,0 +1,3 @@
+package ami;
+
+@license(LGPL);
