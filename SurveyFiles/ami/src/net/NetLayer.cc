@@ -55,10 +55,10 @@ void NetLayer::initialize (int stage){
 //
   //      std::string miDir =  myAddress.str();
         packetLengthBytesAMR = &par("packetLengthAMR");
-        packetLengthBytesRTP = &par("packetLengthRTP");
+      //  packetLengthBytesRTP = &par("packetLengthRTP");
         packetLengthBytesWAM = &par("packetLengthWAM");
         sendIATimeAMR = &par("sendIaTimeAMR");  // volatile parameter
-        sendIATimeRTP = &par("sendIaTimeRTP");
+     //   sendIATimeRTP = &par("sendIaTimeRTP");
         sendIATimeWAM = &par("sendIaTimeWAM");
         pkCounter = 0;
       //  numPackets = par ("numPackets");

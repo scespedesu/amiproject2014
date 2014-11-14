@@ -1,0 +1,35 @@
+version 2
+run PLC20Meters-0-20141114-14:48:04-8232
+attr configname PLC20Meters
+attr datetime 20141114-14:48:04
+attr experiment PLC20Meters
+attr inifile pruebawirelessmu.ini
+attr iterationvars "$0=300, $1=0.04, $2=900, $3=0.04"
+attr iterationvars2 "$0=300, $1=0.04, $2=900, $3=0.04, $repetition=0"
+attr measurement "$0=300, $1=0.04, $2=900, $3=0.04"
+attr network WirelessNetworkMU
+attr processid 8232
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 64  WirelessNetworkMU.colectores[0].netColector  endToEndDelay:vector  ETV
+attr interpolationmode  none
+attr source  endToEndDelay
+attr title  "end-to-end delay of arrived packets, vector"
+attr unit  s
+64	146	0.011942942138	0.009952240582
+64	396	0.019701576133	0.014432240582
+64	662	0.024218944284	0.004384240582
+64	935	0.029025007458	0.011492595539
+64	1206	0.037204102194	0.009312240582
+64	1583	0.051871325624	0.030112240582
+64	2058	0.066150612881	0.024352240582
+64	2373	0.07385171602	0.025632240582
+64	2732	0.082066767219	0.042272240582
+64	3001	0.085125576133	0.012365154182
+64	3615	0.102252875126	0.037847284655
+64	3868	0.105639094045	0.057738491484
+64	4111	0.108636652501	0.011104240582
