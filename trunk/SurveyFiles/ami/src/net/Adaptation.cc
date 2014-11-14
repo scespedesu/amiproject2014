@@ -34,6 +34,8 @@ void Adaptation::initialize(){
 
 void Adaptation::handleMessage(cMessage *msg){
 
+    EV << "Paquete llego a la capa de Adaptation  \n";
+
      //Primero se verifica si el paquete llegó de arriba.
     if(msg->arrivedOn("upperIn")){
 
