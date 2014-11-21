@@ -19,7 +19,11 @@
 
 Define_Module(PhyLayerPLC);
 
-AnalogueModel* PhyLayerPLC::getAnalogueModelFromName(std::string name, ParameterMap& params) {
+void PhyLayerPLC::initialize(int stage) {
+    PhyLayerBattery::initialize(stage);
+}
+
+AnalogueModel* PhyLayerPLC::getAnalogueModelFromName(const std::string& name, ParameterMap& params) const {
 
     if (name == "PERModelPLC")
     {

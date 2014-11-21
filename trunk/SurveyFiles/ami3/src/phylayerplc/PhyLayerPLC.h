@@ -21,8 +21,17 @@
 #include "PhyLayerBattery.h"
 
 class PhyLayerPLC : public PhyLayerBattery {
-    virtual AnalogueModel* getAnalogueModelFromName(std::string name, ParameterMap& params);
-    };
 
+protected:
+    virtual AnalogueModel* getAnalogueModelFromName(const std::string& name, ParameterMap& params) const;
+
+
+public:
+    PhyLayerPLC()
+        : PhyLayerBattery()
+    {}
+
+    virtual void initialize(int stage);
+};
 
 #endif /* PHYLAYERPLC_H_ */
