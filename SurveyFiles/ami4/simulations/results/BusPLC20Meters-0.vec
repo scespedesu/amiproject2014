@@ -1,0 +1,109 @@
+version 2
+run BusPLC20Meters-0-20141124-20:44:49-4828
+attr configname BusPLC20Meters
+attr datetime 20141124-20:44:49
+attr experiment BusPLC20Meters
+attr inifile pruebawirelessmu.ini
+attr iterationvars "$0=300, $1=0.04, $2=900, $3=0.04"
+attr iterationvars2 "$0=300, $1=0.04, $2=900, $3=0.04, $repetition=0"
+attr measurement "$0=300, $1=0.04, $2=900, $3=0.04"
+attr network WirelessNetworkMU
+attr processid 4828
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 4  WirelessNetworkMU.node[0].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 5  WirelessNetworkMU.node[0].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 8  WirelessNetworkMU.node[1].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 9  WirelessNetworkMU.node[1].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 12  WirelessNetworkMU.node[2].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 13  WirelessNetworkMU.node[2].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 16  WirelessNetworkMU.node[3].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 17  WirelessNetworkMU.node[3].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 20  WirelessNetworkMU.node[4].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 21  WirelessNetworkMU.node[4].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 24  WirelessNetworkMU.node[5].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 25  WirelessNetworkMU.node[5].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 28  WirelessNetworkMU.node[6].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 29  WirelessNetworkMU.node[6].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 32  WirelessNetworkMU.node[7].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 33  WirelessNetworkMU.node[7].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 36  WirelessNetworkMU.node[8].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 37  WirelessNetworkMU.node[8].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 40  WirelessNetworkMU.node[9].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 41  WirelessNetworkMU.node[9].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 44  WirelessNetworkMU.node[10].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 45  WirelessNetworkMU.node[10].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 48  WirelessNetworkMU.node[11].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 49  WirelessNetworkMU.node[11].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 52  WirelessNetworkMU.node[12].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 53  WirelessNetworkMU.node[12].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 56  WirelessNetworkMU.node[13].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 57  WirelessNetworkMU.node[13].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 60  WirelessNetworkMU.node[14].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 61  WirelessNetworkMU.node[14].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 64  WirelessNetworkMU.node[15].net  coordenadaX:vector  ETV
+attr sourc

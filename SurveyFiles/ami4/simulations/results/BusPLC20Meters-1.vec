@@ -1,0 +1,185 @@
+version 2
+run BusPLC20Meters-1-20141124-19:36:11-5776
+attr configname BusPLC20Meters
+attr datetime 20141124-19:36:11
+attr experiment BusPLC20Meters
+attr inifile pruebawirelessmu.ini
+attr iterationvars "$0=10, $1=0.04, $2=20, $3=0.04"
+attr iterationvars2 "$0=10, $1=0.04, $2=20, $3=0.04, $repetition=1"
+attr measurement "$0=10, $1=0.04, $2=20, $3=0.04"
+attr network WirelessNetworkMU
+attr processid 5776
+attr repetition 1
+attr replication #1
+attr resultdir results
+attr runnumber 1
+attr seedset 1
+
+vector 239  WirelessNetworkMU.node[0].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 240  WirelessNetworkMU.node[0].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 243  WirelessNetworkMU.node[1].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 244  WirelessNetworkMU.node[1].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 247  WirelessNetworkMU.node[2].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 248  WirelessNetworkMU.node[2].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 251  WirelessNetworkMU.node[3].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 252  WirelessNetworkMU.node[3].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 255  WirelessNetworkMU.node[4].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 256  WirelessNetworkMU.node[4].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 259  WirelessNetworkMU.node[5].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 260  WirelessNetworkMU.node[5].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 263  WirelessNetworkMU.node[6].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 264  WirelessNetworkMU.node[6].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 267  WirelessNetworkMU.node[7].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 268  WirelessNetworkMU.node[7].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 271  WirelessNetworkMU.node[8].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 272  WirelessNetworkMU.node[8].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 275  WirelessNetworkMU.node[9].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 276  WirelessNetworkMU.node[9].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 279  WirelessNetworkMU.node[10].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 280  WirelessNetworkMU.node[10].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 283  WirelessNetworkMU.node[11].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 284  WirelessNetworkMU.node[11].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 287  WirelessNetworkMU.node[12].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 288  WirelessNetworkMU.node[12].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 291  WirelessNetworkMU.node[13].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 292  WirelessNetworkMU.node[13].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 295  WirelessNetworkMU.node[14].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 296  WirelessNetworkMU.node[14].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 299  WirelessNetworkMU.node[15].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 300  WirelessNetworkMU.node[15].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 303  WirelessNetworkMU.node[16].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 304  WirelessNetworkMU.node[16].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 307  WirelessNetworkMU.node[17].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 308  WirelessNetworkMU.node[17].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 311  WirelessNetworkMU.node[18].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 312  WirelessNetworkMU.node[18].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 315  WirelessNetworkMU.node[19].net  coordenadaX:vector  ETV
+attr source  posX
+attr title  "Position X, vector"
+vector 316  WirelessNetworkMU.node[19].net  coordenadaY:vector  ETV
+attr source  posY
+attr title  "Position Y, vector"
+vector 319  WirelessNetworkMU.colectores[0].netColector  coordenadaXCollector:vector  ETV
+attr source  posXCollector
+attr title  "Position X Collector, vector"
+vector 320  WirelessNetworkMU.colectores[0].netColector  coordenadaYCollector:vector  ETV
+attr source  posYCollector
+attr title  "Position Y Collector, vector"
+239	0	0	11.676615956239
+240	0	0	27.921174627729
+243	0	0	20.169085700065
+244	0	0	26.111606113613
+247	0	0	0.0032026702538133
+248	0	0	3.5874845376238
+251	0	0	8.4653118969873
+252	0	0	27.973134431057
+255	0	0	4.109164991416
+256	0	0	6.610491335392
+259	0	0	2.5854806751013
+260	0	0	11.104260331951
+263	0	0	5.2152859158814
+264	0	0	10.861500726081
+267	0	0	9.6757003022358
+268	0	0	18.752889130265
+271	0	0	11.109489122406
+272	0	0	26.195094033144
+275	0	0	15.086868492886
+276	0	0	23.696705710143
+279	0	0	11.737446533516
+280	0	0	8.7716583637521
+283	0	0	19.186146019027
+284	0	0	14.687348555773
+287	0	0	5.7246629716828
+288	0	0	12.416681025177
+291	0	0	24.587288236246
+292	0	0	6.4281621612608
+295	0	0	0.76685268711299
+296	0	0	14.963589401916
+299	0	0	18.773090211675
+300	0	0	25.590936627239
+303	0	0	11.684534520842
+304	0	0	12.801734657027
+307	0	0	15.643315165304
+308	0	0	12.059559962712
+311	0	0	3.9308342346922
+312	0	0	26.295578258112
+315	0	0	5.546841531992
+316	0	0	21.794898593798
+319	0	0	22.420847858302
+320	0	0	20.047174303792
