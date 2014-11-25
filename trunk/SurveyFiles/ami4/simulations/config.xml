@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<AnalogueModels>
+		<AnalogueModel type="PERModelPLC">
+	    	<parameter name="packetErrorRate" type="double" value="0.05"/>
+	    		<parameter name="inferior" type="double" value="0"/>
+	    			<parameter name="superior" type="double" value="0.056"/>
+	    </AnalogueModel>
+	</AnalogueModels>
+</root>
