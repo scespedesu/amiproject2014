@@ -83,7 +83,7 @@ void NetLayerCollector::initialize (int stage){
          double envioRTP =  uniform(0.001, 0.05);
 
 
-          scheduleAt(sendIATimeWAM->doubleValue() + envioRTP, generatePacketRTP);
+          scheduleAt(simTime() + envioRTP, generatePacketRTP);
 
              senalPaquetesEnviadosRTP =  registerSignal("enviadosRTP");
              senalPaquetesRecibidosAMR =  registerSignal("recibidosAMR");

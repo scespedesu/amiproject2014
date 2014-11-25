@@ -113,20 +113,20 @@ void MeshUnder::handleMessage(cMessage *msg){
                 EV<<"Dirección IP destino:" <<dirDest.str()<<"\n";
                 EV<<"Dirección MAC destino:" <<packetMacDestino.str()<<"\n";
                 //double distancia = 60;
-                configRed->setRoot(myMacAddress);
-                if(configRed!=NULL){
-                    if(configRed->findRoute(distancia,packetMacDestino, path)){
-                        proximoSalto = path[path.size()-1];
-                        EV<<"El proximo salto desde" <<myAddress.str().c_str() <<"para llegar a "<<packet->getDestAddr().str().c_str()<<" es "<<proximoSalto.str()<< " \n";
+              //  configRed->setRoot(myMacAddress);
+               // if(configRed!=NULL){
+                //    if(configRed->findRoute(distancia,packetMacDestino, path)){
+                 //       proximoSalto = path[path.size()-1];
+                  //      EV<<"El proximo salto desde" <<myAddress.str().c_str() <<"para llegar a "<<packet->getDestAddr().str().c_str()<<" es "<<proximoSalto.str()<< " \n";
                         tNetwToMacControlInfoBase * const infoDeControl = new tNetwToMacControlInfoBase();
-                        infoDeControl->setDest(proximoSalto);
+                        infoDeControl->setDest(packetMacDestino);
                         packet->setControlInfo (infoDeControl);
                         send(packet, "lowerGateOut");
                         EV << "Se envió  paquete con información del proximo salto al nivel mac \n";
-                    }else{
-                        EV<<"No se encontro el proximo salto desde" <<myAddress.str().c_str() <<"para llegar a "<<packet->getDestAddr().str().c_str()<< " \n";
-                    }
-                }
+           //         }else{
+           //             EV<<"No se encontro el proximo salto desde" <<myAddress.str().c_str() <<"para llegar a "<<packet->getDestAddr().str().c_str()<< " \n";
+           //         }
+       //         }
             }
             }
             }
@@ -154,62 +154,62 @@ void MeshUnder::handleMessage(cMessage *msg){
 
 
 
-           configRed = new RoutingTablesConf();
-                     Packet *packet = check_and_cast<Packet *>(msg);
-                     MACAddress packetMacDestino = configRed->getMACAddressFromID(configRed->getIdNode(packet->getDestAddr()));
-                     if(packetMacDestino==myMacAddress){
-
-                         EV << "El destino del paquete es el nodo actual \n";
-                         //Subo el paquete al nivel de Adaptación
+//           configRed = new RoutingTablesConf();
+//                     Packet *packet = check_and_cast<Packet *>(msg);
+//                     MACAddress packetMacDestino = configRed->getMACAddressFromID(configRed->getIdNode(packet->getDestAddr()));
+//                     if(packetMacDestino==myMacAddress){
+//
+//                         EV << "El destino del paquete es el nodo actual \n";
+//                         //Subo el paquete al nivel de Adaptación
                          send(packet, "localOut");
-                     }else{
+//                     }else{
+////
+////                         if(packetMacDestino==BroadcastSystemMessage()){
+////
+////                                           tNetwToMacControlInfoBase * const infoDeControl = new tNetwToMacControlInfoBase();
+////                                                                  infoDeControl->setDest(BroadcastSystemMessage());
+////                                                                  packet->setControlInfo (infoDeControl);
+////                                                                  send(packet, "lowerGateOut");
+////                                       }else{
+//                         EV << "El destino del paquete NO es el nodo actual. Debe enviarse al siguiente salto \n";
+//                         std::vector<MACAddress> path;
+//                         MACAddress proximoSalto;
+//                         IPv4Address dirDest = packet->getDestAddr();
+//                         EV<<"Dirección IP destino:" <<dirDest.str()<<"\n";
+//                         EV<<"Dirección MAC destino:" <<packetMacDestino.str()<<"\n";
+//                       //  double distancia = 60;
+//                       //  configRed->setRoot(myAddress);
+//                         configRed->setRoot(myMacAddress);
 //
-//                         if(packetMacDestino==BroadcastSystemMessage()){
+//                         if(configRed!=NULL){
+//                             if(configRed->findRoute(distancia,packetMacDestino, path)){
+//                                 proximoSalto = path[path.size()-1];
+//                                 //Envio al nivel de abajo el paquete con la información de control (proximo salto)
 //
-//                                           tNetwToMacControlInfoBase * const infoDeControl = new tNetwToMacControlInfoBase();
-//                                                                  infoDeControl->setDest(BroadcastSystemMessage());
-//                                                                  packet->setControlInfo (infoDeControl);
-//                                                                  send(packet, "lowerGateOut");
-//                                       }else{
-                         EV << "El destino del paquete NO es el nodo actual. Debe enviarse al siguiente salto \n";
-                         std::vector<MACAddress> path;
-                         MACAddress proximoSalto;
-                         IPv4Address dirDest = packet->getDestAddr();
-                         EV<<"Dirección IP destino:" <<dirDest.str()<<"\n";
-                         EV<<"Dirección MAC destino:" <<packetMacDestino.str()<<"\n";
-                       //  double distancia = 60;
-                       //  configRed->setRoot(myAddress);
-                         configRed->setRoot(myMacAddress);
-
-                         if(configRed!=NULL){
-                             if(configRed->findRoute(distancia,packetMacDestino, path)){
-                                 proximoSalto = path[path.size()-1];
-                                 //Envio al nivel de abajo el paquete con la información de control (proximo salto)
-
-                                 //   sendDown (packet, proximoSalto);
-
-                                 EV<<"El proximo salto desde" <<myAddress.str().c_str() <<"para llegar a "<<packet->getDestAddr().str().c_str()<<" es "<<proximoSalto.str()<< " \n";
-
-                              //   NetworkToMacControlInfo *ctrlInfo =  new NetworkToMacControlInfo(proximoSalto);
-                              // NetwToMacControlInfo *infoContrl =  new NetwToMacControlInfo(dirProxSalto);
-                              //  LAddress::L2Type dirDestino = NetwToMacControlInfo::getDestFromControlInfo(infoContrl);
-
-                                tNetwToMacControlInfoBase * const infoDeControl = new tNetwToMacControlInfoBase();
-                                packet->removeControlInfo();
-                                infoDeControl->setDest(proximoSalto);
-                                packet->setControlInfo (infoDeControl);
-                                // cObject *infoDeControl = infoContrl->setControlInfo(fragment, dirProxSalto);
-                                 //cObject* infoDeControl;
-                                // infoDeControl = NetwToMacControlInfo::setControlInfo(fragment, dirProxSalto);
-                              //  fragment->setControlInfo (infoContrl);
-                              send(packet, "lowerGateOut");
-                           //   delete(infoDeControl);
-                                 EV << "Se envió  paquete con información del proximo salto al nivel mac \n";
-                             }else{
-                                 EV<<"No se encontro el proximo salto desde" <<myAddress.str().c_str() <<"para llegar a "<<packet->getDestAddr().str().c_str()<< " \n";
-                             }
-                         }
-                     }
+//                                 //   sendDown (packet, proximoSalto);
+//
+//                                 EV<<"El proximo salto desde" <<myAddress.str().c_str() <<"para llegar a "<<packet->getDestAddr().str().c_str()<<" es "<<proximoSalto.str()<< " \n";
+//
+//                              //   NetworkToMacControlInfo *ctrlInfo =  new NetworkToMacControlInfo(proximoSalto);
+//                              // NetwToMacControlInfo *infoContrl =  new NetwToMacControlInfo(dirProxSalto);
+//                              //  LAddress::L2Type dirDestino = NetwToMacControlInfo::getDestFromControlInfo(infoContrl);
+//
+//                                tNetwToMacControlInfoBase * const infoDeControl = new tNetwToMacControlInfoBase();
+//                                packet->removeControlInfo();
+//                                infoDeControl->setDest(proximoSalto);
+//                                packet->setControlInfo (infoDeControl);
+//                                // cObject *infoDeControl = infoContrl->setControlInfo(fragment, dirProxSalto);
+//                                 //cObject* infoDeControl;
+//                                // infoDeControl = NetwToMacControlInfo::setControlInfo(fragment, dirProxSalto);
+//                              //  fragment->setControlInfo (infoContrl);
+//                              send(packet, "lowerGateOut");
+//                           //   delete(infoDeControl);
+//                                 EV << "Se envió  paquete con información del proximo salto al nivel mac \n";
+//                             }else{
+//                                 EV<<"No se encontro el proximo salto desde" <<myAddress.str().c_str() <<"para llegar a "<<packet->getDestAddr().str().c_str()<< " \n";
+//                             }
+//                         }
+//                     }
                      }
         }
         }
