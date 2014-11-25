@@ -97,8 +97,8 @@ void NetLayer::initialize (int stage){
             double envioWAM =  uniform(0.001, 0.05);
        //     double envioRTP =  uniform(0.001, 0.05);
 
-            scheduleAt(sendIATimeWAM->doubleValue() + envioAMR, generatePacketAMR);
-            scheduleAt(sendIATimeWAM->doubleValue() + envioWAM, generatePacketWAM);
+            scheduleAt(simTime() + envioAMR, generatePacketAMR);
+            scheduleAt(simTime() + envioWAM, generatePacketWAM);
        //     scheduleAt(sendIATimeWAM->doubleValue() + envioRTP, generatePacketRTP);
 
         }
