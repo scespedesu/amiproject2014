@@ -13,27 +13,15 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#ifndef PHYLAYERPLC_H_
-#define PHYLAYERPLC_H_
+package ami.phylayerplc;
 
-
-#include "MiXiMDefs.h"
-#include "PhyLayerBattery.h"
-
-class PhyLayerPLC : public PhyLayerBattery {
-
-private:
-
- protected:
-    virtual AnalogueModel* getAnalogueModelFromName(const std::string& name, ParameterMap& params) const;
-
-
-public:
-    PhyLayerPLC()
-        : PhyLayerBattery()
-    {}
-
-    virtual void initialize(int stage);
-};
-
-#endif /* PHYLAYERPLC_H_ */
+simple PERModelPLC 
+    
+    {
+    parameters:
+       // @class(PERModelPLC);
+        
+        @signal[descartados](type="long");
+        @statistic[paquetesDescartados](title="Paquetes Descartados"; source="descartados"; record=vector);
+        
+}

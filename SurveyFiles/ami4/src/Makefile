@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for ami
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep -IF:/Documents/Research/workspace/inet/src/networklayer/ipv4 -IF:/Documents/Research/workspace/MiXiM/src/base/modules -IF:/Documents/Research/workspace/inet/src/networklayer/common -IF:/Documents/Research/workspace/inet/src/base -IF:/Documents/Research/workspace/MiXiM/src -IF:/Documents/Research/workspace/inet/src/mobility/models -IF:/Documents/Research/workspace/inet/src/networklayer/contract -IF:/Documents/Research/workspace/MiXiM/src/base/utils -IF:/Documents/Research/workspace/inet/src/mobility -IF:/Documents/Research/workspace/MiXiM/src/base -IF:/Documents/Research/workspace/inet/src/util -IF:/Documents/Research/workspace/MiXiM/src/base/phyLayer -IF:/Documents/Research/workspace/inet/src/applications/pingapp -IF:/Documents/Research/workspace/inet/src/linklayer/contract -IF:/Documents/Research/workspace/inet/src/networklayer/arp -IF:/Documents/Research/workspace/MiXiM/src/base/connectionManager -IF:/Documents/Research/workspace/MiXiM/src/base/messages -IF:/Documents/Research/workspace/MiXiM/src/modules/utility -IF:/Documents/Research/workspace/MiXiM/src/modules/phy -IF:/Documents/Research/workspace/MiXiM/src/modules/analogueModel -IF:/Documents/Research/workspace/MiXiM/src/modules/messages -IF:/Documents/Research/workspace/MiXiM/src/modules -LF:/Documents/Research/workspace/MiXiM/out/$(CONFIGNAME)/src -LF:/Documents/Research/workspace/inet/out/$(CONFIGNAME)/src -lmixim -linet -DMIXIM_INET=1 -DINET_IMPORT -KMIXIM_PROJ=F:/Documents/Research/workspace/MiXiM -KINET_PROJ=F:/Documents/Research/workspace/inet
+#  opp_makemake -f --deep -I../../MiXiM/src/base/modules -I../../inet/src/networklayer/common -I../../inet/src -I../../inet/src/networklayer/icmpv6 -I../../MiXiM/src -I../../inet/src/mobility -I../../MiXiM/src/base/utils -I../../inet/src/networklayer/contract -I../../inet/src/mobility/models -I../../inet/src/networklayer/xmipv6 -I../../MiXiM/src/base -I../../inet/src/util -I../../inet/src/transport/contract -I../../MiXiM/src/base/connectionManager -I../../inet/src/util/headerserializers/tcp -I../../inet/src/networklayer/ipv4 -I../../inet/src/util/headerserializers/ipv4 -I../../inet/src/base -I../../inet/src/util/headerserializers -I../../MiXiM/src/base/phyLayer -I../../inet/src/transport/sctp -I../../inet/src/networklayer/ipv6 -I../../inet/src/util/headerserializers/udp -I../../inet/src/networklayer/ipv6tunneling -I../../inet/src/applications/pingapp -I../../inet/src/util/headerserializers/sctp -I../../inet/src/linklayer/contract -I../../inet/src/transport/tcp_common -I../../inet/src/networklayer/arp -I../../inet/src/transport/udp -I../../MiXiM/src/base/messages -I../../MiXiM/src/modules/phy -I../../MiXiM/src/modules/utility -I../../MiXiM/src/modules/analogueModel -I../../MiXiM/src/modules/messages -I../../MiXiM/src/modules -L../../MiXiM/out/$(CONFIGNAME)/src -L../../inet/out/$(CONFIGNAME)/src -lmixim -linet -DMIXIM_INET=1 -DINET_IMPORT -KMIXIM_PROJ=../../MiXiM -KINET_PROJ=../../inet
 #
 
 # Name of target to be created (-o option)
@@ -15,28 +15,42 @@ USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(CMDENV_LIBS)
 
 # C++ include paths (with -I)
 INCLUDE_PATH = \
-    -I$(INET_PROJ)/src/networklayer/ipv4 \
-    -I$(MIXIM_PROJ)/src/base/modules \
-    -I$(INET_PROJ)/src/networklayer/common \
-    -I$(INET_PROJ)/src/base \
-    -I$(MIXIM_PROJ)/src \
-    -I$(INET_PROJ)/src/mobility/models \
-    -I$(INET_PROJ)/src/networklayer/contract \
-    -I$(MIXIM_PROJ)/src/base/utils \
-    -I$(INET_PROJ)/src/mobility \
-    -I$(MIXIM_PROJ)/src/base \
-    -I$(INET_PROJ)/src/util \
-    -I$(MIXIM_PROJ)/src/base/phyLayer \
-    -I$(INET_PROJ)/src/applications/pingapp \
-    -I$(INET_PROJ)/src/linklayer/contract \
-    -I$(INET_PROJ)/src/networklayer/arp \
-    -I$(MIXIM_PROJ)/src/base/connectionManager \
-    -I$(MIXIM_PROJ)/src/base/messages \
-    -I$(MIXIM_PROJ)/src/modules/utility \
-    -I$(MIXIM_PROJ)/src/modules/phy \
-    -I$(MIXIM_PROJ)/src/modules/analogueModel \
-    -I$(MIXIM_PROJ)/src/modules/messages \
-    -I$(MIXIM_PROJ)/src/modules \
+    -I../../MiXiM/src/base/modules \
+    -I../../inet/src/networklayer/common \
+    -I../../inet/src \
+    -I../../inet/src/networklayer/icmpv6 \
+    -I../../MiXiM/src \
+    -I../../inet/src/mobility \
+    -I../../MiXiM/src/base/utils \
+    -I../../inet/src/networklayer/contract \
+    -I../../inet/src/mobility/models \
+    -I../../inet/src/networklayer/xmipv6 \
+    -I../../MiXiM/src/base \
+    -I../../inet/src/util \
+    -I../../inet/src/transport/contract \
+    -I../../MiXiM/src/base/connectionManager \
+    -I../../inet/src/util/headerserializers/tcp \
+    -I../../inet/src/networklayer/ipv4 \
+    -I../../inet/src/util/headerserializers/ipv4 \
+    -I../../inet/src/base \
+    -I../../inet/src/util/headerserializers \
+    -I../../MiXiM/src/base/phyLayer \
+    -I../../inet/src/transport/sctp \
+    -I../../inet/src/networklayer/ipv6 \
+    -I../../inet/src/util/headerserializers/udp \
+    -I../../inet/src/networklayer/ipv6tunneling \
+    -I../../inet/src/applications/pingapp \
+    -I../../inet/src/util/headerserializers/sctp \
+    -I../../inet/src/linklayer/contract \
+    -I../../inet/src/transport/tcp_common \
+    -I../../inet/src/networklayer/arp \
+    -I../../inet/src/transport/udp \
+    -I../../MiXiM/src/base/messages \
+    -I../../MiXiM/src/modules/phy \
+    -I../../MiXiM/src/modules/utility \
+    -I../../MiXiM/src/modules/analogueModel \
+    -I../../MiXiM/src/modules/messages \
+    -I../../MiXiM/src/modules \
     -I. \
     -Inet \
     -InodeColector \
@@ -48,8 +62,8 @@ INCLUDE_PATH = \
 EXTRA_OBJS =
 
 # Additional libraries (-L, -l options)
-LIBS = -L$(MIXIM_PROJ)/out/$(CONFIGNAME)/src -L$(INET_PROJ)/out/$(CONFIGNAME)/src  -lmixim -linet
-LIBS += -Wl,-rpath,`abspath $(MIXIM_PROJ)/out/$(CONFIGNAME)/src` -Wl,-rpath,`abspath $(INET_PROJ)/out/$(CONFIGNAME)/src`
+LIBS = -L../../MiXiM/out/$(CONFIGNAME)/src -L../../inet/out/$(CONFIGNAME)/src  -lmixim -linet
+LIBS += -Wl,-rpath,`abspath ../../MiXiM/out/$(CONFIGNAME)/src` -Wl,-rpath,`abspath ../../inet/out/$(CONFIGNAME)/src`
 
 # Output directory
 PROJECT_OUTPUT_DIR = ../out
@@ -76,8 +90,8 @@ MSGFILES = \
     Packet.msg
 
 # Other makefile variables (-K)
-MIXIM_PROJ=F:/Documents/Research/workspace/MiXiM
-INET_PROJ=F:/Documents/Research/workspace/inet
+MIXIM_PROJ=../../MiXiM
+INET_PROJ=../../inet
 
 #------------------------------------------------------------------------------
 

@@ -27,6 +27,7 @@ import inet.networklayer.common.InterfaceTable;
 import inet.base.NotificationBoard;
 import inet.networklayer.autorouting.ipv4.HostAutoConfigurator;
 import inet.networklayer.ipv4.RoutingTable;
+//import ami.phylayerplc.PERModelPLC;
 
 //
 // A "Node" consists of a Routing plus an App module which represents the
@@ -39,7 +40,7 @@ module WirelessNodeMU
         @node;
         //int address;
         string addressNode = default("");
-        
+
         string netType;
         //string addrStr;
         string mobilityType = default("StationaryMobility"); //type of the mobility module
@@ -94,7 +95,7 @@ module WirelessNodeMU
         routing: MeshUnder {
             parameters:
                 @display("p=140,170");
-            
+
         }
 
         wlan: Nic802154_TI_CC2420 {
@@ -117,7 +118,7 @@ module WirelessNodeMU
                 publishDelta = default(1);
                 publishTime = default(0);
                 numDevices = default(1);
-                
+
 
                 @display("p=229,238");
         }
@@ -143,6 +144,13 @@ module WirelessNodeMU
                 timeSeries = default(false);
                 @display("p=343,245;i=block/table,#FF8040");
         }
+
+//        perModel: PERModelPLC {
+//
+//            @display("p=321,180");
+//        }
+
+
 
 
     connections:

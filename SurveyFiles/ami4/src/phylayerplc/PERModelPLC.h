@@ -23,10 +23,18 @@
 
 class PERModelPLC : public AnalogueModel {
 
+private:
+
+ //   simsignal_t senalPaquetesDescartados;
+    cLongHistogram numPkDescartados;
+    cOutVector numPaquetesDescartados;
+    int paqDescartados;
+
 protected:
     double packetErrorRate;
     double inferior;
     double superior;
+
 
 public:
     PERModelPLC();
@@ -42,6 +50,8 @@ public:
     virtual bool initFromMap(const ParameterMap&);
 
     virtual void filterSignal(airframe_ptr_t, const Coord&, const Coord&);
+
+    virtual void finish();
 };
 
 #endif /* PERMODELPLC_H_ */

@@ -88,7 +88,7 @@ void NetLayer::initialize (int stage){
 
             if(myAddress!=destAddress){
             generatePacketAMR = new cMessage("nextPacketAMR");
-            generatePacketWAM = new cMessage("nextPacketWAM");
+       //     generatePacketWAM = new cMessage("nextPacketWAM");
         //    generatePacketRTP = new cMessage("nextPacketRTP");
 
             //Diferentes momentos de envío de paquetes
@@ -98,7 +98,7 @@ void NetLayer::initialize (int stage){
        //     double envioRTP =  uniform(0.001, 0.05);
 
             scheduleAt(simTime() + envioAMR, generatePacketAMR);
-            scheduleAt(simTime() + envioWAM, generatePacketWAM);
+      //      scheduleAt(simTime() + envioWAM, generatePacketWAM);
        //     scheduleAt(sendIATimeWAM->doubleValue() + envioRTP, generatePacketRTP);
 
         }
@@ -141,6 +141,9 @@ void NetLayer::initialize (int stage){
 
 void NetLayer::handleMessage (cMessage *msg){
 
+    cModule* host = getParentModule();
+    int idNodo=  host->getId();
+
     if (msg == generatePacketAMR)
     {
 
@@ -162,6 +165,7 @@ void NetLayer::handleMessage (cMessage *msg){
         pk->setSrcAddr(myAddress);
         pk->setDestAddr(destAddress);
         pk->setSpecialField(false);
+        pk->setSourceID(idNodo);
         send(pk,"out");
         emit (senalPaquetesEnviadosAMR, 1);
        // contadorEnviadosAMR++;
@@ -169,52 +173,32 @@ void NetLayer::handleMessage (cMessage *msg){
 
 
     }else{
-
-//        if(msg==generatePacketRTP){
+//            if(msg==generatePacketWAM){
+//                //Envio paquete del tipo WAM
+//                               const char *text = par ("destAddresses");
+//                               IPv4Address destAddress = IPv4Address(text);
+//                            // IPvXAddress destAddress = check_and_cast<IPvXAddress> (IPvXAddressResolver().resolve(par ("destAddresses")));
 //
-//            //Envio paquete del tipo RTP
+//                               char pkname[40];
+//                               // sprintf(pkname,"packet", myAddress, destAddress, pkCounter++);
+//                               //sprintf(pkname,"packet", pkCounter++;)
 //
-//            const char *text = par ("destAddresses");
-//                IPv4Address destAddress = IPv4Address(text);
-//                char pkname[40];
-//                   sprintf(pkname,"packet");
-//                   pkCounter++;
-//                   EV << "generating packet " << pkname << endl;
-//                   Packet *pk = new Packet(pkname);
-//                   pk->setTimestamp(simTime());
-//                   pk->setByteLength(packetLengthBytesRTP->longValue());
-//                   pk->setSrcAddr(myAddress);
-//                   pk->setDestAddr(IPv4Address::ALLONES_ADDRESS);
-//                   pk->setSpecialField(false);
-//                   send(pk,"out");
-//                   scheduleAt(simTime() + sendIATimeRTP->doubleValue(), generatePacketRTP);
-//     //   }
-//        }else{
-            if(msg==generatePacketWAM){
-                //Envio paquete del tipo WAM
-                               const char *text = par ("destAddresses");
-                               IPv4Address destAddress = IPv4Address(text);
-                            // IPvXAddress destAddress = check_and_cast<IPvXAddress> (IPvXAddressResolver().resolve(par ("destAddresses")));
-
-                               char pkname[40];
-                               // sprintf(pkname,"packet", myAddress, destAddress, pkCounter++);
-                               //sprintf(pkname,"packet", pkCounter++;)
-
-                               sprintf(pkname,"packet");
-                               pkCounter++;
-                               EV << "generating packet " << pkname << endl;
-                               Packet *pk = new Packet(pkname);
-                               pk->setTimestamp(simTime());
-                               pk->setByteLength(packetLengthBytesWAM->longValue());
-                               pk->setSrcAddr(myAddress);
-                               pk->setDestAddr(destAddress);
-                               pk->setSpecialField(false);
-                               send(pk,"out");
-                               emit (senalPaquetesEnviadosWAM, 1);
-                              // contadorEnviadosWAM++;
-                               scheduleAt(simTime() + sendIATimeWAM->doubleValue(), generatePacketWAM);
-
-            }else{
+//                               sprintf(pkname,"packet");
+//                               pkCounter++;
+//                               EV << "generating packet " << pkname << endl;
+//                               Packet *pk = new Packet(pkname);
+//                               pk->setTimestamp(simTime());
+//                               pk->setByteLength(packetLengthBytesWAM->longValue());
+//                               pk->setSrcAddr(myAddress);
+//                               pk->setDestAddr(destAddress);
+//                               pk->setSpecialField(false);
+//                               pk->setSourceID(idNodo);
+//                               send(pk,"out");
+//                               emit (senalPaquetesEnviadosWAM, 1);
+//                              // contadorEnviadosWAM++;
+//                               scheduleAt(simTime() + sendIATimeWAM->doubleValue(), generatePacketWAM);
+//
+//            }else{
 
                 // Handle incoming packet
                      Packet *pk = check_and_cast<Packet *>(msg);
@@ -248,7 +232,7 @@ void NetLayer::handleMessage (cMessage *msg){
                  }
 
             }
-        }
+     // }
 
  //   }
 
