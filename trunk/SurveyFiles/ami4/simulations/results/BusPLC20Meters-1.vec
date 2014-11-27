@@ -1,185 +1,314 @@
 version 2
-run BusPLC20Meters-1-20141124-19:36:11-5776
+run BusPLC20Meters-1-20141127-14:51:03-6364
 attr configname BusPLC20Meters
-attr datetime 20141124-19:36:11
+attr datetime 20141127-14:51:03
 attr experiment BusPLC20Meters
 attr inifile pruebawirelessmu.ini
-attr iterationvars "$0=10, $1=0.04, $2=20, $3=0.04"
-attr iterationvars2 "$0=10, $1=0.04, $2=20, $3=0.04, $repetition=1"
-attr measurement "$0=10, $1=0.04, $2=20, $3=0.04"
+attr iterationvars "$0=300, $1=0.04, $2=900, $3=0.04"
+attr iterationvars2 "$0=300, $1=0.04, $2=900, $3=0.04, $repetition=1"
+attr measurement "$0=300, $1=0.04, $2=900, $3=0.04"
 attr network WirelessNetworkMU
-attr processid 5776
+attr processid 6364
 attr repetition 1
 attr replication #1
 attr resultdir results
 attr runnumber 1
 attr seedset 1
 
-vector 239  WirelessNetworkMU.node[0].net  coordenadaX:vector  ETV
+vector 4  WirelessNetworkMU.node[0].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 240  WirelessNetworkMU.node[0].net  coordenadaY:vector  ETV
+vector 5  WirelessNetworkMU.node[0].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 243  WirelessNetworkMU.node[1].net  coordenadaX:vector  ETV
+vector 8  WirelessNetworkMU.node[1].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 244  WirelessNetworkMU.node[1].net  coordenadaY:vector  ETV
+vector 9  WirelessNetworkMU.node[1].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 247  WirelessNetworkMU.node[2].net  coordenadaX:vector  ETV
+vector 12  WirelessNetworkMU.node[2].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 248  WirelessNetworkMU.node[2].net  coordenadaY:vector  ETV
+vector 13  WirelessNetworkMU.node[2].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 251  WirelessNetworkMU.node[3].net  coordenadaX:vector  ETV
+vector 16  WirelessNetworkMU.node[3].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 252  WirelessNetworkMU.node[3].net  coordenadaY:vector  ETV
+vector 17  WirelessNetworkMU.node[3].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 255  WirelessNetworkMU.node[4].net  coordenadaX:vector  ETV
+vector 20  WirelessNetworkMU.node[4].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 256  WirelessNetworkMU.node[4].net  coordenadaY:vector  ETV
+vector 21  WirelessNetworkMU.node[4].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 259  WirelessNetworkMU.node[5].net  coordenadaX:vector  ETV
+vector 24  WirelessNetworkMU.node[5].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 260  WirelessNetworkMU.node[5].net  coordenadaY:vector  ETV
+vector 25  WirelessNetworkMU.node[5].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 263  WirelessNetworkMU.node[6].net  coordenadaX:vector  ETV
+vector 28  WirelessNetworkMU.node[6].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 264  WirelessNetworkMU.node[6].net  coordenadaY:vector  ETV
+vector 29  WirelessNetworkMU.node[6].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 267  WirelessNetworkMU.node[7].net  coordenadaX:vector  ETV
+vector 32  WirelessNetworkMU.node[7].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 268  WirelessNetworkMU.node[7].net  coordenadaY:vector  ETV
+vector 33  WirelessNetworkMU.node[7].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 271  WirelessNetworkMU.node[8].net  coordenadaX:vector  ETV
+vector 36  WirelessNetworkMU.node[8].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 272  WirelessNetworkMU.node[8].net  coordenadaY:vector  ETV
+vector 37  WirelessNetworkMU.node[8].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 275  WirelessNetworkMU.node[9].net  coordenadaX:vector  ETV
+vector 40  WirelessNetworkMU.node[9].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 276  WirelessNetworkMU.node[9].net  coordenadaY:vector  ETV
+vector 41  WirelessNetworkMU.node[9].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 279  WirelessNetworkMU.node[10].net  coordenadaX:vector  ETV
+vector 44  WirelessNetworkMU.node[10].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 280  WirelessNetworkMU.node[10].net  coordenadaY:vector  ETV
+vector 45  WirelessNetworkMU.node[10].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 283  WirelessNetworkMU.node[11].net  coordenadaX:vector  ETV
+vector 48  WirelessNetworkMU.node[11].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 284  WirelessNetworkMU.node[11].net  coordenadaY:vector  ETV
+vector 49  WirelessNetworkMU.node[11].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 287  WirelessNetworkMU.node[12].net  coordenadaX:vector  ETV
+vector 52  WirelessNetworkMU.node[12].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 288  WirelessNetworkMU.node[12].net  coordenadaY:vector  ETV
+vector 53  WirelessNetworkMU.node[12].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 291  WirelessNetworkMU.node[13].net  coordenadaX:vector  ETV
+vector 56  WirelessNetworkMU.node[13].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 292  WirelessNetworkMU.node[13].net  coordenadaY:vector  ETV
+vector 57  WirelessNetworkMU.node[13].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 295  WirelessNetworkMU.node[14].net  coordenadaX:vector  ETV
+vector 60  WirelessNetworkMU.node[14].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 296  WirelessNetworkMU.node[14].net  coordenadaY:vector  ETV
+vector 61  WirelessNetworkMU.node[14].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 299  WirelessNetworkMU.node[15].net  coordenadaX:vector  ETV
+vector 64  WirelessNetworkMU.node[15].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 300  WirelessNetworkMU.node[15].net  coordenadaY:vector  ETV
+vector 65  WirelessNetworkMU.node[15].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 303  WirelessNetworkMU.node[16].net  coordenadaX:vector  ETV
+vector 68  WirelessNetworkMU.node[16].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 304  WirelessNetworkMU.node[16].net  coordenadaY:vector  ETV
+vector 69  WirelessNetworkMU.node[16].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 307  WirelessNetworkMU.node[17].net  coordenadaX:vector  ETV
+vector 72  WirelessNetworkMU.node[17].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 308  WirelessNetworkMU.node[17].net  coordenadaY:vector  ETV
+vector 73  WirelessNetworkMU.node[17].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 311  WirelessNetworkMU.node[18].net  coordenadaX:vector  ETV
+vector 76  WirelessNetworkMU.node[18].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 312  WirelessNetworkMU.node[18].net  coordenadaY:vector  ETV
+vector 77  WirelessNetworkMU.node[18].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 315  WirelessNetworkMU.node[19].net  coordenadaX:vector  ETV
+vector 80  WirelessNetworkMU.node[19].net  coordenadaX:vector  ETV
 attr source  posX
 attr title  "Position X, vector"
-vector 316  WirelessNetworkMU.node[19].net  coordenadaY:vector  ETV
+vector 81  WirelessNetworkMU.node[19].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 319  WirelessNetworkMU.colectores[0].netColector  coordenadaXCollector:vector  ETV
+vector 86  WirelessNetworkMU.colectores[0].netColector  coordenadaXCollector:vector  ETV
 attr source  posXCollector
 attr title  "Position X Collector, vector"
-vector 320  WirelessNetworkMU.colectores[0].netColector  coordenadaYCollector:vector  ETV
+vector 87  WirelessNetworkMU.colectores[0].netColector  coordenadaYCollector:vector  ETV
 attr source  posYCollector
 attr title  "Position Y Collector, vector"
-239	0	0	11.676615956239
-240	0	0	27.921174627729
-243	0	0	20.169085700065
-244	0	0	26.111606113613
-247	0	0	0.0032026702538133
-248	0	0	3.5874845376238
-251	0	0	8.4653118969873
-252	0	0	27.973134431057
-255	0	0	4.109164991416
-256	0	0	6.610491335392
-259	0	0	2.5854806751013
-260	0	0	11.104260331951
-263	0	0	5.2152859158814
-264	0	0	10.861500726081
-267	0	0	9.6757003022358
-268	0	0	18.752889130265
-271	0	0	11.109489122406
-272	0	0	26.195094033144
-275	0	0	15.086868492886
-276	0	0	23.696705710143
-279	0	0	11.737446533516
-280	0	0	8.7716583637521
-283	0	0	19.186146019027
-284	0	0	14.687348555773
-287	0	0	5.7246629716828
-288	0	0	12.416681025177
-291	0	0	24.587288236246
-292	0	0	6.4281621612608
-295	0	0	0.76685268711299
-296	0	0	14.963589401916
-299	0	0	18.773090211675
-300	0	0	25.590936627239
-303	0	0	11.684534520842
-304	0	0	12.801734657027
-307	0	0	15.643315165304
-308	0	0	12.059559962712
-311	0	0	3.9308342346922
-312	0	0	26.295578258112
-315	0	0	5.546841531992
-316	0	0	21.794898593798
-319	0	0	22.420847858302
-320	0	0	20.047174303792
+vector 84  WirelessNetworkMU.colectores[0].netColector  NodosQueEnviaronAMR:vector  ETV
+attr source  medidorFuenteAMR
+attr title  "Nodos Fuente AMR:, vector"
+4	0	0	11.676615956239
+5	0	0	27.921174627729
+8	0	0	20.169085700065
+9	0	0	26.111606113613
+12	0	0	0.0032026702538133
+13	0	0	3.5874845376238
+16	0	0	8.4653118969873
+17	0	0	27.973134431057
+20	0	0	4.109164991416
+21	0	0	6.610491335392
+24	0	0	2.5854806751013
+25	0	0	11.104260331951
+28	0	0	5.2152859158814
+29	0	0	10.861500726081
+32	0	0	9.6757003022358
+33	0	0	18.752889130265
+36	0	0	11.109489122406
+37	0	0	26.195094033144
+40	0	0	15.086868492886
+41	0	0	23.696705710143
+44	0	0	11.737446533516
+45	0	0	8.7716583637521
+48	0	0	19.186146019027
+49	0	0	14.687348555773
+52	0	0	5.7246629716828
+53	0	0	12.416681025177
+56	0	0	24.587288236246
+57	0	0	6.4281621612608
+60	0	0	0.76685268711299
+61	0	0	14.963589401916
+64	0	0	18.773090211675
+65	0	0	25.590936627239
+68	0	0	11.684534520842
+69	0	0	12.801734657027
+72	0	0	15.643315165304
+73	0	0	12.059559962712
+76	0	0	3.9308342346922
+77	0	0	26.295578258112
+80	0	0	5.546841531992
+81	0	0	21.794898593798
+84	110	0.011208160667	21
+84	532	0.028251022308	13
+84	796	0.036117160409	16
+84	1091	0.044191238722	9
+84	1354	0.051894024522	17
+84	1651	0.059644340254	18
+84	1914	0.067869136409	22
+84	2135	0.075607121692	7
+84	2342	0.086688607948	15
+84	2706	300.011848160667	21
+84	3047	300.028012340254	18
+84	3300	300.037777749485	10
+84	3661	300.052534024522	17
+84	4000	300.068509136409	22
+84	4218	300.076316861451	4
+84	4468	300.084547802289	8
+84	4671	300.093933025651	12
+84	5025	600.013128160667	21
+84	5315	600.022785749485	10
+84	5559	600.030491022308	13
+84	5891	600.044854024522	17
+84	6196	600.052875900997	6
+84	6444	600.061021025651	12
+84	6760	600.076867802289	8
+84	7025	600.091239121692	7
+84	7257	600.099678249872	23
+84	7589	900.011528160667	21
+84	7846	900.019273733439	11
+84	8104	900.026945749485	10
+84	8379	900.036757160409	16
+84	8659	900.044555900997	6
+84	9032	900.058766249872	23
+84	9290	900.067208701204	20
+84	9544	900.075488607948	15
+84	9827	900.085244340254	18
+84	10072	900.102678024522	17
+84	10434	1200.011208160667	21
+84	10711	1200.019913733439	11
+84	10984	1200.028972340254	18
+84	11218	1200.039403022308	13
+84	11497	1200.047069136409	22
+84	11855	1200.062147802289	8
+84	12118	1200.072158249872	23
+84	12309	1200.081248607948	15
+84	12532	1200.096062567443	19
+84	12916	1500.011905749485	10
+84	13154	1500.020233733439	11
+84	13390	1500.030789806627	5
+84	13771	1500.045618325226	14
+84	14038	1500.053349160409	16
+84	14302	1500.061515900997	6
+84	14542	1500.069174024522	17
+84	14801	1500.077507802289	8
+84	15007	1500.086828861451	4
+84	15356	1800.011528160667	21
+84	15599	1800.020251022308	13
+84	15867	1800.029839238722	9
+84	16117	1800.037717160409	16
+84	16389	1800.046572340254	18
+84	16624	1800.054469806627	5
+84	17164	1800.078286249872	23
+84	17403	1800.092720607948	15
+84	17644	1800.103592701204	20
+84	17990	2100.011208160667	21
+84	18266	2100.019593733439	11
+84	18529	2100.027585749485	10
+84	18780	2100.035372340254	18
+84	19051	2100.044117160409	16
+84	19409	2100.058603022308	13
+84	19648	2100.066934024522	17
+84	19880	2100.074942567443	19
+84	20133	2100.090126249872	23
+84	20466	2400.011208160667	21
+84	20707	2400.018971022308	13
+84	20966	2400.026945749485	10
+84	21215	2400.035279238722	9
+84	21465	2400.043052340254	18
+84	21713	2400.050934024522	17
+84	21997	2400.059036861451	4
+84	22269	2400.067015121692	7
+84	22490	2400.075741025651	12
+84	22732	2400.086926249872	23
+84	22950	2400.095269160409	16
+84	23288	2700.012168160667	21
+84	23552	2700.020545749485	10
+84	23768	2700.028869806627	5
+84	24222	2700.044910567443	19
+84	24542	2700.052924340254	18
+84	24808	2700.061145733439	11
+84	25053	2700.068829136409	22
+84	25329	2700.083655121692	7
+84	25532	2700.091488607948	15
+84	25786	2700.106899802289	8
+84	26120	3000.011848160667	21
+84	26379	3000.019593733439	11
+84	26829	3000.037986325226	14
+84	27211	3000.052389160409	16
+84	27555	3000.068555900997	6
+84	27815	3000.076179802289	8
+84	28021	3000.084333025651	12
+84	28370	3300.011848160667	21
+84	28632	3300.019913733439	11
+84	28881	3300.028559238722	9
+84	29141	3300.037346325226	14
+84	29449	3300.046949160409	16
+84	29710	3300.055414024522	17
+84	29976	3300.063246249872	23
+84	30184	3300.072288607948	15
+84	30430	3300.080861025651	12
+84	30780	3600.010888160667	21
+84	31024	3600.019291022308	13
+84	31256	3600.028229806627	5
+84	31524	3600.036386325226	14
+84	32066	3600.059101025651	12
+84	32395	3600.074076861451	4
+84	32661	3600.082259802289	8
+84	32878	3600.094377733439	11
+84	33218	3900.012808160667	21
+84	33464	3900.021851022308	13
+84	33721	3900.029505749485	10
+84	34071	3900.044590567443	19
+84	34346	3900.053189806627	5
+84	34701	3900.067848701204	20
+84	35032	3900.084638249872	23
+84	35402	3900.108588861451	4
+84	35858	3900.124459900997	6
+86	0	0	22.420847858302
+87	0	0	20.047174303792

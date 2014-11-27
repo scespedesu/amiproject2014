@@ -21,7 +21,7 @@ class noncobject IPv4Address;
 
 packet Packet
 {
-  //  int idPacket;
+    int sourceID;
     IPv4Address srcAddr;
     IPv4Address destAddr;
     // int hopCount;

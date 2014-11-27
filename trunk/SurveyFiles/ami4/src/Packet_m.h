@@ -24,7 +24,7 @@
  * <pre>
  * packet Packet
  * {
- *   
+ *     int sourceID;
  *     IPv4Address srcAddr;
  *     IPv4Address destAddr;
  *     
@@ -37,6 +37,7 @@
 class Packet : public ::cPacket
 {
   protected:
+    int sourceID_var;
     IPv4Address srcAddr_var;
     IPv4Address destAddr_var;
     int packetSize_var;
@@ -60,6 +61,8 @@ class Packet : public ::cPacket
     virtual void parsimUnpack(cCommBuffer *b);
 
     // field getter/setter methods
+    virtual int getSourceID() const;
+    virtual void setSourceID(int sourceID);
     virtual IPv4Address& getSrcAddr();
     virtual const IPv4Address& getSrcAddr() const {return const_cast<Packet*>(this)->getSrcAddr();}
     virtual void setSrcAddr(const IPv4Address& srcAddr);
