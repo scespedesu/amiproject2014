@@ -1,20 +1,19 @@
-                                                                
 version 2
-run BusPLC20Meters-3-20141127-15:27:53-6848
-attr configname BusPLC20Meters
-attr datetime 20141127-15:27:53
-attr experiment BusPLC20Meters
+run PLC20Meters-5-20141127-18:53:25-10912
+attr configname PLC20Meters
+attr datetime 20141127-18:53:25
+attr experiment PLC20Meters
 attr inifile pruebawirelessmu.ini
-attr iterationvars "$0=300, $1=0.04, $2=900, $3=0.1"
-attr iterationvars2 "$0=300, $1=0.04, $2=900, $3=0.1, $repetition=0"
-attr measurement "$0=300, $1=0.04, $2=900, $3=0.1"
+attr iterationvars "$0=300, $1=0.1, $2=900, $3=0.1"
+attr iterationvars2 "$0=300, $1=0.1, $2=900, $3=0.1, $repetition=0"
+attr measurement "$0=300, $1=0.1, $2=900, $3=0.1"
 attr network WirelessNetworkMU
-attr processid 6848
+attr processid 10912
 attr repetition 0
 attr replication #0
 attr resultdir results
-attr runnumber 3
-attr seedset 0
+attr runnumber 5
+attr seedset 5
 
 vector 4  WirelessNetworkMU.node[0].net  coordenadaX:vector  ETV
 attr source  posX
@@ -106,4 +105,6 @@ attr title  "Position X, vector"
 vector 61  WirelessNetworkMU.node[14].net  coordenadaY:vector  ETV
 attr source  posY
 attr title  "Position Y, vector"
-vector 64  Wire
+vector 64  WirelessNetworkMU.node[15].net  coordenadaX:vector  ETV
+attr source  posX
+attr 

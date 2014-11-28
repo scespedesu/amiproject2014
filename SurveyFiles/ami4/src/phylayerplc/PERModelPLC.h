@@ -23,21 +23,18 @@
 
 class PERModelPLC : public AnalogueModel {
 
-private:
-
- //   simsignal_t senalPaquetesDescartados;
-    cLongHistogram numPkDescartados;
-    cOutVector numPaquetesDescartados;
-    int paqDescartados;
-
 protected:
     double packetErrorRate;
     double inferior;
     double superior;
-
+    cOutVector paquetesDescartadosPER;
+    int paqDescartados;
 
 public:
+
     PERModelPLC();
+
+
     virtual ~PERModelPLC();
     /** @brief Initialize the analog model from XML map data.
      *

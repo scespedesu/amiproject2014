@@ -1,14 +1,14 @@
 version 2
-run BusPLC20Meters-5-20141127-14:51:49-3748
+run BusPLC20Meters-5-20141127-15:14:16-2176
 attr configname BusPLC20Meters
-attr datetime 20141127-14:51:49
+attr datetime 20141127-15:14:16
 attr experiment BusPLC20Meters
 attr inifile pruebawirelessmu.ini
 attr iterationvars "$0=300, $1=0.04, $2=900, $3=0.04"
 attr iterationvars2 "$0=300, $1=0.04, $2=900, $3=0.04, $repetition=5"
 attr measurement "$0=300, $1=0.04, $2=900, $3=0.04"
 attr network WirelessNetworkMU
-attr processid 3748
+attr processid 2176
 attr repetition 5
 attr replication #5
 attr resultdir results
@@ -16,18 +16,18 @@ attr runnumber 5
 attr seedset 5
 
 statistic WirelessNetworkMU.node[0].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926289072
-field stddev 0.019248251777703
-field sum 0.059852578144
-field sqrsum 0.0021616607517397
-field min 0.016315719714
-field max 0.04353685843
+field count 5
+field mean 0.01033607239
+field stddev 0.0006937434684377
+field sum 0.05168036195
+field sqrsum 0.0005360970822566
+field min 0.00963207239
+field max 0.01123207239
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[0].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[0].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -97,43 +97,43 @@ scalar WirelessNetworkMU.node[0].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[0].wlan.mac 	nbTxFrames 	9
-scalar WirelessNetworkMU.node[0].wlan.mac 	nbRxFrames 	2
-scalar WirelessNetworkMU.node[0].wlan.mac 	nbDroppedFrames 	7
-scalar WirelessNetworkMU.node[0].wlan.mac 	nbMissedAcks 	2
-scalar WirelessNetworkMU.node[0].wlan.mac 	nbRecvdAcks 	7
+scalar WirelessNetworkMU.node[0].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[0].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[0].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[0].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[0].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[0].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[0].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[0].wlan.mac 	meanBackoff 	0.00352
-scalar WirelessNetworkMU.node[0].wlan.mac 	nbBackoffs 	58
-scalar WirelessNetworkMU.node[0].wlan.mac 	backoffDurations 	0.20416
-scalar WirelessNetworkMU.node[0].wlan.phy 	nbFramesWithInterference 	36
-scalar WirelessNetworkMU.node[0].wlan.phy 	nbFramesWithoutInterference 	194
+scalar WirelessNetworkMU.node[0].wlan.mac 	meanBackoff 	0.0011885714285714
+scalar WirelessNetworkMU.node[0].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[0].wlan.mac 	backoffDurations 	0.01664
+scalar WirelessNetworkMU.node[0].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[0].wlan.phy 	nbFramesWithoutInterference 	551
 scalar WirelessNetworkMU.node[0].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[0].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[0].wlan.phy 	nbFramesWithInterferenceDropped 	6
+scalar WirelessNetworkMU.node[0].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[0].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[0].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[0].batteryStats 	total 	249400.51393318
+scalar WirelessNetworkMU.node[0].batteryStats 	total 	249400.35500503
 attr unit  mW-s
 scalar WirelessNetworkMU.node[0].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[0].batteryStats 	"Mean power consumption" 	62.0399288391
+scalar WirelessNetworkMU.node[0].batteryStats 	"Mean power consumption" 	62.039889304733
 attr unit  mW
 statistic WirelessNetworkMU.node[1].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926243626
-field stddev 0.019248251777703
-field sum 0.059852487252
-field sqrsum 0.0021616553116233
-field min 0.016315674268
-field max 0.043536812984
+field count 5
+field mean 0.010336026944
+field stddev 0.00069374346843773
+field sum 0.05168013472
+field sqrsum 0.00053609238493547
+field min 0.009632026944
+field max 0.011232026944
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[1].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[1].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -203,43 +203,43 @@ scalar WirelessNetworkMU.node[1].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[1].wlan.mac 	nbTxFrames 	6
-scalar WirelessNetworkMU.node[1].wlan.mac 	nbRxFrames 	2
-scalar WirelessNetworkMU.node[1].wlan.mac 	nbDroppedFrames 	11
-scalar WirelessNetworkMU.node[1].wlan.mac 	nbMissedAcks 	3
-scalar WirelessNetworkMU.node[1].wlan.mac 	nbRecvdAcks 	3
+scalar WirelessNetworkMU.node[1].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[1].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[1].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[1].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[1].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[1].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[1].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[1].wlan.mac 	meanBackoff 	0.0034977777777778
-scalar WirelessNetworkMU.node[1].wlan.mac 	nbBackoffs 	72
-scalar WirelessNetworkMU.node[1].wlan.mac 	backoffDurations 	0.25184
-scalar WirelessNetworkMU.node[1].wlan.phy 	nbFramesWithInterference 	30
-scalar WirelessNetworkMU.node[1].wlan.phy 	nbFramesWithoutInterference 	199
-scalar WirelessNetworkMU.node[1].wlan.phy 	nbFramesWithInterferencePartial 	1
+scalar WirelessNetworkMU.node[1].wlan.mac 	meanBackoff 	0.0010742857142857
+scalar WirelessNetworkMU.node[1].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[1].wlan.mac 	backoffDurations 	0.01504
+scalar WirelessNetworkMU.node[1].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[1].wlan.phy 	nbFramesWithoutInterference 	551
+scalar WirelessNetworkMU.node[1].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[1].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[1].wlan.phy 	nbFramesWithInterferenceDropped 	10
+scalar WirelessNetworkMU.node[1].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[1].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[1].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[1].batteryStats 	total 	249400.60929084
+scalar WirelessNetworkMU.node[1].batteryStats 	total 	249400.35500431
 attr unit  mW-s
 scalar WirelessNetworkMU.node[1].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[1].batteryStats 	"Mean power consumption" 	62.03995255991
+scalar WirelessNetworkMU.node[1].batteryStats 	"Mean power consumption" 	62.039889304555
 attr unit  mW
 statistic WirelessNetworkMU.node[2].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.02992626699
-field stddev 0.019248251777703
-field sum 0.05985253398
-field sqrsum 0.0021616581084114
-field min 0.016315697632
-field max 0.043536836348
+field count 5
+field mean 0.010336050308
+field stddev 0.00069374346843772
+field sum 0.05168025154
+field sqrsum 0.00053609479984753
+field min 0.009632050308
+field max 0.011232050308
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[2].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[2].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -309,43 +309,43 @@ scalar WirelessNetworkMU.node[2].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[2].wlan.mac 	nbTxFrames 	1
-scalar WirelessNetworkMU.node[2].wlan.mac 	nbRxFrames 	2
-scalar WirelessNetworkMU.node[2].wlan.mac 	nbDroppedFrames 	14
-scalar WirelessNetworkMU.node[2].wlan.mac 	nbMissedAcks 	1
-scalar WirelessNetworkMU.node[2].wlan.mac 	nbRecvdAcks 	0
+scalar WirelessNetworkMU.node[2].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[2].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[2].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[2].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[2].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[2].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[2].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[2].wlan.mac 	meanBackoff 	0.0038355555555556
-scalar WirelessNetworkMU.node[2].wlan.mac 	nbBackoffs 	72
-scalar WirelessNetworkMU.node[2].wlan.mac 	backoffDurations 	0.27616
-scalar WirelessNetworkMU.node[2].wlan.phy 	nbFramesWithInterference 	31
-scalar WirelessNetworkMU.node[2].wlan.phy 	nbFramesWithoutInterference 	203
+scalar WirelessNetworkMU.node[2].wlan.mac 	meanBackoff 	0.00089142857142857
+scalar WirelessNetworkMU.node[2].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[2].wlan.mac 	backoffDurations 	0.01248
+scalar WirelessNetworkMU.node[2].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[2].wlan.phy 	nbFramesWithoutInterference 	551
 scalar WirelessNetworkMU.node[2].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[2].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[2].wlan.phy 	nbFramesWithInterferenceDropped 	12
+scalar WirelessNetworkMU.node[2].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[2].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[2].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[2].batteryStats 	total 	249400.76821923
+scalar WirelessNetworkMU.node[2].batteryStats 	total 	249400.35500526
 attr unit  mW-s
 scalar WirelessNetworkMU.node[2].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[2].batteryStats 	"Mean power consumption" 	62.039992094336
+scalar WirelessNetworkMU.node[2].batteryStats 	"Mean power consumption" 	62.039889304792
 attr unit  mW
 statistic WirelessNetworkMU.node[3].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926254372
-field stddev 0.019248251777703
-field sum 0.059852508744
-field sqrsum 0.0021616565979732
-field min 0.016315685014
-field max 0.04353682373
+field count 5
+field mean 0.01033603769
+field stddev 0.00069374346843773
+field sum 0.05168018845
+field sqrsum 0.0005360934956455
+field min 0.00963203769
+field max 0.01123203769
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[3].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[3].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -415,43 +415,43 @@ scalar WirelessNetworkMU.node[3].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[3].wlan.mac 	nbTxFrames 	6
-scalar WirelessNetworkMU.node[3].wlan.mac 	nbRxFrames 	2
-scalar WirelessNetworkMU.node[3].wlan.mac 	nbDroppedFrames 	11
-scalar WirelessNetworkMU.node[3].wlan.mac 	nbMissedAcks 	3
-scalar WirelessNetworkMU.node[3].wlan.mac 	nbRecvdAcks 	3
+scalar WirelessNetworkMU.node[3].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[3].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[3].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[3].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[3].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[3].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[3].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[3].wlan.mac 	meanBackoff 	0.0035942028985507
-scalar WirelessNetworkMU.node[3].wlan.mac 	nbBackoffs 	69
-scalar WirelessNetworkMU.node[3].wlan.mac 	backoffDurations 	0.248
-scalar WirelessNetworkMU.node[3].wlan.phy 	nbFramesWithInterference 	29
-scalar WirelessNetworkMU.node[3].wlan.phy 	nbFramesWithoutInterference 	201
-scalar WirelessNetworkMU.node[3].wlan.phy 	nbFramesWithInterferencePartial 	1
+scalar WirelessNetworkMU.node[3].wlan.mac 	meanBackoff 	0.00112
+scalar WirelessNetworkMU.node[3].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[3].wlan.mac 	backoffDurations 	0.01568
+scalar WirelessNetworkMU.node[3].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[3].wlan.phy 	nbFramesWithoutInterference 	551
+scalar WirelessNetworkMU.node[3].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[3].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[3].wlan.phy 	nbFramesWithInterferenceDropped 	10
+scalar WirelessNetworkMU.node[3].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[3].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[3].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[3].batteryStats 	total 	249400.60929084
+scalar WirelessNetworkMU.node[3].batteryStats 	total 	249400.35500407
 attr unit  mW-s
 scalar WirelessNetworkMU.node[3].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[3].batteryStats 	"Mean power consumption" 	62.03995255991
+scalar WirelessNetworkMU.node[3].batteryStats 	"Mean power consumption" 	62.039889304496
 attr unit  mW
 statistic WirelessNetworkMU.node[4].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926277545
-field stddev 0.019248251777703
-field sum 0.05985255509
-field sqrsum 0.0021616593718986
-field min 0.016315708187
-field max 0.043536846903
+field count 5
+field mean 0.010336060863
+field stddev 0.00069374346843772
+field sum 0.051680304315
+field sqrsum 0.0005360958908182
+field min 0.009632060863
+field max 0.011232060863
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[4].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[4].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -521,43 +521,43 @@ scalar WirelessNetworkMU.node[4].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[4].wlan.mac 	nbTxFrames 	16
-scalar WirelessNetworkMU.node[4].wlan.mac 	nbRxFrames 	2
-scalar WirelessNetworkMU.node[4].wlan.mac 	nbDroppedFrames 	5
-scalar WirelessNetworkMU.node[4].wlan.mac 	nbMissedAcks 	7
-scalar WirelessNetworkMU.node[4].wlan.mac 	nbRecvdAcks 	9
+scalar WirelessNetworkMU.node[4].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[4].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[4].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[4].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[4].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[4].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[4].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[4].wlan.mac 	meanBackoff 	0.0027667692307692
-scalar WirelessNetworkMU.node[4].wlan.mac 	nbBackoffs 	65
-scalar WirelessNetworkMU.node[4].wlan.mac 	backoffDurations 	0.17984
-scalar WirelessNetworkMU.node[4].wlan.phy 	nbFramesWithInterference 	30
-scalar WirelessNetworkMU.node[4].wlan.phy 	nbFramesWithoutInterference 	195
-scalar WirelessNetworkMU.node[4].wlan.phy 	nbFramesWithInterferencePartial 	2
+scalar WirelessNetworkMU.node[4].wlan.mac 	meanBackoff 	0.00112
+scalar WirelessNetworkMU.node[4].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[4].wlan.mac 	backoffDurations 	0.01568
+scalar WirelessNetworkMU.node[4].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[4].wlan.phy 	nbFramesWithoutInterference 	551
+scalar WirelessNetworkMU.node[4].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[4].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[4].wlan.phy 	nbFramesWithInterferenceDropped 	3
+scalar WirelessNetworkMU.node[4].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[4].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[4].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[4].batteryStats 	total 	249400.29143262
+scalar WirelessNetworkMU.node[4].batteryStats 	total 	249400.35500407
 attr unit  mW-s
 scalar WirelessNetworkMU.node[4].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[4].batteryStats 	"Mean power consumption" 	62.039873490701
+scalar WirelessNetworkMU.node[4].batteryStats 	"Mean power consumption" 	62.039889304496
 attr unit  mW
 statistic WirelessNetworkMU.node[5].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926248002
-field stddev 0.019248251777703
-field sum 0.059852496004
-field sqrsum 0.0021616558354523
-field min 0.016315678644
-field max 0.04353681736
+field count 5
+field mean 0.01033603132
+field stddev 0.00069374346843774
+field sum 0.0516801566
+field sqrsum 0.0005360928372401
+field min 0.00963203132
+field max 0.01123203132
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[5].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[5].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -627,43 +627,43 @@ scalar WirelessNetworkMU.node[5].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[5].wlan.mac 	nbTxFrames 	11
-scalar WirelessNetworkMU.node[5].wlan.mac 	nbRxFrames 	2
-scalar WirelessNetworkMU.node[5].wlan.mac 	nbDroppedFrames 	10
-scalar WirelessNetworkMU.node[5].wlan.mac 	nbMissedAcks 	7
-scalar WirelessNetworkMU.node[5].wlan.mac 	nbRecvdAcks 	4
+scalar WirelessNetworkMU.node[5].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[5].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[5].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[5].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[5].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[5].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[5].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[5].wlan.mac 	meanBackoff 	0.0032631578947368
-scalar WirelessNetworkMU.node[5].wlan.mac 	nbBackoffs 	76
-scalar WirelessNetworkMU.node[5].wlan.mac 	backoffDurations 	0.248
-scalar WirelessNetworkMU.node[5].wlan.phy 	nbFramesWithInterference 	32
-scalar WirelessNetworkMU.node[5].wlan.phy 	nbFramesWithoutInterference 	198
+scalar WirelessNetworkMU.node[5].wlan.mac 	meanBackoff 	0.0010285714285714
+scalar WirelessNetworkMU.node[5].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[5].wlan.mac 	backoffDurations 	0.0144
+scalar WirelessNetworkMU.node[5].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[5].wlan.phy 	nbFramesWithoutInterference 	551
 scalar WirelessNetworkMU.node[5].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[5].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[5].wlan.phy 	nbFramesWithInterferenceDropped 	6
+scalar WirelessNetworkMU.node[5].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[5].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[5].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[5].batteryStats 	total 	249400.45036125
+scalar WirelessNetworkMU.node[5].batteryStats 	total 	249400.35500383
 attr unit  mW-s
 scalar WirelessNetworkMU.node[5].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[5].batteryStats 	"Mean power consumption" 	62.039913025187
+scalar WirelessNetworkMU.node[5].batteryStats 	"Mean power consumption" 	62.039889304436
 attr unit  mW
 statistic WirelessNetworkMU.node[6].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926255217
-field stddev 0.019248251777703
-field sum 0.059852510434
-field sqrsum 0.0021616566991239
-field min 0.016315685859
-field max 0.043536824575
+field count 5
+field mean 0.010336038535
+field stddev 0.00069374346843771
+field sum 0.051680192675
+field sqrsum 0.00053609358298502
+field min 0.009632038535
+field max 0.011232038535
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[6].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[6].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -733,43 +733,43 @@ scalar WirelessNetworkMU.node[6].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[6].wlan.mac 	nbTxFrames 	15
-scalar WirelessNetworkMU.node[6].wlan.mac 	nbRxFrames 	1
-scalar WirelessNetworkMU.node[6].wlan.mac 	nbDroppedFrames 	4
-scalar WirelessNetworkMU.node[6].wlan.mac 	nbMissedAcks 	5
-scalar WirelessNetworkMU.node[6].wlan.mac 	nbRecvdAcks 	10
+scalar WirelessNetworkMU.node[6].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[6].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[6].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[6].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[6].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[6].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[6].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[6].wlan.mac 	meanBackoff 	0.0033185185185185
-scalar WirelessNetworkMU.node[6].wlan.mac 	nbBackoffs 	54
-scalar WirelessNetworkMU.node[6].wlan.mac 	backoffDurations 	0.1792
-scalar WirelessNetworkMU.node[6].wlan.phy 	nbFramesWithInterference 	31
-scalar WirelessNetworkMU.node[6].wlan.phy 	nbFramesWithoutInterference 	191
-scalar WirelessNetworkMU.node[6].wlan.phy 	nbFramesWithInterferencePartial 	1
+scalar WirelessNetworkMU.node[6].wlan.mac 	meanBackoff 	0.00112
+scalar WirelessNetworkMU.node[6].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[6].wlan.mac 	backoffDurations 	0.01568
+scalar WirelessNetworkMU.node[6].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[6].wlan.phy 	nbFramesWithoutInterference 	551
+scalar WirelessNetworkMU.node[6].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[6].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[6].wlan.phy 	nbFramesWithInterferenceDropped 	7
+scalar WirelessNetworkMU.node[6].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[6].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[6].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[6].batteryStats 	total 	249400.32321858
+scalar WirelessNetworkMU.node[6].batteryStats 	total 	249400.35500383
 attr unit  mW-s
 scalar WirelessNetworkMU.node[6].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[6].batteryStats 	"Mean power consumption" 	62.039881397658
+scalar WirelessNetworkMU.node[6].batteryStats 	"Mean power consumption" 	62.039889304436
 attr unit  mW
 statistic WirelessNetworkMU.node[7].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926240818
-field stddev 0.019248251777703
-field sum 0.059852481636
-field sqrsum 0.0021616549754917
-field min 0.01631567146
-field max 0.043536810176
+field count 5
+field mean 0.010336024136
+field stddev 0.00069374346843774
+field sum 0.05168012068
+field sqrsum 0.00053609209469987
+field min 0.009632024136
+field max 0.011232024136
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[7].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[7].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -840,42 +840,42 @@ attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
 scalar WirelessNetworkMU.node[7].wlan.mac 	nbTxFrames 	14
-scalar WirelessNetworkMU.node[7].wlan.mac 	nbRxFrames 	1
-scalar WirelessNetworkMU.node[7].wlan.mac 	nbDroppedFrames 	4
-scalar WirelessNetworkMU.node[7].wlan.mac 	nbMissedAcks 	4
-scalar WirelessNetworkMU.node[7].wlan.mac 	nbRecvdAcks 	10
+scalar WirelessNetworkMU.node[7].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[7].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[7].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[7].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[7].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[7].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[7].wlan.mac 	meanBackoff 	0.0035374545454545
-scalar WirelessNetworkMU.node[7].wlan.mac 	nbBackoffs 	55
-scalar WirelessNetworkMU.node[7].wlan.mac 	backoffDurations 	0.19456
-scalar WirelessNetworkMU.node[7].wlan.phy 	nbFramesWithInterference 	28
-scalar WirelessNetworkMU.node[7].wlan.phy 	nbFramesWithoutInterference 	193
-scalar WirelessNetworkMU.node[7].wlan.phy 	nbFramesWithInterferencePartial 	1
+scalar WirelessNetworkMU.node[7].wlan.mac 	meanBackoff 	0.0011885714285714
+scalar WirelessNetworkMU.node[7].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[7].wlan.mac 	backoffDurations 	0.01664
+scalar WirelessNetworkMU.node[7].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[7].wlan.phy 	nbFramesWithoutInterference 	551
+scalar WirelessNetworkMU.node[7].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[7].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[7].wlan.phy 	nbFramesWithInterferenceDropped 	9
+scalar WirelessNetworkMU.node[7].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[7].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[7].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[7].batteryStats 	total 	249400.35500431
+scalar WirelessNetworkMU.node[7].batteryStats 	total 	249400.35500574
 attr unit  mW-s
 scalar WirelessNetworkMU.node[7].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[7].batteryStats 	"Mean power consumption" 	62.039889304555
+scalar WirelessNetworkMU.node[7].batteryStats 	"Mean power consumption" 	62.039889304911
 attr unit  mW
 statistic WirelessNetworkMU.node[8].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926253917
-field stddev 0.019248251777703
-field sum 0.059852507834
-field sqrsum 0.0021616565435074
-field min 0.016315684559
-field max 0.043536823275
+field count 5
+field mean 0.010336037235
+field stddev 0.00069374346843774
+field sum 0.051680186175
+field sqrsum 0.00053609344861653
+field min 0.009632037235
+field max 0.011232037235
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[8].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[8].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -945,43 +945,43 @@ scalar WirelessNetworkMU.node[8].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[8].wlan.mac 	nbTxFrames 	4
-scalar WirelessNetworkMU.node[8].wlan.mac 	nbRxFrames 	2
-scalar WirelessNetworkMU.node[8].wlan.mac 	nbDroppedFrames 	12
-scalar WirelessNetworkMU.node[8].wlan.mac 	nbMissedAcks 	2
-scalar WirelessNetworkMU.node[8].wlan.mac 	nbRecvdAcks 	2
+scalar WirelessNetworkMU.node[8].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[8].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[8].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[8].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[8].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[8].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[8].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[8].wlan.mac 	meanBackoff 	0.0033749333333333
-scalar WirelessNetworkMU.node[8].wlan.mac 	nbBackoffs 	75
-scalar WirelessNetworkMU.node[8].wlan.mac 	backoffDurations 	0.25312
-scalar WirelessNetworkMU.node[8].wlan.phy 	nbFramesWithInterference 	34
-scalar WirelessNetworkMU.node[8].wlan.phy 	nbFramesWithoutInterference 	201
+scalar WirelessNetworkMU.node[8].wlan.mac 	meanBackoff 	0.0011885714285714
+scalar WirelessNetworkMU.node[8].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[8].wlan.mac 	backoffDurations 	0.01664
+scalar WirelessNetworkMU.node[8].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[8].wlan.phy 	nbFramesWithoutInterference 	551
 scalar WirelessNetworkMU.node[8].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[8].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[8].wlan.phy 	nbFramesWithInterferenceDropped 	8
+scalar WirelessNetworkMU.node[8].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[8].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[8].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[8].batteryStats 	total 	249400.67286181
+scalar WirelessNetworkMU.node[8].batteryStats 	total 	249400.35500383
 attr unit  mW-s
 scalar WirelessNetworkMU.node[8].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[8].batteryStats 	"Mean power consumption" 	62.039968373586
+scalar WirelessNetworkMU.node[8].batteryStats 	"Mean power consumption" 	62.039889304436
 attr unit  mW
 statistic WirelessNetworkMU.node[9].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926255837
-field stddev 0.019248251777703
-field sum 0.059852511674
-field sqrsum 0.002161656773341
-field min 0.016315686479
-field max 0.043536825195
+field count 5
+field mean 0.010336039155
+field stddev 0.00069374346843771
+field sum 0.051680195775
+field sqrsum 0.00053609364706847
+field min 0.009632039155
+field max 0.011232039155
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[9].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[9].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -1051,43 +1051,43 @@ scalar WirelessNetworkMU.node[9].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[9].wlan.mac 	nbTxFrames 	11
-scalar WirelessNetworkMU.node[9].wlan.mac 	nbRxFrames 	2
-scalar WirelessNetworkMU.node[9].wlan.mac 	nbDroppedFrames 	8
-scalar WirelessNetworkMU.node[9].wlan.mac 	nbMissedAcks 	5
-scalar WirelessNetworkMU.node[9].wlan.mac 	nbRecvdAcks 	6
+scalar WirelessNetworkMU.node[9].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[9].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[9].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[9].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[9].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[9].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[9].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[9].wlan.mac 	meanBackoff 	0.00368
-scalar WirelessNetworkMU.node[9].wlan.mac 	nbBackoffs 	74
-scalar WirelessNetworkMU.node[9].wlan.mac 	backoffDurations 	0.27232
-scalar WirelessNetworkMU.node[9].wlan.phy 	nbFramesWithInterference 	32
-scalar WirelessNetworkMU.node[9].wlan.phy 	nbFramesWithoutInterference 	196
+scalar WirelessNetworkMU.node[9].wlan.mac 	meanBackoff 	0.0013028571428571
+scalar WirelessNetworkMU.node[9].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[9].wlan.mac 	backoffDurations 	0.01824
+scalar WirelessNetworkMU.node[9].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[9].wlan.phy 	nbFramesWithoutInterference 	551
 scalar WirelessNetworkMU.node[9].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[9].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[9].wlan.phy 	nbFramesWithInterferenceDropped 	7
+scalar WirelessNetworkMU.node[9].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[9].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[9].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[9].batteryStats 	total 	249400.45036077
+scalar WirelessNetworkMU.node[9].batteryStats 	total 	249400.35500503
 attr unit  mW-s
 scalar WirelessNetworkMU.node[9].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[9].batteryStats 	"Mean power consumption" 	62.039913025068
+scalar WirelessNetworkMU.node[9].batteryStats 	"Mean power consumption" 	62.039889304733
 attr unit  mW
 statistic WirelessNetworkMU.node[10].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.02992626578
-field stddev 0.019248251777703
-field sum 0.05985253156
-field sqrsum 0.0021616579635683
-field min 0.016315696422
-field max 0.043536835138
+field count 5
+field mean 0.010336049098
+field stddev 0.00069374346843772
+field sum 0.05168024549
+field sqrsum 0.00053609467478133
+field min 0.009632049098
+field max 0.011232049098
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[10].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[10].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -1157,43 +1157,43 @@ scalar WirelessNetworkMU.node[10].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[10].wlan.mac 	nbTxFrames 	8
-scalar WirelessNetworkMU.node[10].wlan.mac 	nbRxFrames 	2
-scalar WirelessNetworkMU.node[10].wlan.mac 	nbDroppedFrames 	6
+scalar WirelessNetworkMU.node[10].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[10].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[10].wlan.mac 	nbDroppedFrames 	0
 scalar WirelessNetworkMU.node[10].wlan.mac 	nbMissedAcks 	0
-scalar WirelessNetworkMU.node[10].wlan.mac 	nbRecvdAcks 	8
+scalar WirelessNetworkMU.node[10].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[10].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[10].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[10].wlan.mac 	meanBackoff 	0.0037131034482759
-scalar WirelessNetworkMU.node[10].wlan.mac 	nbBackoffs 	58
-scalar WirelessNetworkMU.node[10].wlan.mac 	backoffDurations 	0.21536
-scalar WirelessNetworkMU.node[10].wlan.phy 	nbFramesWithInterference 	37
-scalar WirelessNetworkMU.node[10].wlan.phy 	nbFramesWithoutInterference 	197
+scalar WirelessNetworkMU.node[10].wlan.mac 	meanBackoff 	0.0013257142857143
+scalar WirelessNetworkMU.node[10].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[10].wlan.mac 	backoffDurations 	0.01856
+scalar WirelessNetworkMU.node[10].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[10].wlan.phy 	nbFramesWithoutInterference 	551
 scalar WirelessNetworkMU.node[10].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[10].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[10].wlan.phy 	nbFramesWithInterferenceDropped 	5
+scalar WirelessNetworkMU.node[10].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[10].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[10].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[10].batteryStats 	total 	249400.54571915
+scalar WirelessNetworkMU.node[10].batteryStats 	total 	249400.35500479
 attr unit  mW-s
 scalar WirelessNetworkMU.node[10].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[10].batteryStats 	"Mean power consumption" 	62.039936746056
+scalar WirelessNetworkMU.node[10].batteryStats 	"Mean power consumption" 	62.039889304673
 attr unit  mW
 statistic WirelessNetworkMU.node[11].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926231988
-field stddev 0.019248251777703
-field sum 0.059852463976
-field sqrsum 0.002161653918497
-field min 0.01631566263
-field max 0.043536801346
+field count 5
+field mean 0.010336015306
+field stddev 0.00069374346843771
+field sum 0.05168007653
+field sqrsum 0.00053609118202933
+field min 0.009632015306
+field max 0.011232015306
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[11].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[11].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -1263,43 +1263,43 @@ scalar WirelessNetworkMU.node[11].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[11].wlan.mac 	nbTxFrames 	10
-scalar WirelessNetworkMU.node[11].wlan.mac 	nbRxFrames 	1
-scalar WirelessNetworkMU.node[11].wlan.mac 	nbDroppedFrames 	7
-scalar WirelessNetworkMU.node[11].wlan.mac 	nbMissedAcks 	3
-scalar WirelessNetworkMU.node[11].wlan.mac 	nbRecvdAcks 	7
+scalar WirelessNetworkMU.node[11].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[11].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[11].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[11].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[11].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[11].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[11].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[11].wlan.mac 	meanBackoff 	0.0033741176470588
-scalar WirelessNetworkMU.node[11].wlan.mac 	nbBackoffs 	68
-scalar WirelessNetworkMU.node[11].wlan.mac 	backoffDurations 	0.22944
-scalar WirelessNetworkMU.node[11].wlan.phy 	nbFramesWithInterference 	34
-scalar WirelessNetworkMU.node[11].wlan.phy 	nbFramesWithoutInterference 	195
+scalar WirelessNetworkMU.node[11].wlan.mac 	meanBackoff 	0.0014628571428571
+scalar WirelessNetworkMU.node[11].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[11].wlan.mac 	backoffDurations 	0.02048
+scalar WirelessNetworkMU.node[11].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[11].wlan.phy 	nbFramesWithoutInterference 	551
 scalar WirelessNetworkMU.node[11].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[11].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[11].wlan.phy 	nbFramesWithInterferenceDropped 	7
+scalar WirelessNetworkMU.node[11].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[11].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[11].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[11].batteryStats 	total 	249400.48214817
+scalar WirelessNetworkMU.node[11].batteryStats 	total 	249400.35500503
 attr unit  mW-s
 scalar WirelessNetworkMU.node[11].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[11].batteryStats 	"Mean power consumption" 	62.039920932381
+scalar WirelessNetworkMU.node[11].batteryStats 	"Mean power consumption" 	62.039889304733
 attr unit  mW
 statistic WirelessNetworkMU.node[12].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926264725
-field stddev 0.019248251777703
-field sum 0.05985252945
-field sqrsum 0.0021616578372794
-field min 0.016315695367
-field max 0.043536834083
+field count 5
+field mean 0.010336048043
+field stddev 0.00069374346843772
+field sum 0.051680240215
+field sqrsum 0.00053609456573602
+field min 0.009632048043
+field max 0.011232048043
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[12].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[12].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -1369,43 +1369,43 @@ scalar WirelessNetworkMU.node[12].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[12].wlan.mac 	nbTxFrames 	9
-scalar WirelessNetworkMU.node[12].wlan.mac 	nbRxFrames 	1
-scalar WirelessNetworkMU.node[12].wlan.mac 	nbDroppedFrames 	7
-scalar WirelessNetworkMU.node[12].wlan.mac 	nbMissedAcks 	2
-scalar WirelessNetworkMU.node[12].wlan.mac 	nbRecvdAcks 	7
+scalar WirelessNetworkMU.node[12].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[12].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[12].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[12].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[12].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[12].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[12].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[12].wlan.mac 	meanBackoff 	0.00328
-scalar WirelessNetworkMU.node[12].wlan.mac 	nbBackoffs 	56
-scalar WirelessNetworkMU.node[12].wlan.mac 	backoffDurations 	0.18368
-scalar WirelessNetworkMU.node[12].wlan.phy 	nbFramesWithInterference 	31
-scalar WirelessNetworkMU.node[12].wlan.phy 	nbFramesWithoutInterference 	197
+scalar WirelessNetworkMU.node[12].wlan.mac 	meanBackoff 	0.0012342857142857
+scalar WirelessNetworkMU.node[12].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[12].wlan.mac 	backoffDurations 	0.01728
+scalar WirelessNetworkMU.node[12].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[12].wlan.phy 	nbFramesWithoutInterference 	551
 scalar WirelessNetworkMU.node[12].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[12].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[12].wlan.phy 	nbFramesWithInterferenceDropped 	9
+scalar WirelessNetworkMU.node[12].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[12].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[12].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[12].batteryStats 	total 	249400.51393294
+scalar WirelessNetworkMU.node[12].batteryStats 	total 	249400.35500503
 attr unit  mW-s
 scalar WirelessNetworkMU.node[12].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[12].batteryStats 	"Mean power consumption" 	62.039928839041
+scalar WirelessNetworkMU.node[12].batteryStats 	"Mean power consumption" 	62.039889304733
 attr unit  mW
 statistic WirelessNetworkMU.node[13].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926258039
-field stddev 0.019248251777703
-field sum 0.059852516078
-field sqrsum 0.0021616570369315
-field min 0.016315688681
-field max 0.043536827397
+field count 5
+field mean 0.010336041357
+field stddev 0.00069374346843774
+field sum 0.051680206785
+field sqrsum 0.00053609387466807
+field min 0.009632041357
+field max 0.011232041357
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[13].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[13].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -1475,43 +1475,43 @@ scalar WirelessNetworkMU.node[13].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[13].wlan.mac 	nbTxFrames 	10
-scalar WirelessNetworkMU.node[13].wlan.mac 	nbRxFrames 	2
-scalar WirelessNetworkMU.node[13].wlan.mac 	nbDroppedFrames 	10
-scalar WirelessNetworkMU.node[13].wlan.mac 	nbMissedAcks 	6
-scalar WirelessNetworkMU.node[13].wlan.mac 	nbRecvdAcks 	4
+scalar WirelessNetworkMU.node[13].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[13].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[13].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[13].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[13].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[13].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[13].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[13].wlan.mac 	meanBackoff 	0.0036280519480519
-scalar WirelessNetworkMU.node[13].wlan.mac 	nbBackoffs 	77
-scalar WirelessNetworkMU.node[13].wlan.mac 	backoffDurations 	0.27936
-scalar WirelessNetworkMU.node[13].wlan.phy 	nbFramesWithInterference 	32
-scalar WirelessNetworkMU.node[13].wlan.phy 	nbFramesWithoutInterference 	200
+scalar WirelessNetworkMU.node[13].wlan.mac 	meanBackoff 	0.00128
+scalar WirelessNetworkMU.node[13].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[13].wlan.mac 	backoffDurations 	0.01792
+scalar WirelessNetworkMU.node[13].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[13].wlan.phy 	nbFramesWithoutInterference 	551
 scalar WirelessNetworkMU.node[13].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[13].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[13].wlan.phy 	nbFramesWithInterferenceDropped 	4
+scalar WirelessNetworkMU.node[13].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[13].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[13].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[13].batteryStats 	total 	249400.48214698
+scalar WirelessNetworkMU.node[13].batteryStats 	total 	249400.35500407
 attr unit  mW-s
 scalar WirelessNetworkMU.node[13].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[13].batteryStats 	"Mean power consumption" 	62.039920932084
+scalar WirelessNetworkMU.node[13].batteryStats 	"Mean power consumption" 	62.039889304496
 attr unit  mW
 statistic WirelessNetworkMU.node[14].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926280302
-field stddev 0.019248251777703
-field sum 0.059852560604
-field sqrsum 0.0021616597019256
-field min 0.016315710944
-field max 0.04353684966
+field count 5
+field mean 0.01033606362
+field stddev 0.00069374346843773
+field sum 0.0516803181
+field sqrsum 0.00053609617578344
+field min 0.00963206362
+field max 0.01123206362
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[14].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[14].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -1581,43 +1581,43 @@ scalar WirelessNetworkMU.node[14].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[14].wlan.mac 	nbTxFrames 	4
-scalar WirelessNetworkMU.node[14].wlan.mac 	nbRxFrames 	1
-scalar WirelessNetworkMU.node[14].wlan.mac 	nbDroppedFrames 	11
-scalar WirelessNetworkMU.node[14].wlan.mac 	nbMissedAcks 	1
-scalar WirelessNetworkMU.node[14].wlan.mac 	nbRecvdAcks 	3
+scalar WirelessNetworkMU.node[14].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[14].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[14].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[14].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[14].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[14].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[14].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[14].wlan.mac 	meanBackoff 	0.0041694117647059
-scalar WirelessNetworkMU.node[14].wlan.mac 	nbBackoffs 	68
-scalar WirelessNetworkMU.node[14].wlan.mac 	backoffDurations 	0.28352
-scalar WirelessNetworkMU.node[14].wlan.phy 	nbFramesWithInterference 	36
-scalar WirelessNetworkMU.node[14].wlan.phy 	nbFramesWithoutInterference 	200
+scalar WirelessNetworkMU.node[14].wlan.mac 	meanBackoff 	0.0015542857142857
+scalar WirelessNetworkMU.node[14].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[14].wlan.mac 	backoffDurations 	0.02176
+scalar WirelessNetworkMU.node[14].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[14].wlan.phy 	nbFramesWithoutInterference 	551
 scalar WirelessNetworkMU.node[14].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[14].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[14].wlan.phy 	nbFramesWithInterferenceDropped 	6
+scalar WirelessNetworkMU.node[14].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[14].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[14].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[14].batteryStats 	total 	249400.67286158
+scalar WirelessNetworkMU.node[14].batteryStats 	total 	249400.35500383
 attr unit  mW-s
 scalar WirelessNetworkMU.node[14].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[14].batteryStats 	"Mean power consumption" 	62.039968373526
+scalar WirelessNetworkMU.node[14].batteryStats 	"Mean power consumption" 	62.039889304436
 attr unit  mW
 statistic WirelessNetworkMU.node[15].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926274608
-field stddev 0.019248251777703
-field sum 0.059852549216
-field sqrsum 0.0021616590203247
-field min 0.01631570525
-field max 0.043536843966
+field count 5
+field mean 0.010336057926
+field stddev 0.00069374346843771
+field sum 0.05168028963
+field sqrsum 0.00053609558724814
+field min 0.009632057926
+field max 0.011232057926
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[15].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[15].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -1687,43 +1687,43 @@ scalar WirelessNetworkMU.node[15].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[15].wlan.mac 	nbTxFrames 	12
-scalar WirelessNetworkMU.node[15].wlan.mac 	nbRxFrames 	2
-scalar WirelessNetworkMU.node[15].wlan.mac 	nbDroppedFrames 	3
-scalar WirelessNetworkMU.node[15].wlan.mac 	nbMissedAcks 	1
-scalar WirelessNetworkMU.node[15].wlan.mac 	nbRecvdAcks 	11
+scalar WirelessNetworkMU.node[15].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[15].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[15].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[15].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[15].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[15].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[15].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[15].wlan.mac 	meanBackoff 	0.00256
-scalar WirelessNetworkMU.node[15].wlan.mac 	nbBackoffs 	27
-scalar WirelessNetworkMU.node[15].wlan.mac 	backoffDurations 	0.06912
-scalar WirelessNetworkMU.node[15].wlan.phy 	nbFramesWithInterference 	33
-scalar WirelessNetworkMU.node[15].wlan.phy 	nbFramesWithoutInterference 	192
+scalar WirelessNetworkMU.node[15].wlan.mac 	meanBackoff 	0.0013485714285714
+scalar WirelessNetworkMU.node[15].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[15].wlan.mac 	backoffDurations 	0.01888
+scalar WirelessNetworkMU.node[15].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[15].wlan.phy 	nbFramesWithoutInterference 	551
 scalar WirelessNetworkMU.node[15].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[15].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[15].wlan.phy 	nbFramesWithInterferenceDropped 	10
+scalar WirelessNetworkMU.node[15].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[15].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[15].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[15].batteryStats 	total 	249400.41857529
+scalar WirelessNetworkMU.node[15].batteryStats 	total 	249400.35500479
 attr unit  mW-s
 scalar WirelessNetworkMU.node[15].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[15].batteryStats 	"Mean power consumption" 	62.039905118231
+scalar WirelessNetworkMU.node[15].batteryStats 	"Mean power consumption" 	62.039889304673
 attr unit  mW
 statistic WirelessNetworkMU.node[16].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926276484
-field stddev 0.019248251777703
-field sum 0.059852552968
-field sqrsum 0.0021616592448915
-field min 0.016315707126
-field max 0.043536845842
+field count 5
+field mean 0.010336059802
+field stddev 0.00069374346843772
+field sum 0.05168029901
+field sqrsum 0.0005360957811526
+field min 0.009632059802
+field max 0.011232059802
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[16].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[16].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -1793,43 +1793,43 @@ scalar WirelessNetworkMU.node[16].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[16].wlan.mac 	nbTxFrames 	7
-scalar WirelessNetworkMU.node[16].wlan.mac 	nbRxFrames 	2
-scalar WirelessNetworkMU.node[16].wlan.mac 	nbDroppedFrames 	9
-scalar WirelessNetworkMU.node[16].wlan.mac 	nbMissedAcks 	2
-scalar WirelessNetworkMU.node[16].wlan.mac 	nbRecvdAcks 	5
+scalar WirelessNetworkMU.node[16].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[16].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[16].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[16].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[16].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[16].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[16].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[16].wlan.mac 	meanBackoff 	0.0035153623188406
-scalar WirelessNetworkMU.node[16].wlan.mac 	nbBackoffs 	69
-scalar WirelessNetworkMU.node[16].wlan.mac 	backoffDurations 	0.24256
-scalar WirelessNetworkMU.node[16].wlan.phy 	nbFramesWithInterference 	35
-scalar WirelessNetworkMU.node[16].wlan.phy 	nbFramesWithoutInterference 	197
-scalar WirelessNetworkMU.node[16].wlan.phy 	nbFramesWithInterferencePartial 	1
+scalar WirelessNetworkMU.node[16].wlan.mac 	meanBackoff 	0.0012571428571429
+scalar WirelessNetworkMU.node[16].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[16].wlan.mac 	backoffDurations 	0.0176
+scalar WirelessNetworkMU.node[16].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[16].wlan.phy 	nbFramesWithoutInterference 	551
+scalar WirelessNetworkMU.node[16].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[16].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[16].wlan.phy 	nbFramesWithInterferenceDropped 	5
+scalar WirelessNetworkMU.node[16].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[16].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[16].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[16].batteryStats 	total 	249400.57750416
+scalar WirelessNetworkMU.node[16].batteryStats 	total 	249400.35500479
 attr unit  mW-s
 scalar WirelessNetworkMU.node[16].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[16].batteryStats 	"Mean power consumption" 	62.039944652776
+scalar WirelessNetworkMU.node[16].batteryStats 	"Mean power consumption" 	62.039889304673
 attr unit  mW
 statistic WirelessNetworkMU.node[17].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926248168
-field stddev 0.019248251777703
-field sum 0.059852496336
-field sqrsum 0.0021616558553233
-field min 0.01631567881
-field max 0.043536817526
+field count 5
+field mean 0.010336031486
+field stddev 0.00069374346843771
+field sum 0.05168015743
+field sqrsum 0.00053609285439792
+field min 0.009632031486
+field max 0.011232031486
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[17].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[17].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -1899,43 +1899,43 @@ scalar WirelessNetworkMU.node[17].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[17].wlan.mac 	nbTxFrames 	7
-scalar WirelessNetworkMU.node[17].wlan.mac 	nbRxFrames 	2
-scalar WirelessNetworkMU.node[17].wlan.mac 	nbDroppedFrames 	8
-scalar WirelessNetworkMU.node[17].wlan.mac 	nbMissedAcks 	1
-scalar WirelessNetworkMU.node[17].wlan.mac 	nbRecvdAcks 	6
+scalar WirelessNetworkMU.node[17].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[17].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[17].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[17].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[17].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[17].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[17].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[17].wlan.mac 	meanBackoff 	0.0035087719298246
-scalar WirelessNetworkMU.node[17].wlan.mac 	nbBackoffs 	57
-scalar WirelessNetworkMU.node[17].wlan.mac 	backoffDurations 	0.2
-scalar WirelessNetworkMU.node[17].wlan.phy 	nbFramesWithInterference 	31
-scalar WirelessNetworkMU.node[17].wlan.phy 	nbFramesWithoutInterference 	197
+scalar WirelessNetworkMU.node[17].wlan.mac 	meanBackoff 	0.0010057142857143
+scalar WirelessNetworkMU.node[17].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[17].wlan.mac 	backoffDurations 	0.01408
+scalar WirelessNetworkMU.node[17].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[17].wlan.phy 	nbFramesWithoutInterference 	551
 scalar WirelessNetworkMU.node[17].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[17].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[17].wlan.phy 	nbFramesWithInterferenceDropped 	11
+scalar WirelessNetworkMU.node[17].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[17].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[17].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[17].batteryStats 	total 	249400.57750463
+scalar WirelessNetworkMU.node[17].batteryStats 	total 	249400.35500598
 attr unit  mW-s
 scalar WirelessNetworkMU.node[17].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[17].batteryStats 	"Mean power consumption" 	62.039944652894
+scalar WirelessNetworkMU.node[17].batteryStats 	"Mean power consumption" 	62.03988930497
 attr unit  mW
 statistic WirelessNetworkMU.node[18].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926236312
-field stddev 0.019248251777703
-field sum 0.059852472624
-field sqrsum 0.0021616544361012
-field min 0.016315666954
-field max 0.04353680567
+field count 5
+field mean 0.01033601963
+field stddev 0.00069374346843773
+field sum 0.05168009815
+field sqrsum 0.00053609162895873
+field min 0.00963201963
+field max 0.01123201963
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[18].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[18].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -2005,43 +2005,43 @@ scalar WirelessNetworkMU.node[18].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[18].wlan.mac 	nbTxFrames 	10
-scalar WirelessNetworkMU.node[18].wlan.mac 	nbRxFrames 	1
-scalar WirelessNetworkMU.node[18].wlan.mac 	nbDroppedFrames 	5
-scalar WirelessNetworkMU.node[18].wlan.mac 	nbMissedAcks 	1
-scalar WirelessNetworkMU.node[18].wlan.mac 	nbRecvdAcks 	9
+scalar WirelessNetworkMU.node[18].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[18].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[18].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[18].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[18].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[18].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[18].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[18].wlan.mac 	meanBackoff 	0.0034826666666667
-scalar WirelessNetworkMU.node[18].wlan.mac 	nbBackoffs 	60
-scalar WirelessNetworkMU.node[18].wlan.mac 	backoffDurations 	0.20896
-scalar WirelessNetworkMU.node[18].wlan.phy 	nbFramesWithInterference 	29
-scalar WirelessNetworkMU.node[18].wlan.phy 	nbFramesWithoutInterference 	195
-scalar WirelessNetworkMU.node[18].wlan.phy 	nbFramesWithInterferencePartial 	1
+scalar WirelessNetworkMU.node[18].wlan.mac 	meanBackoff 	0.0010285714285714
+scalar WirelessNetworkMU.node[18].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[18].wlan.mac 	backoffDurations 	0.0144
+scalar WirelessNetworkMU.node[18].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[18].wlan.phy 	nbFramesWithoutInterference 	551
+scalar WirelessNetworkMU.node[18].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[18].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[18].wlan.phy 	nbFramesWithInterferenceDropped 	12
+scalar WirelessNetworkMU.node[18].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[18].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[18].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[18].batteryStats 	total 	249400.48214722
+scalar WirelessNetworkMU.node[18].batteryStats 	total 	249400.3550036
 attr unit  mW-s
 scalar WirelessNetworkMU.node[18].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[18].batteryStats 	"Mean power consumption" 	62.039920932143
+scalar WirelessNetworkMU.node[18].batteryStats 	"Mean power consumption" 	62.039889304377
 attr unit  mW
 statistic WirelessNetworkMU.node[19].net 	endToEndDelayRTP:stats
-field count 2
-field mean 0.029926239151
-field stddev 0.019248251777703
-field sum 0.059852478302
-field sqrsum 0.0021616547759435
-field min 0.016315669793
-field max 0.043536808509
+field count 5
+field mean 0.010336022469
+field stddev 0.00069374346843771
+field sum 0.051680112345
+field sqrsum 0.00053609192239836
+field min 0.009632022469
+field max 0.011232022469
 attr interpolationmode  none
 attr source  endToEndDelayRTP
 attr title  "end-to-end delay RTP, stats"
 attr unit  s
-scalar WirelessNetworkMU.node[19].net 	paquetesRecibidosRTP:sum 	2
+scalar WirelessNetworkMU.node[19].net 	paquetesRecibidosRTP:sum 	5
 attr interpolationmode  none
 attr source  recibidosRTP
 attr title  "Paquetes recibidos RTP, sum"
@@ -2111,29 +2111,29 @@ scalar WirelessNetworkMU.node[19].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.node[19].wlan.mac 	nbTxFrames 	4
-scalar WirelessNetworkMU.node[19].wlan.mac 	nbRxFrames 	2
-scalar WirelessNetworkMU.node[19].wlan.mac 	nbDroppedFrames 	11
-scalar WirelessNetworkMU.node[19].wlan.mac 	nbMissedAcks 	1
-scalar WirelessNetworkMU.node[19].wlan.mac 	nbRecvdAcks 	3
+scalar WirelessNetworkMU.node[19].wlan.mac 	nbTxFrames 	14
+scalar WirelessNetworkMU.node[19].wlan.mac 	nbRxFrames 	5
+scalar WirelessNetworkMU.node[19].wlan.mac 	nbDroppedFrames 	0
+scalar WirelessNetworkMU.node[19].wlan.mac 	nbMissedAcks 	0
+scalar WirelessNetworkMU.node[19].wlan.mac 	nbRecvdAcks 	14
 scalar WirelessNetworkMU.node[19].wlan.mac 	nbTxAcks 	0
 scalar WirelessNetworkMU.node[19].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.node[19].wlan.mac 	meanBackoff 	0.0035952941176471
-scalar WirelessNetworkMU.node[19].wlan.mac 	nbBackoffs 	68
-scalar WirelessNetworkMU.node[19].wlan.mac 	backoffDurations 	0.24448
-scalar WirelessNetworkMU.node[19].wlan.phy 	nbFramesWithInterference 	40
-scalar WirelessNetworkMU.node[19].wlan.phy 	nbFramesWithoutInterference 	200
-scalar WirelessNetworkMU.node[19].wlan.phy 	nbFramesWithInterferencePartial 	1
+scalar WirelessNetworkMU.node[19].wlan.mac 	meanBackoff 	0.00098285714285714
+scalar WirelessNetworkMU.node[19].wlan.mac 	nbBackoffs 	14
+scalar WirelessNetworkMU.node[19].wlan.mac 	backoffDurations 	0.01376
+scalar WirelessNetworkMU.node[19].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.node[19].wlan.phy 	nbFramesWithoutInterference 	551
+scalar WirelessNetworkMU.node[19].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.node[19].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.node[19].wlan.phy 	nbFramesWithInterferenceDropped 	2
+scalar WirelessNetworkMU.node[19].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.node[19].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.node[19].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.node[19].batteryStats 	total 	249400.67286181
+scalar WirelessNetworkMU.node[19].batteryStats 	total 	249400.35500407
 attr unit  mW-s
 scalar WirelessNetworkMU.node[19].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.node[19].batteryStats 	"Mean power consumption" 	62.039968373586
+scalar WirelessNetworkMU.node[19].batteryStats 	"Mean power consumption" 	62.039889304496
 attr unit  mW
 statistic WirelessNetworkMU.colectores[0].netColector 	endToEndDelayWAM:stats
 field count 0
@@ -2148,13 +2148,13 @@ attr source  endToEndDelayWAM
 attr title  "end-to-end delay WAM, stats"
 attr unit  s
 statistic WirelessNetworkMU.colectores[0].netColector 	endToEndDelayAMR:stats
-field count 119
-field mean 0.026785386224697
-field stddev 0.017409187567681
-field sum 3.187460960739
-field sqrsum 0.12114079069801
-field min 0.008992024136
-field max 0.09716803132
+field count 280
+field mean 0.010177184222793
+field stddev 0.00072860501919928
+field sum 2.849611582382
+field sqrsum 0.029149133448753
+field min 0.00899201963
+field max 0.01123207239
 attr interpolationmode  none
 attr source  endToEndDelayAMR
 attr title  "end-to-end delay AMR, stats"
@@ -2163,7 +2163,7 @@ scalar WirelessNetworkMU.colectores[0].netColector 	paquetesRecibidosWAM:sum 	0
 attr interpolationmode  none
 attr source  recibidosWAM
 attr title  "Paquetes recibidos WAM, sum"
-scalar WirelessNetworkMU.colectores[0].netColector 	paquetesRecibidosAMR:sum 	119
+scalar WirelessNetworkMU.colectores[0].netColector 	paquetesRecibidosAMR:sum 	280
 attr interpolationmode  none
 attr source  recibidosAMR
 attr title  "Paquetes recibidos AMR, sum"
@@ -2229,29 +2229,29 @@ scalar WirelessNetworkMU.colectores[0].routing 	llegadaPaquete:count 	0
 attr interpolationmode  none
 attr source  llegada
 attr title  "Paquete entregado en destino, count"
-scalar WirelessNetworkMU.colectores[0].wlan.mac 	nbTxFrames 	3
-scalar WirelessNetworkMU.colectores[0].wlan.mac 	nbRxFrames 	103
-scalar WirelessNetworkMU.colectores[0].wlan.mac 	nbDroppedFrames 	2
+scalar WirelessNetworkMU.colectores[0].wlan.mac 	nbTxFrames 	5
+scalar WirelessNetworkMU.colectores[0].wlan.mac 	nbRxFrames 	280
+scalar WirelessNetworkMU.colectores[0].wlan.mac 	nbDroppedFrames 	0
 scalar WirelessNetworkMU.colectores[0].wlan.mac 	nbMissedAcks 	0
 scalar WirelessNetworkMU.colectores[0].wlan.mac 	nbRecvdAcks 	0
-scalar WirelessNetworkMU.colectores[0].wlan.mac 	nbTxAcks 	119
+scalar WirelessNetworkMU.colectores[0].wlan.mac 	nbTxAcks 	280
 scalar WirelessNetworkMU.colectores[0].wlan.mac 	nbDuplicates 	0
-scalar WirelessNetworkMU.colectores[0].wlan.mac 	meanBackoff 	0.0037052631578947
-scalar WirelessNetworkMU.colectores[0].wlan.mac 	nbBackoffs 	38
-scalar WirelessNetworkMU.colectores[0].wlan.mac 	backoffDurations 	0.1408
-scalar WirelessNetworkMU.colectores[0].wlan.phy 	nbFramesWithInterference 	16
-scalar WirelessNetworkMU.colectores[0].wlan.phy 	nbFramesWithoutInterference 	103
+scalar WirelessNetworkMU.colectores[0].wlan.mac 	meanBackoff 	0.001024
+scalar WirelessNetworkMU.colectores[0].wlan.mac 	nbBackoffs 	5
+scalar WirelessNetworkMU.colectores[0].wlan.mac 	backoffDurations 	0.00512
+scalar WirelessNetworkMU.colectores[0].wlan.phy 	nbFramesWithInterference 	0
+scalar WirelessNetworkMU.colectores[0].wlan.phy 	nbFramesWithoutInterference 	280
 scalar WirelessNetworkMU.colectores[0].wlan.phy 	nbFramesWithInterferencePartial 	0
 scalar WirelessNetworkMU.colectores[0].wlan.phy 	nbFramesWithoutInterferencePartial 	0
-scalar WirelessNetworkMU.colectores[0].wlan.phy 	nbFramesWithInterferenceDropped 	6
+scalar WirelessNetworkMU.colectores[0].wlan.phy 	nbFramesWithInterferenceDropped 	0
 scalar WirelessNetworkMU.colectores[0].wlan.phy 	nbFramesWithoutInterferenceDropped 	0
 scalar WirelessNetworkMU.colectores[0].batteryStats 	nominal 	1187988120
 attr unit  mW-s
-scalar WirelessNetworkMU.colectores[0].batteryStats 	total 	249400.50668859
+scalar WirelessNetworkMU.colectores[0].batteryStats 	total 	249400.17833829
 attr unit  mW-s
 scalar WirelessNetworkMU.colectores[0].batteryStats 	lifetime 	-1
 attr unit  s
-scalar WirelessNetworkMU.colectores[0].batteryStats 	"Mean power consumption" 	62.039927036964
+scalar WirelessNetworkMU.colectores[0].batteryStats 	"Mean power consumption" 	62.039845357783
 attr unit  mW
 scalar WirelessNetworkMU 	avgDelay:mean 	-1.#IND
 attr source  endToEndDelay
