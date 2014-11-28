@@ -217,6 +217,16 @@ void MeshUnder::handleMessage(cMessage *msg){
 
 
 MeshUnder::~MeshUnder() {
-    // TODO Auto-generated destructor stub
+
+    cOwnedObject *Del=NULL;
+    int OwnedSize=this->defaultListSize();
+    for(int i=0;i<OwnedSize;i++){
+            Del=this->defaultListGet(0);
+            this->drop(Del);
+            delete Del;
+    }
 }
+
+    // TODO Auto-generated destructor stub
+
 
