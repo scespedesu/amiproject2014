@@ -88,17 +88,17 @@ void NetLayer::initialize (int stage){
 
             if(myAddress!=destAddress){
             generatePacketAMR = new cMessage("nextPacketAMR");
-       //     generatePacketWAM = new cMessage("nextPacketWAM");
+            generatePacketWAM = new cMessage("nextPacketWAM");
         //    generatePacketRTP = new cMessage("nextPacketRTP");
 
             //Diferentes momentos de envío de paquetes
 
-            double envioAMR =  uniform(0.001, 0.05);
-            double envioWAM =  uniform(0.001, 0.05);
+            double envioAMR =  uniform(1, 10);
+            double envioWAM =  uniform(1, 10);
        //     double envioRTP =  uniform(0.001, 0.05);
 
             scheduleAt(simTime() + envioAMR, generatePacketAMR);
-      //      scheduleAt(simTime() + envioWAM, generatePacketWAM);
+            scheduleAt(simTime() + envioWAM, generatePacketWAM);
        //     scheduleAt(sendIATimeWAM->doubleValue() + envioRTP, generatePacketRTP);
 
         }
@@ -173,32 +173,32 @@ void NetLayer::handleMessage (cMessage *msg){
 
 
     }else{
-//            if(msg==generatePacketWAM){
-//                //Envio paquete del tipo WAM
-//                               const char *text = par ("destAddresses");
-//                               IPv4Address destAddress = IPv4Address(text);
-//                            // IPvXAddress destAddress = check_and_cast<IPvXAddress> (IPvXAddressResolver().resolve(par ("destAddresses")));
-//
-//                               char pkname[40];
-//                               // sprintf(pkname,"packet", myAddress, destAddress, pkCounter++);
-//                               //sprintf(pkname,"packet", pkCounter++;)
-//
-//                               sprintf(pkname,"packet");
-//                               pkCounter++;
-//                               EV << "generating packet " << pkname << endl;
-//                               Packet *pk = new Packet(pkname);
-//                               pk->setTimestamp(simTime());
-//                               pk->setByteLength(packetLengthBytesWAM->longValue());
-//                               pk->setSrcAddr(myAddress);
-//                               pk->setDestAddr(destAddress);
-//                               pk->setSpecialField(false);
-//                               pk->setSourceID(idNodo);
-//                               send(pk,"out");
-//                               emit (senalPaquetesEnviadosWAM, 1);
-//                              // contadorEnviadosWAM++;
-//                               scheduleAt(simTime() + sendIATimeWAM->doubleValue(), generatePacketWAM);
-//
-//            }else{
+            if(msg==generatePacketWAM){
+                //Envio paquete del tipo WAM
+                               const char *text = par ("destAddresses");
+                               IPv4Address destAddress = IPv4Address(text);
+                            // IPvXAddress destAddress = check_and_cast<IPvXAddress> (IPvXAddressResolver().resolve(par ("destAddresses")));
+
+                               char pkname[40];
+                               // sprintf(pkname,"packet", myAddress, destAddress, pkCounter++);
+                               //sprintf(pkname,"packet", pkCounter++;)
+
+                               sprintf(pkname,"packet");
+                               pkCounter++;
+                               EV << "generating packet " << pkname << endl;
+                               Packet *pk = new Packet(pkname);
+                               pk->setTimestamp(simTime());
+                               pk->setByteLength(packetLengthBytesWAM->longValue());
+                               pk->setSrcAddr(myAddress);
+                               pk->setDestAddr(destAddress);
+                               pk->setSpecialField(false);
+                               pk->setSourceID(idNodo);
+                               send(pk,"out");
+                               emit (senalPaquetesEnviadosWAM, 1);
+                              // contadorEnviadosWAM++;
+                               scheduleAt(simTime() + sendIATimeWAM->doubleValue(), generatePacketWAM);
+
+            }else{
 
                 // Handle incoming packet
                      Packet *pk = check_and_cast<Packet *>(msg);
@@ -232,7 +232,7 @@ void NetLayer::handleMessage (cMessage *msg){
                  }
 
             }
-     // }
+      }
 
  //   }
 

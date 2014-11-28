@@ -19,11 +19,14 @@
 //Define_Module(PERModelPLC);
 PERModelPLC::PERModelPLC() {
     // TODO Auto-generated constructor stub
+       //    configRed = new RoutingTablesConf();
     packetErrorRate =0;
     inferior=0;
     superior=0;
+    paqDescartados=0;
 
-    //    configRed = new RoutingTablesConf();
+    paquetesDescartadosPER.setName("descartadosPER");
+
 
 }
 
@@ -35,8 +38,6 @@ PERModelPLC::~PERModelPLC() {
 bool PERModelPLC::initFromMap(const ParameterMap& params) {
 
 
-
-    paqDescartados =0;
     //senalPaquetesDescartados = cComponent::registerSignal("descartados");
     ParameterMap::const_iterator it;
     bool                         bInitSuccess = true;
@@ -67,6 +68,8 @@ void PERModelPLC::filterSignal(airframe_ptr_t frame, const Coord& /*sendersPos*/
         attenuationFactor = 0;  // absorb all energy so that the receveir cannot receive anything
         paqDescartados++;
 
+        paquetesDescartadosPER.record(paqDescartados);
+
     }
 
     TimeMapping<Linear>* attMapping = new TimeMapping<Linear> ();
@@ -77,8 +80,11 @@ void PERModelPLC::filterSignal(airframe_ptr_t frame, const Coord& /*sendersPos*/
 
 void PERModelPLC::finish(){
 
-    numPaquetesDescartados.record(paqDescartados);
-    numPkDescartados.collect(paqDescartados);
+//    numPaquetesDescartados.record(paqDescartados);
+//    numPkDescartados.collect(paqDescartados);
+  //  paquetesDescartadosPER.record(paqDescartados);
+
+    //cComponent::recordScalar("#Descartados", paqDescartados);
 }
 
 

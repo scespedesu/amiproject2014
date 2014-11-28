@@ -75,13 +75,13 @@ void NetLayerCollector::initialize (int stage){
    //   if (destAddresses.size() != 0){
             //throw cRuntimeError("At least one address must be specified in the destAddresses parameter!");
 
-          generatePacketRTP = new cMessage("nextPacketRTP");
+     //     generatePacketRTP = new cMessage("nextPacketRTP");
 
             //Diferentes momentos de envío de paquetes
            //     double envioAMR =  uniform(0.001, 0.05);
           //     double envioWAM =  uniform(0.001, 0.05);
-         double envioRTP =  uniform(0.001, 0.05);
-         scheduleAt(simTime() + envioRTP, generatePacketRTP);
+    //     double envioRTP =  uniform(0.001, 0.05);
+   //      scheduleAt(simTime() + envioRTP, generatePacketRTP);
 
              senalPaquetesEnviadosRTP =  registerSignal("enviadosRTP");
              senalPaquetesRecibidosAMR =  registerSignal("recibidosAMR");

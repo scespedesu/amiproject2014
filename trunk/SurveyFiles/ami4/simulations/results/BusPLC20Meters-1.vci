@@ -1,15 +1,15 @@
-file 10610 1417117872                                           
+file 351750 1417122022                                          
 version 2
-run BusPLC20Meters-1-20141127-14:51:03-6364
+run BusPLC20Meters-1-20141127-15:47:50-8984
 attr configname BusPLC20Meters
-attr datetime 20141127-14:51:03
+attr datetime 20141127-15:47:50
 attr experiment BusPLC20Meters
 attr inifile pruebawirelessmu.ini
 attr iterationvars "$0=300, $1=0.04, $2=900, $3=0.04"
 attr iterationvars2 "$0=300, $1=0.04, $2=900, $3=0.04, $repetition=1"
 attr measurement "$0=300, $1=0.04, $2=900, $3=0.04"
 attr network WirelessNetworkMU
-attr processid 6364
+attr processid 8984
 attr repetition 1
 attr replication #1
 attr resultdir results
@@ -142,9 +142,9 @@ attr title  "Position X Collector, vector"
 vector 87  WirelessNetworkMU.colectores[0].netColector  coordenadaYCollector:vector  ETV
 attr source  posYCollector
 attr title  "Position Y Collector, vector"
-vector 84  WirelessNetworkMU.colectores[0].netColector  NodosQueEnviaronAMR:vector  ETV
-attr source  medidorFuenteAMR
-attr title  "Nodos Fuente AMR:, vector"
+vector 85  WirelessNetworkMU.colectores[0].netColector  NodosQueEnviaronWAM:vector  ETV
+attr source  medidorFuenteWAM
+attr title  "Nodos Fuente WAM:, vector"
 4	5821 23 0 0 0 0 1 11.676615956239 11.676615956239 11.676615956239 136.3433601895
 5	5844 23 0 0 0 0 1 27.921174627729 27.921174627729 27.921174627729 779.59199259212
 8	5867 23 0 0 0 0 1 20.169085700065 20.169085700065 20.169085700065 406.79201797656
@@ -185,6 +185,6 @@ attr title  "Nodos Fuente AMR:, vector"
 77	6707 24 0 0 0 0 1 26.295578258112 26.295578258112 26.295578258112 691.4574359285
 80	6731 23 0 0 0 0 1 5.546841531992 5.546841531992 5.546841531992 30.767450981031
 81	6754 24 0 0 0 0 1 21.794898593798 21.794898593798 21.794898593798 475.01760471395
-84	6778 3784 110 35858 0.011208160667 3900.124459900997 126 4 23 1774 28968
-86	10562 24 0 0 0 0 1 22.420847858302 22.420847858302 22.420847858302 502.69441868514
-87	10586 24 0 0 0 0 1 20.047174303792 20.047174303792 20.047174303792 401.88919756664
+85	6778 344924 108 3519953 1.35651711926 49.998370223549 11477 4 23 156783 2521723
+86	351702 24 0 0 0 0 1 22.420847858302 22.420847858302 22.420847858302 502.69441868514
+87	351726 24 0 0 0 0 1 20.047174303792 20.047174303792 20.047174303792 401.88919756664
