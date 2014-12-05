@@ -38,10 +38,10 @@ simple NetLayer like IApp
            @signal[enviadosWAM](type="long");
              @signal[recibidosRTP](type="long");
                @signal[endToEndDelayRTP](type="simtime_t");
-              @signal[posX](type="double");
-        @statistic[coordenadaX](title="Position X"; source="posX"; record=vector);
-        @signal[posY](type="double");
-        @statistic[coordenadaY](title="Position Y"; source="posY"; record=vector);
+       //       @signal[posX](type="double");
+        //@statistic[coordenadaX](title="Position X"; source="posX"; record=vector);
+        //@signal[posY](type="double");
+        //@statistic[coordenadaY](title="Position Y"; source="posY"; record=vector);
 
        // @signal[hopCount](type="int");
        // @signal[sourceAddress](type="int");

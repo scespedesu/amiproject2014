@@ -62,8 +62,8 @@ class NetLayer : public BaseModule {
     simsignal_t senalPaquetesEnviadosWAM;
     simsignal_t senalPaquetesRecibidosRTP;
     simsignal_t senalEndToEndDelayRTP;
-    simsignal_t senalXPos;
-    simsignal_t senalYPos;
+//    simsignal_t senalXPos;
+//    simsignal_t senalYPos;
 
  //   simsignal_t hopCountSignal;
    // simsignal_t sourceAddressSignal;

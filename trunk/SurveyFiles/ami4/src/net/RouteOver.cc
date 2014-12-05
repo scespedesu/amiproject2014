@@ -34,8 +34,8 @@ RouteOver::RouteOver() {
 void RouteOver::initialize (int stage ){
 
     BaseModule::initialize(stage);
-    senalLlegada = registerSignal("llegada");
-    senalReDireccion = registerSignal("redireccion");
+  //  senalLlegada = registerSignal("llegada");
+    //senalReDireccion = registerSignal("redireccion");
     distancia = par("distance");
 
 }

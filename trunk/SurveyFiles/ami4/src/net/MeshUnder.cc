@@ -43,9 +43,9 @@ MeshUnder::MeshUnder() {
 void MeshUnder::initialize (int stage ){
 
     BaseModule::initialize(stage);
-    senalLlegada = registerSignal("llegada");
-    senalReDireccion = registerSignal("redireccion");
-    distancia = par("distance");
+ //   senalLlegada = registerSignal("llegada");
+   // senalReDireccion = registerSignal("redireccion");
+   distancia = par("distance");
 
 }
 
@@ -81,6 +81,7 @@ void MeshUnder::handleMessage(cMessage *msg){
                                        infoDeControl->setDest(broadcastAddr);
                                        packet->setControlInfo (infoDeControl);
                                        send(packet, "lowerGateOut");
+                                      // delete infoDeControl;
 
             }else{
 
@@ -122,6 +123,7 @@ void MeshUnder::handleMessage(cMessage *msg){
                         infoDeControl->setDest(packetMacDestino);
                         packet->setControlInfo (infoDeControl);
                         send(packet, "lowerGateOut");
+                        //delete infoDeControl;
                         EV << "Se envió  paquete con información del proximo salto al nivel mac \n";
            //         }else{
            //             EV<<"No se encontro el proximo salto desde" <<myAddress.str().c_str() <<"para llegar a "<<packet->getDestAddr().str().c_str()<< " \n";

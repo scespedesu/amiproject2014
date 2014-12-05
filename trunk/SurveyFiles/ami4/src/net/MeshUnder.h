@@ -39,8 +39,8 @@ public:
     virtual ~MeshUnder();
 
 private:
-       simsignal_t senalLlegada;
-       simsignal_t senalReDireccion;
+ //      simsignal_t senalLlegada;
+   //    simsignal_t senalReDireccion;
             double distancia;
 
 protected:
