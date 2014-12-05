@@ -27,7 +27,7 @@ simple NetLayerCollector like IApp
      //   string destAddresses;  // destination addresses
    //     volatile double sendIaTimeAMR @unit(s) = default(exponential(1s)); // time between generating packets
         volatile double sendIaTimeRTP @unit(s) = default(exponential(1s));
-        volatile double sendIaTimeWAM @unit(s) = default(exponential(1s));
+    //    volatile double sendIaTimeWAM @unit(s) = default(exponential(1s));
   //      volatile int packetLengthAMR @unit(byte);  // length of one message (fixed! no "volatile" modifier)
         volatile int packetLengthRTP@unit(byte);
    //     volatile int packetLengthWAM @unit(byte);
@@ -39,14 +39,14 @@ simple NetLayerCollector like IApp
         @signal[recibidosWAM](type="long");
         @signal[endToEndDelayAMR](type="simtime_t");
         @signal[endToEndDelayWAM](type="simtime_t");
-	    @signal[medidorFuenteAMR](type="long");
-	       @signal[medidorFuenteWAM](type="long");
-        @signal[posXCollector](type="double");
+	 //   @signal[medidorFuenteAMR](type="long");
+	 //      @signal[medidorFuenteWAM](type="long");
+     //   @signal[posXCollector](type="double");
            @statistic[NodosQueEnviaronAMR](title="Nodos Fuente AMR:"; source="medidorFuenteAMR"; record=vector);
               @statistic[NodosQueEnviaronWAM](title="Nodos Fuente WAM:"; source="medidorFuenteWAM"; record=vector);
-        @statistic[coordenadaXCollector](title="Position X Collector"; source="posXCollector"; record=vector);
-        @signal[posYCollector](type="double");
-        @statistic[coordenadaYCollector](title="Position Y Collector"; source="posYCollector"; record=vector);
+   //     @statistic[coordenadaXCollector](title="Position X Collector"; source="posXCollector"; record=vector);
+    //    @signal[posYCollector](type="double");
+      //  @statistic[coordenadaYCollector](title="Position Y Collector"; source="posYCollector"; record=vector);
 //        
        // @signal[hopCount](type="int");
        // @signal[sourceAddress](type="int");

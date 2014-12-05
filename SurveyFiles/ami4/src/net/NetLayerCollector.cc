@@ -52,7 +52,7 @@ void NetLayerCollector::initialize (int stage){
         packetLengthBytesRTP = &par("packetLengthRTP");
      //   packetLengthBytesWAM = &par("packetLengthWAM");
         sendIATimeRTP = &par("sendIaTimeRTP");
-        sendIATimeWAM = &par("sendIaTimeWAM");
+     //   sendIATimeWAM = &par("sendIaTimeWAM");
         pkCounter = 0;
 
 //        contadorRecibidosAMR=0;
@@ -75,38 +75,40 @@ void NetLayerCollector::initialize (int stage){
    //   if (destAddresses.size() != 0){
             //throw cRuntimeError("At least one address must be specified in the destAddresses parameter!");
 
-     //     generatePacketRTP = new cMessage("nextPacketRTP");
+            generatePacketRTP = new cMessage("nextPacketRTP");
 
             //Diferentes momentos de envío de paquetes
            //     double envioAMR =  uniform(0.001, 0.05);
           //     double envioWAM =  uniform(0.001, 0.05);
-    //     double envioRTP =  uniform(0.001, 0.05);
-   //      scheduleAt(simTime() + envioRTP, generatePacketRTP);
+            double envioRTP =  uniform(1, 10);
+            scheduleAt(simTime() + envioRTP, generatePacketRTP);
 
              senalPaquetesEnviadosRTP =  registerSignal("enviadosRTP");
              senalPaquetesRecibidosAMR =  registerSignal("recibidosAMR");
              senalPaquetesRecibidosWAM =  registerSignal("recibidosWAM");
              senalEndToEndDelayAMR =  registerSignal("endToEndDelayAMR");
              senalEndToEndDelayWAM =  registerSignal("endToEndDelayWAM");
-             senalXPosCollector =  registerSignal ("posXCollector");
-              senalYPosCollector =  registerSignal ("posYCollector");
-              senalMedidorFuenteAMR  = registerSignal("medidorFuenteAMR");
-              senalMedidorFuenteWAM  = registerSignal("medidorFuenteWAM");
+       //      senalXPosCollector =  registerSignal ("posXCollector");
+         //     senalYPosCollector =  registerSignal ("posYCollector");
+           //   senalMedidorFuenteAMR  = registerSignal("medidorFuenteAMR");
+             // senalMedidorFuenteWAM  = registerSignal("medidorFuenteWAM");
 
-        }else{
-
-            if(stage==1){
-                              cModule* host = getParentModule();
-                              cModule *mobilityModule = host->getSubmodule("mobility");
-                              IMobility *im = check_and_cast<IMobility *>(mobilityModule);
-                              Coord coordenates =  im->getCurrentPosition();
-                              double px = coordenates.x;
-                              double py =  coordenates.y;
-                              emit (senalXPosCollector, px);
-                              emit (senalYPosCollector, py);
-
-           }
         }
+
+//    else{
+//
+//            if(stage==1){
+//                              cModule* host = getParentModule();
+//                              cModule *mobilityModule = host->getSubmodule("mobility");
+//                              IMobility *im = check_and_cast<IMobility *>(mobilityModule);
+//                              Coord coordenates =  im->getCurrentPosition();
+//                              double px = coordenates.x;
+//                              double py =  coordenates.y;
+//                              emit (senalXPosCollector, px);
+//                              emit (senalYPosCollector, py);
+//
+//           }
+//        }
 
 
    //     endToEndDelaySignal = registerSignal("endToEndDelay");
@@ -194,13 +196,13 @@ void NetLayerCollector::handleMessage (cMessage *msg){
 
                      if(pk->getByteLength()==200){
 
-                       emit (senalMedidorFuenteAMR, pk->getSourceID());
+                 //      emit (senalMedidorFuenteAMR, pk->getSourceID());
                        emit (senalPaquetesRecibidosAMR, 1);
                        //  contadorRecibidosAMR++;
                          emit (senalEndToEndDelayAMR, simTime() - pk->getTimestamp() );
                      }else{
                          if(pk->getByteLength()==46){
-                             emit (senalMedidorFuenteWAM, pk->getSourceID());
+                  //           emit (senalMedidorFuenteWAM, pk->getSourceID());
                            emit (senalPaquetesRecibidosWAM, 1);
                           //   contadorRecibidosWAM++;
                              emit (senalEndToEndDelayWAM, simTime() - pk->getTimestamp() );

@@ -62,10 +62,10 @@ simsignal_t senalPaquetesRecibidosAMR;
 simsignal_t senalPaquetesRecibidosWAM;
 simsignal_t senalEndToEndDelayAMR;
 simsignal_t senalEndToEndDelayWAM;
-simsignal_t senalMedidorFuenteAMR;
-simsignal_t senalMedidorFuenteWAM;
-simsignal_t senalXPosCollector;
-simsignal_t senalYPosCollector;
+//simsignal_t senalMedidorFuenteAMR;
+//simsignal_t senalMedidorFuenteWAM;
+//simsignal_t senalXPosCollector;
+//simsignal_t senalYPosCollector;
 
 
 

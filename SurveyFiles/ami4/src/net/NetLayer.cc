@@ -115,34 +115,36 @@ void NetLayer::initialize (int stage){
         senalPaquetesEnviadosWAM= registerSignal("enviadosWAM");
         senalPaquetesRecibidosRTP = registerSignal("recibidosRTP");
         senalEndToEndDelayRTP = registerSignal("endToEndDelayRTP");
-        senalXPos =  registerSignal ("posX");
-        senalYPos =  registerSignal ("posY");
+     //   senalXPos =  registerSignal ("posX");
+       // senalYPos =  registerSignal ("posY");
 //
 
         // hopCountSignal =  registerSignal("hopCount");
         // sourceAddressSignal = registerSignal("sourceAddress");
 
-            }else{
-
-                if(stage==1){
-                        cModule* host = getParentModule();
-                        cModule *mobilityModule = host->getSubmodule("mobility");
-                        IMobility *im = check_and_cast<IMobility *>(mobilityModule);
-                        Coord coordenates =  im->getCurrentPosition();
-                        double px = coordenates.x;
-                        double py =  coordenates.y;
-
-                        emit (senalXPos, px);
-                        emit (senalYPos, py);
-
             }
-            }
+
+//    else{
+//
+//                if(stage==1){
+//                        cModule* host = getParentModule();
+//                        cModule *mobilityModule = host->getSubmodule("mobility");
+//                        IMobility *im = check_and_cast<IMobility *>(mobilityModule);
+//                        Coord coordenates =  im->getCurrentPosition();
+//                        double px = coordenates.x;
+//                        double py =  coordenates.y;
+//
+//                        emit (senalXPos, px);
+//                        emit (senalYPos, py);
+//
+//            }
+//            }
 }
 
 void NetLayer::handleMessage (cMessage *msg){
 
-    cModule* host = getParentModule();
-    int idNodo=  host->getId();
+//    cModule* host = getParentModule();
+//    int idNodo=  host->getId();
 
     if (msg == generatePacketAMR)
     {
@@ -165,7 +167,7 @@ void NetLayer::handleMessage (cMessage *msg){
         pk->setSrcAddr(myAddress);
         pk->setDestAddr(destAddress);
         pk->setSpecialField(false);
-        pk->setSourceID(idNodo);
+  //      pk->setSourceID(idNodo);
         send(pk,"out");
         emit (senalPaquetesEnviadosAMR, 1);
        // contadorEnviadosAMR++;
@@ -192,7 +194,7 @@ void NetLayer::handleMessage (cMessage *msg){
                                pk->setSrcAddr(myAddress);
                                pk->setDestAddr(destAddress);
                                pk->setSpecialField(false);
-                               pk->setSourceID(idNodo);
+                             //  pk->setSourceID(idNodo);
                                send(pk,"out");
                                emit (senalPaquetesEnviadosWAM, 1);
                               // contadorEnviadosWAM++;
@@ -202,7 +204,7 @@ void NetLayer::handleMessage (cMessage *msg){
 
                 // Handle incoming packet
                      Packet *pk = check_and_cast<Packet *>(msg);
-                     EV << "El paquete de tamaño original: " << pk->getByteLength() << " bytes ha llegado a su destino!\n";
+        //             EV << "El paquete de tamaño original: " << pk->getByteLength() << " bytes ha llegado a su destino!\n";
 
                      //   EV << "received packet " << pk->getName() << " sent at " << pk->getTimestamp() << endl;
 
