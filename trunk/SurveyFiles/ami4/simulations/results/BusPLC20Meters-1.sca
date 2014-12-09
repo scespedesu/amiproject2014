@@ -1,14 +1,14 @@
 version 2
-run BusPLC20Meters-1-20141204-13:21:28-3416
+run BusPLC20Meters-1-20141206-18:52:14-4420
 attr configname BusPLC20Meters
-attr datetime 20141204-13:21:28
+attr datetime 20141206-18:52:14
 attr experiment BusPLC20Meters
 attr inifile pruebawirelessmu.ini
 attr iterationvars "$0=300, $1=0.04, $2=900"
 attr iterationvars2 "$0=300, $1=0.04, $2=900, $repetition=1"
 attr measurement "$0=300, $1=0.04, $2=900"
 attr network WirelessNetworkMU
-attr processid 3416
+attr processid 4420
 attr repetition 1
 attr replication #1
 attr resultdir results
