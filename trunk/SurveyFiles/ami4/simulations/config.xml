@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
 	<AnalogueModels>
-		<AnalogueModel type="PERModelPLC">
-	    	<parameter name="packetErrorRate" type="double" value="0.05"/>
-	    		<parameter name="inferior" type="double" value="0"/>
-	    			<parameter name="superior" type="double" value="0.056"/>
+	  <AnalogueModel type="LogNormalShadowing">
+	    	<!-- Mean attenuation in dB -->
+	    	<parameter name="mean" type="double" value="2.42"/>
+	    	
+	    	<!-- Standart deviation of the attenuation in dB -->
+	    	<parameter name="stdDev" type="double" value="3.12"/>
+	    	
+	    	<!-- Interval in which to define attenuation for in seconds -->
+	    	<parameter name="interval" type="double" value="0.001"/>
 	    </AnalogueModel>
+	    
 	</AnalogueModels>
 </root>

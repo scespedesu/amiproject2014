@@ -24,7 +24,7 @@ packet Packet
     int sourceID;
     IPv4Address srcAddr;
     IPv4Address destAddr;
-    // int hopCount;
+    int hopCount;
     int packetSize;
     bool specialField;
     int outGateIndex;

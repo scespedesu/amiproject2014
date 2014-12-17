@@ -59,6 +59,12 @@ void Adaptation::handleMessage(cMessage *msg){
     }
 
 Adaptation::~Adaptation() {
-    // TODO Auto-generated destructor stub
+    cOwnedObject *Del=NULL;
+      int OwnedSize=this->defaultListSize();
+      for(int i=0;i<OwnedSize;i++){
+              Del=this->defaultListGet(0);
+              this->drop(Del);
+              delete Del;
+      }
 }
 

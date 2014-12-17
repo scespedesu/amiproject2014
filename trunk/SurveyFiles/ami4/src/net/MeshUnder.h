@@ -34,18 +34,30 @@ public:
         ARP* arp;
         IPv4Address myAddress;
         MACAddress myMacAddress;
+       // MACAddress packetMacDestino;
         RoutingTablesConf *configRed;
+        MACAddress proximoSalto;
+        int contadorPaquetes;
 
     virtual ~MeshUnder();
 
 private:
  //      simsignal_t senalLlegada;
    //    simsignal_t senalReDireccion;
+    simsignal_t senalForwardedAMR;
+    simsignal_t senalForwardedWAM;
+    simsignal_t senalForwardedRTP;
+//    simsignal_t senalNumeroSaltosWAM;
+//    simsignal_t senalNumeroSaltosRTP;
             double distancia;
+
 
 protected:
 
     virtual void initialize(int stage);
+//    virtual int numInitStages() const {
+//        return 4;
+//    }
     virtual void handleMessage(cMessage *msg);
 };
 

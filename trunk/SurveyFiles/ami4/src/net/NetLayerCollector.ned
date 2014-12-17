@@ -48,7 +48,7 @@ simple NetLayerCollector like IApp
     //    @signal[posYCollector](type="double");
       //  @statistic[coordenadaYCollector](title="Position Y Collector"; source="posYCollector"; record=vector);
 //        
-       // @signal[hopCount](type="int");
+          @signal[hopCount](type="int");
        // @signal[sourceAddress](type="int");
      //   @statistic[endToEndDelay](title="end-to-end delay of arrived packets";source="endToEndDelay";unit=s;record=vector,mean,max;interpolationmode=none);
          @statistic[paquetesEnviadosRTP](title="Paquetes enviados RTP";source="enviadosRTP";record=sum;interpolationmode=none);
@@ -56,8 +56,10 @@ simple NetLayerCollector like IApp
           @statistic[paquetesRecibidosWAM](title="Paquetes recibidos WAM";source="recibidosWAM";record=sum;interpolationmode=none);
            @statistic[endToEndDelayAMR](title="end-to-end delay AMR";source="endToEndDelayAMR";unit=s;record=stats;interpolationmode=none);
             @statistic[endToEndDelayWAM](title="end-to-end delay WAM";source="endToEndDelayWAM";unit=s;record=stats;interpolationmode=none);
+//          @signal[numSaltos](type="long");
+//          @statistic[numeroSaltos](title="Saltos";source="numSaltos";record=vector;interpolationmode=none);
           
-        //@statistic[hopCount](title="hop count of arrived packets";interpolationmode=none;record=vector?,mean,max);
+        @statistic[hopCount](title="hop count of arrived packets";interpolationmode=none;record=vector?,mean,max);
         //@statistic[sourceAddress](title="source address of arrived packets";interpolationmode=none;record=vector?);
     gates:
         input in;

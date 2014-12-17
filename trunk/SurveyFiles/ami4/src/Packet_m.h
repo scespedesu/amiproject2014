@@ -27,7 +27,7 @@
  *     int sourceID;
  *     IPv4Address srcAddr;
  *     IPv4Address destAddr;
- *     
+ *     int hopCount;
  *     int packetSize;
  *     bool specialField;
  *     int outGateIndex;
@@ -40,6 +40,7 @@ class Packet : public ::cPacket
     int sourceID_var;
     IPv4Address srcAddr_var;
     IPv4Address destAddr_var;
+    int hopCount_var;
     int packetSize_var;
     bool specialField_var;
     int outGateIndex_var;
@@ -69,6 +70,8 @@ class Packet : public ::cPacket
     virtual IPv4Address& getDestAddr();
     virtual const IPv4Address& getDestAddr() const {return const_cast<Packet*>(this)->getDestAddr();}
     virtual void setDestAddr(const IPv4Address& destAddr);
+    virtual int getHopCount() const;
+    virtual void setHopCount(int hopCount);
     virtual int getPacketSize() const;
     virtual void setPacketSize(int packetSize);
     virtual bool getSpecialField() const;

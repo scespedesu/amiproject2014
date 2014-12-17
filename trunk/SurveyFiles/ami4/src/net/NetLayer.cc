@@ -36,10 +36,13 @@ NetLayer::NetLayer() {
 
 NetLayer::~NetLayer() {
     // TODO Auto-generated destructor stub
-
-//    emit(senalPaquetesEnviadosAMR, contadorEnviadosAMR);
-//    emit (senalPaquetesEnviadosWAM, contadorEnviadosWAM);
-//    emit (senalPaquetesRecibidosRTP, contadorRecibidosRTP);
+    cOwnedObject *Del=NULL;
+      int OwnedSize=this->defaultListSize();
+      for(int i=0;i<OwnedSize;i++){
+              Del=this->defaultListGet(0);
+              this->drop(Del);
+              delete Del;
+      }
 }
 
 void NetLayer::initialize (int stage){
@@ -89,7 +92,7 @@ void NetLayer::initialize (int stage){
             if(myAddress!=destAddress){
             generatePacketAMR = new cMessage("nextPacketAMR");
             generatePacketWAM = new cMessage("nextPacketWAM");
-        //    generatePacketRTP = new cMessage("nextPacketRTP");
+         //   generatePacketRTP = new cMessage("nextPacketRTP");
 
             //Diferentes momentos de envío de paquetes
 

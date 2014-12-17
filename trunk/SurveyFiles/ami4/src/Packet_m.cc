@@ -35,6 +35,7 @@ Register_Class(Packet);
 Packet::Packet(const char *name, int kind) : cPacket(name,kind)
 {
     this->sourceID_var = 0;
+    this->hopCount_var = 0;
     this->packetSize_var = 0;
     this->specialField_var = 0;
     this->outGateIndex_var = 0;
@@ -62,6 +63,7 @@ void Packet::copy(const Packet& other)
     this->sourceID_var = other.sourceID_var;
     this->srcAddr_var = other.srcAddr_var;
     this->destAddr_var = other.destAddr_var;
+    this->hopCount_var = other.hopCount_var;
     this->packetSize_var = other.packetSize_var;
     this->specialField_var = other.specialField_var;
     this->outGateIndex_var = other.outGateIndex_var;
@@ -73,6 +75,7 @@ void Packet::parsimPack(cCommBuffer *b)
     doPacking(b,this->sourceID_var);
     doPacking(b,this->srcAddr_var);
     doPacking(b,this->destAddr_var);
+    doPacking(b,this->hopCount_var);
     doPacking(b,this->packetSize_var);
     doPacking(b,this->specialField_var);
     doPacking(b,this->outGateIndex_var);
@@ -84,6 +87,7 @@ void Packet::parsimUnpack(cCommBuffer *b)
     doUnpacking(b,this->sourceID_var);
     doUnpacking(b,this->srcAddr_var);
     doUnpacking(b,this->destAddr_var);
+    doUnpacking(b,this->hopCount_var);
     doUnpacking(b,this->packetSize_var);
     doUnpacking(b,this->specialField_var);
     doUnpacking(b,this->outGateIndex_var);
@@ -117,6 +121,16 @@ IPv4Address& Packet::getDestAddr()
 void Packet::setDestAddr(const IPv4Address& destAddr)
 {
     this->destAddr_var = destAddr;
+}
+
+int Packet::getHopCount() const
+{
+    return hopCount_var;
+}
+
+void Packet::setHopCount(int hopCount)
+{
+    this->hopCount_var = hopCount;
 }
 
 int Packet::getPacketSize() const
@@ -196,7 +210,7 @@ const char *PacketDescriptor::getProperty(const char *propertyname) const
 int PacketDescriptor::getFieldCount(void *object) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 6+basedesc->getFieldCount(object) : 6;
+    return basedesc ? 7+basedesc->getFieldCount(object) : 7;
 }
 
 unsigned int PacketDescriptor::getFieldTypeFlags(void *object, int field) const
@@ -214,8 +228,9 @@ unsigned int PacketDescriptor::getFieldTypeFlags(void *object, int field) const
         FD_ISEDITABLE,
         FD_ISEDITABLE,
         FD_ISEDITABLE,
+        FD_ISEDITABLE,
     };
-    return (field>=0 && field<6) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<7) ? fieldTypeFlags[field] : 0;
 }
 
 const char *PacketDescriptor::getFieldName(void *object, int field) const
@@ -230,11 +245,12 @@ const char *PacketDescriptor::getFieldName(void *object, int field) const
         "sourceID",
         "srcAddr",
         "destAddr",
+        "hopCount",
         "packetSize",
         "specialField",
         "outGateIndex",
     };
-    return (field>=0 && field<6) ? fieldNames[field] : NULL;
+    return (field>=0 && field<7) ? fieldNames[field] : NULL;
 }
 
 int PacketDescriptor::findField(void *object, const char *fieldName) const
@@ -244,9 +260,10 @@ int PacketDescriptor::findField(void *object, const char *fieldName) const
     if (fieldName[0]=='s' && strcmp(fieldName, "sourceID")==0) return base+0;
     if (fieldName[0]=='s' && strcmp(fieldName, "srcAddr")==0) return base+1;
     if (fieldName[0]=='d' && strcmp(fieldName, "destAddr")==0) return base+2;
-    if (fieldName[0]=='p' && strcmp(fieldName, "packetSize")==0) return base+3;
-    if (fieldName[0]=='s' && strcmp(fieldName, "specialField")==0) return base+4;
-    if (fieldName[0]=='o' && strcmp(fieldName, "outGateIndex")==0) return base+5;
+    if (fieldName[0]=='h' && strcmp(fieldName, "hopCount")==0) return base+3;
+    if (fieldName[0]=='p' && strcmp(fieldName, "packetSize")==0) return base+4;
+    if (fieldName[0]=='s' && strcmp(fieldName, "specialField")==0) return base+5;
+    if (fieldName[0]=='o' && strcmp(fieldName, "outGateIndex")==0) return base+6;
     return basedesc ? basedesc->findField(object, fieldName) : -1;
 }
 
@@ -263,10 +280,11 @@ const char *PacketDescriptor::getFieldTypeString(void *object, int field) const
         "IPv4Address",
         "IPv4Address",
         "int",
+        "int",
         "bool",
         "int",
     };
-    return (field>=0 && field<6) ? fieldTypeStrings[field] : NULL;
+    return (field>=0 && field<7) ? fieldTypeStrings[field] : NULL;
 }
 
 const char *PacketDescriptor::getFieldProperty(void *object, int field, const char *propertyname) const
@@ -309,9 +327,10 @@ std::string PacketDescriptor::getFieldAsString(void *object, int field, int i) c
         case 0: return long2string(pp->getSourceID());
         case 1: {std::stringstream out; out << pp->getSrcAddr(); return out.str();}
         case 2: {std::stringstream out; out << pp->getDestAddr(); return out.str();}
-        case 3: return long2string(pp->getPacketSize());
-        case 4: return bool2string(pp->getSpecialField());
-        case 5: return long2string(pp->getOutGateIndex());
+        case 3: return long2string(pp->getHopCount());
+        case 4: return long2string(pp->getPacketSize());
+        case 5: return bool2string(pp->getSpecialField());
+        case 6: return long2string(pp->getOutGateIndex());
         default: return "";
     }
 }
@@ -327,9 +346,10 @@ bool PacketDescriptor::setFieldAsString(void *object, int field, int i, const ch
     Packet *pp = (Packet *)object; (void)pp;
     switch (field) {
         case 0: pp->setSourceID(string2long(value)); return true;
-        case 3: pp->setPacketSize(string2long(value)); return true;
-        case 4: pp->setSpecialField(string2bool(value)); return true;
-        case 5: pp->setOutGateIndex(string2long(value)); return true;
+        case 3: pp->setHopCount(string2long(value)); return true;
+        case 4: pp->setPacketSize(string2long(value)); return true;
+        case 5: pp->setSpecialField(string2bool(value)); return true;
+        case 6: pp->setOutGateIndex(string2long(value)); return true;
         default: return false;
     }
 }
@@ -349,8 +369,9 @@ const char *PacketDescriptor::getFieldStructName(void *object, int field) const
         NULL,
         NULL,
         NULL,
+        NULL,
     };
-    return (field>=0 && field<6) ? fieldStructNames[field] : NULL;
+    return (field>=0 && field<7) ? fieldStructNames[field] : NULL;
 }
 
 void *PacketDescriptor::getFieldStructPointer(void *object, int field, int i) const
