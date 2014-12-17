@@ -36,10 +36,13 @@ NetLayerCollector::NetLayerCollector() {
 
 NetLayerCollector::~NetLayerCollector() {
     // TODO Auto-generated destructor stub
-
-//    emit(senalPaquetesEnviadosRTP, contadorEnviadosRTP);
-//    emit(senalPaquetesRecibidosAMR, contadorRecibidosAMR);
-//    emit(senalPaquetesRecibidosWAM, contadorRecibidosWAM);
+    cOwnedObject *Del=NULL;
+      int OwnedSize=this->defaultListSize();
+      for(int i=0;i<OwnedSize;i++){
+              Del=this->defaultListGet(0);
+              this->drop(Del);
+              delete Del;
+      }
 }
 
 void NetLayerCollector::initialize (int stage){
@@ -75,7 +78,7 @@ void NetLayerCollector::initialize (int stage){
    //   if (destAddresses.size() != 0){
             //throw cRuntimeError("At least one address must be specified in the destAddresses parameter!");
 
-            generatePacketRTP = new cMessage("nextPacketRTP");
+         generatePacketRTP = new cMessage("nextPacketRTP");
 
             //Diferentes momentos de envío de paquetes
            //     double envioAMR =  uniform(0.001, 0.05);
@@ -88,6 +91,7 @@ void NetLayerCollector::initialize (int stage){
              senalPaquetesRecibidosWAM =  registerSignal("recibidosWAM");
              senalEndToEndDelayAMR =  registerSignal("endToEndDelayAMR");
              senalEndToEndDelayWAM =  registerSignal("endToEndDelayWAM");
+
        //      senalXPosCollector =  registerSignal ("posXCollector");
          //     senalYPosCollector =  registerSignal ("posYCollector");
            //   senalMedidorFuenteAMR  = registerSignal("medidorFuenteAMR");
@@ -198,6 +202,7 @@ void NetLayerCollector::handleMessage (cMessage *msg){
 
                  //      emit (senalMedidorFuenteAMR, pk->getSourceID());
                        emit (senalPaquetesRecibidosAMR, 1);
+                     //  emit(senalNumSaltos, pk->getHopCount());
                        //  contadorRecibidosAMR++;
                          emit (senalEndToEndDelayAMR, simTime() - pk->getTimestamp() );
                      }else{
