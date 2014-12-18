@@ -48,9 +48,9 @@ void MeshUnder::initialize (int stage ){
  //   senalLlegada = registerSignal("llegada");
    // senalReDireccion = registerSignal("redireccion");
   //  senalNumeroSaltos =  registerSignal("numSaltos");
-    senalForwardedAMR =  registerSignal("forwardedAMR");
-    senalForwardedWAM =  registerSignal("forwardedWAM");
-    senalForwardedRTP =  registerSignal("forwardedRTP");
+    senalForwardedAMR =  registerSignal("fwdAMR");
+    senalForwardedWAM =  registerSignal("fwdWAM");
+    senalForwardedRTP =  registerSignal("fwdRTP");
 //    senalNumeroSaltosWAM =  registerSignal("numSaltosWAM");
 //    senalNumeroSaltosRTP =  registerSignal("numSaltosRTP");
    distancia = par("distance");
@@ -325,13 +325,13 @@ void MeshUnder::handleMessage(cMessage *msg){
                                 packet->setHopCount(packet->getHopCount() + 1);
 
                                 EV << "Se envió  paquete con información del proximo salto al nivel mac \n";
-//                               if(packet->getByteLength()==200){
+                               if(packet->getByteLength()==200){
 //
-//                                    emit(senalForwardedAMR, 1);
-//                                }else{
-//                                    if(packet->getByteLength()==46){
-//                                        emit(senalForwardedWAM, 1);
-//                                    }
+                                   emit(senalForwardedAMR, 1);
+                               }else{
+                                    if(packet->getByteLength()==46){
+                                        emit(senalForwardedWAM, 1);
+                                  }
                                 }
                               //  emit(senalNumeroSaltos, 1);
 //                           //   delete(infoDeControl);
@@ -343,7 +343,7 @@ void MeshUnder::handleMessage(cMessage *msg){
                      }
                      }
         }
-    //    }
+       }
  //   }
 
 
