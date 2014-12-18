@@ -36,13 +36,13 @@ NetLayer::NetLayer() {
 
 NetLayer::~NetLayer() {
     // TODO Auto-generated destructor stub
-    cOwnedObject *Del=NULL;
-      int OwnedSize=this->defaultListSize();
-      for(int i=0;i<OwnedSize;i++){
-              Del=this->defaultListGet(0);
-              this->drop(Del);
-              delete Del;
-      }
+//    cOwnedObject *Del=NULL;
+//      int OwnedSize=this->defaultListSize();
+//      for(int i=0;i<OwnedSize;i++){
+//              Del=this->defaultListGet(0);
+//              this->drop(Del);
+//              delete Del;
+//      }
 }
 
 void NetLayer::initialize (int stage){
@@ -170,6 +170,7 @@ void NetLayer::handleMessage (cMessage *msg){
         pk->setSrcAddr(myAddress);
         pk->setDestAddr(destAddress);
         pk->setSpecialField(false);
+        pk->setHopCount(0);
   //      pk->setSourceID(idNodo);
         send(pk,"out");
         emit (senalPaquetesEnviadosAMR, 1);

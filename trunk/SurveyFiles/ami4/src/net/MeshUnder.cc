@@ -56,6 +56,7 @@ void MeshUnder::initialize (int stage ){
    distancia = par("distance");
 
    contadorPaquetes =0;
+  // numSaltosActual=0;
 //    }else{
 //
 //   if(stage==3){
@@ -202,6 +203,8 @@ void MeshUnder::handleMessage(cMessage *msg){
                         infoDeControl->setDest(proximoSalto);
                         packet->setControlInfo (infoDeControl);
                         send(packet, "lowerGateOut");
+                       // numSaltosActual =  packet->getHopCount();
+                        packet->setHopCount(packet->getHopCount()+1);
 
 //                          if(packet->getByteLength()==200){
 //
@@ -318,6 +321,8 @@ void MeshUnder::handleMessage(cMessage *msg){
 //                                // infoDeControl = NetwToMacControlInfo::setControlInfo(fragment, dirProxSalto);
 //                              //  fragment->setControlInfo (infoContrl);
                                 send(packet, "lowerGateOut");
+
+                                packet->setHopCount(packet->getHopCount() + 1);
 
                                 EV << "Se envió  paquete con información del proximo salto al nivel mac \n";
 //                               if(packet->getByteLength()==200){
