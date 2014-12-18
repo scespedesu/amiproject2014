@@ -38,6 +38,7 @@ public:
         RoutingTablesConf *configRed;
         MACAddress proximoSalto;
         int contadorPaquetes;
+       // int numSaltosActual;
 
     virtual ~MeshUnder();
 

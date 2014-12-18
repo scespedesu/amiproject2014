@@ -36,13 +36,13 @@ NetLayerCollector::NetLayerCollector() {
 
 NetLayerCollector::~NetLayerCollector() {
     // TODO Auto-generated destructor stub
-    cOwnedObject *Del=NULL;
-      int OwnedSize=this->defaultListSize();
-      for(int i=0;i<OwnedSize;i++){
-              Del=this->defaultListGet(0);
-              this->drop(Del);
-              delete Del;
-      }
+//    cOwnedObject *Del=NULL;
+//      int OwnedSize=this->defaultListSize();
+//      for(int i=0;i<OwnedSize;i++){
+//              Del=this->defaultListGet(0);
+//              this->drop(Del);
+//              delete Del;
+//      }
 }
 
 void NetLayerCollector::initialize (int stage){
@@ -159,6 +159,7 @@ void NetLayerCollector::handleMessage (cMessage *msg){
                    pk->setSrcAddr(myAddress);
                    pk->setDestAddr(IPv4Address::ALLONES_ADDRESS);
                    pk->setSpecialField(false);
+                   pk->setHopCount(0);
                    send(pk,"out");
                    emit(senalPaquetesEnviadosRTP, 1);
             //       contadorEnviadosRTP++;
@@ -197,7 +198,7 @@ void NetLayerCollector::handleMessage (cMessage *msg){
                      EV << "El paquete de tamaño original: " << pk->getByteLength() << " bytes ha llegado a su destino!\n";
 
                      //   EV << "received packet " << pk->getName() << " sent at " << pk->getTimestamp() << endl;
-
+                     hopCountStats.collect(pk->getHopCount());
                      if(pk->getByteLength()==200){
 
                  //      emit (senalMedidorFuenteAMR, pk->getSourceID());
@@ -236,6 +237,13 @@ void NetLayerCollector::handleMessage (cMessage *msg){
                      }
                  }
 }
+
+void NetLayerCollector::finish (){
+
+    hopCountStats.recordAs("Contador saltos");
+
+}
+
 
           //}
       //}

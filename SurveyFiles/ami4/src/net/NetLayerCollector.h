@@ -62,6 +62,8 @@ simsignal_t senalPaquetesRecibidosAMR;
 simsignal_t senalPaquetesRecibidosWAM;
 simsignal_t senalEndToEndDelayAMR;
 simsignal_t senalEndToEndDelayWAM;
+
+cLongHistogram hopCountStats;
 //simsignal_t senalNumSaltos;
 //simsignal_t senalMedidorFuenteAMR;
 //simsignal_t senalMedidorFuenteWAM;
@@ -82,6 +84,8 @@ virtual ~NetLayerCollector();
    virtual int numInitStages() const {
        return 2;
    }
+
+   virtual void finish();
 };
 
 
