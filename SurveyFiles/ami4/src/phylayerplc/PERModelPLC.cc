@@ -66,7 +66,7 @@ void PERModelPLC::filterSignal(airframe_ptr_t frame, const Coord& /*sendersPos*/
     packetErrorRate =  uniform(inferior, superior);
     if(packetErrorRate > 0 && uniform(0, 1) < packetErrorRate) {
         attenuationFactor = 0;  // absorb all energy so that the receveir cannot receive anything
-        paqDescartados++;
+  //      paqDescartados++;
 
         paquetesDescartadosPER.record(paqDescartados);
 
