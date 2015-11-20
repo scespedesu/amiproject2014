@@ -1,0 +1,1 @@
+A study of AMI networks featuring deployment technologies, communication requirements and a comparison of routing strategies is performed.
